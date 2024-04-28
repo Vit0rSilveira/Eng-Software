@@ -26,17 +26,17 @@ function Home() {
         <>
             <Header />
             <div id="carrosel"></div>
-            <div id="about-us">
+            <div id="about-us" className="box-text">
                 <h1>Um pouco sobre nós</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda consectetur sed aliquid libero! Aliquid deserunt laudantium suscipit maxime inventore recusandae esse eos sunt nesciunt porro ut, iste vel perferendis quaerat.</p>
             </div>
 
-            <div id="last-updates">
+            <div id="last-updates"  className="box-text">
                 <h1>Últimas Ações Realizadas</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda consectetur sed aliquid libero! Aliquid deserunt laudantium suscipit maxime inventore recusandae esse eos sunt nesciunt porro ut, iste vel perferendis quaerat.</p>
             </div>
 
-            <div id="questions">
+            <div id="questions"  className="box-text">
                 <h1>Perguntas Frequentes</h1>
                 <div id="box-questions">
                     {questions.slice(0, 4).map((q, index) => (
