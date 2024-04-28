@@ -1,0 +1,27 @@
+#carrosel {
+    margin-top: 5vh;
+    height: 20vh;
+    border-style: solid;
+}
+
+h1 {
+    margin-bottom: 2%;
+}
+
+#about-us, #last-updates {
+    margin: 1%;
+}
+
+#questions {
+    margin: 1%;
+}
+
+#questions h1 {
+    margin-bottom: 20px; /* Espaçamento abaixo do título "Perguntas Frequentes" */
+}
+
+#box-questions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas de largura igual */
+    gap: 20px; /* Espaçamento entre as perguntas */
+}
