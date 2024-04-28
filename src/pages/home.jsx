@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from '../components/header';
-import Question from "../styles/components/questions";
+import Question from "../components/questions";
 import '../styles/pages/home.css'
 
 function Home() {

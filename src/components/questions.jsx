@@ -1,5 +1,5 @@
 import React from "react";
-import '../../styles/components/questions.css'
+import '../styles/components/questions.css'
 
 function Question(props) {
     return (
