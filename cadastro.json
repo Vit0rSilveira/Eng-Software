@@ -1,0 +1,36 @@
+[
+    {
+        "nome_completo": "João da Silva",
+        "email": "joao@example.com",
+        "telefone": "123456789",
+        "descricao": "Um profissional de TI apaixonado por programação e entusiasta de novas tecnologias."
+    },
+    {
+        "nome_completo": "Maria Oliveira",
+        "email": "maria@example.com",
+        "telefone": "987654321",
+        "descricao": "Uma designer criativa com um amor pelo design de interface do usuário e ilustração."
+    },
+    {
+        "nome_completo": "Carlos Souza",
+        "email": "carlos@example.com",
+        "telefone": "456123789",
+        "descricao": "Um advogado dedicado que se esforça para garantir justiça e equidade para todos os seus clientes."
+    },
+    {
+        "nome_completo": "Ana Pereira",
+        "email": "ana@example.com",
+        "telefone": "789123456",
+        "descricao": "Uma escritora talentosa que adora explorar temas de fantasia e ficção científica em seus romances."
+    },
+    {
+        "nome_completo": "Pedro Santos",
+        "email": "pedro@example.com",
+        "telefone": "321987654",
+        "descricao": "Um chef renomado que combina habilidade culinária com uma paixão pela cozinha internacional."
+    }
+]
+
+
+
+
