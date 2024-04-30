@@ -1,13 +1,15 @@
 import React from "react";
 import { Routes, Route} from 'react-router-dom';
 import Home from '../pages/home.jsx'
+import Cadastro from '../pages/cadastro';
 
 
 
 function Destiny () {
     return (
         <Routes>
-            <Route exat path = "/" element = { <Home/> } />
+            <Route exact path = "/" element = { <Home/> } />
+            <Route path="/cadastro" element={<Cadastro />} />
         </Routes>
     )
 }
