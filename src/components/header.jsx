@@ -8,8 +8,8 @@ function Header() {
         <header>
             <div id="logo">
                 <img src="../../public/images/logo.jpg" alt="Logotipo do Pão Fraterno" id="logo-pao-fraterno"/>
-                <h2>Grupo Pão Fraterno</h2>
-                <h2>André Luiz</h2>
+                <h4>Grupo Pão Fraterno</h4>
+                <h4>André Luiz</h4>
             </div>
             <ul>
                 <li>Quem Somos</li>

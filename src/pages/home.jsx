@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Images_carousel from '../components/carrousel'
 import Header from '../components/header';
 import Question from "../components/questions";
 import Footer from '../components/footer';
@@ -26,7 +27,7 @@ function Home() {
     return (
         <>
             <Header />
-            <div id="carrosel"></div>
+            <Images_carousel/>
             <main>
                 <div id="about-us" className="box-text">
                     <h1>Um pouco sobre nós</h1>
