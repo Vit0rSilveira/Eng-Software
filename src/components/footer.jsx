@@ -12,17 +12,17 @@ function Footer() {
             <div class='redes'>
                 <p class="redes-text" >Acesse nossas redes</p>
                 <div class='redes-icons'>
-                    <FaInstagram size={50}/>
-                    <FaFacebook size={50}/>
+                    <FaInstagram size={30}/>
+                    <FaFacebook size={30}/>
                 </div>
             </div>
             <div class='contato'>
                 <p> Entre em contato conosco</p>
                 <p> paofraterno@gmail.com </p>
-                <FaPhone size={45} />
+                <FaPhone size={30} />
             </div>
             <div class='localizacao'>
-                <p><IoLocationSharp size={40} />Localização:</p>
+                <p><IoLocationSharp size={30} />Localização:</p>
                 <p>Rua Alguma Coisa, Bairro não sei o que lá</p>
                 <p>Num: 123</p>
                 <p>Cep: 123.456-78</p>

@@ -14,8 +14,8 @@ footer {
 }
 
 footer p {
-    font: 2em "palanquin", sans-serif ;
-    font-weight: 600;
+    font: 1em "palanquin", sans-serif ;
+    font-weight: 300;
     text-align: center;
     margin-bottom: 10px;
 }
