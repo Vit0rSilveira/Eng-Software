@@ -1,0 +1,22 @@
+h1{
+    margin-bottom:15px;
+    color: #022859;
+}
+
+#info-page{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#info-page div{
+    min-width: 50vw;
+    max-width: 50vw;
+}
+
+.image-fluid{
+    align-self:center;
+    width: 75%;
+}
