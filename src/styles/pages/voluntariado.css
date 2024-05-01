@@ -1,0 +1,83 @@
+
+#voluntariado{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80vh;
+}
+
+.infos-contato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infos-contato p{
+    font: 1em "palanquin", sans-serif ;
+    font-weight: 600;
+}
+
+.infos-contato div{
+    width: 30vw;
+}
+
+input{
+    height: 25px;
+}
+
+h1{
+    margin-bottom: 30px;
+}
+
+.info-nome{
+    margin-bottom: 30px;
+}
+
+.text-nome{
+    align-self: flex-start;
+    margin-bottom: 5px;
+
+}
+
+.input-nome{
+    width: 100%;
+}
+
+
+.info-email-telefone{
+    display: flex;
+    width: 30vw;
+    margin-bottom: 70px;
+}
+
+.info-email{
+    width: 20vw;
+}
+
+.input-email{
+    width: 17vw;
+}
+
+.info-telefone{
+    padding-left: 3vw;
+    width: 10vw;
+}
+
+.input-telefone{
+    width: 10vw;
+}
+
+.info-pessoal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-info-pessoal{
+    margin-bottom: 20px;
+}
+
+.input-info-pessoal{
+    resize: none;
+    width: 100%;
+}
