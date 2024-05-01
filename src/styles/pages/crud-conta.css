@@ -1,6 +1,6 @@
 
 /* geral */
-#login{
+#crud-conta{
     height: auto;
     width: auto;
     display: flex;
@@ -65,7 +65,7 @@ div, p, button{
     padding-bottom: 20px;
     border: 1px;
     border-style: solid;
-    border-color: #b9b9b9;
+    border-color: #393939;
     border-radius: 4px;
 }
 
@@ -73,7 +73,7 @@ div, p, button{
     margin-top: 15px;
     margin-bottom: 3px;
     font-size: 16px;
-    color: #393939;
+    color: #4c4c4c;
 }
 
 .input-box{
@@ -85,7 +85,7 @@ div, p, button{
     background-color: #F8F8F8;
 }
 
-.login-button {
+.confirm-button {
     width: 100px;
     margin-top: 20px;
     padding: 5px 16px;
@@ -95,21 +95,16 @@ div, p, button{
     font-size: 16px;
     font-weight: 600;
 }
-.login-button:hover {
+.confirm-button:hover {
   background-color: #93a1bb;
   transition-duration: 0.1s;
 }
-.login-button:disabled {
+.confirm-button:disabled {
   background-color: #A1AFCB;
   border-color: rgba(27, 31, 35, 0.15);
 }
-.login-button:active {
+.confirm-button:active {
   background-color: #8a97b0;
-}
-
-.forgot-password-text{
-    margin: 20px 10px -5px -10px;
-    font-size: 10px;
 }
 
 
