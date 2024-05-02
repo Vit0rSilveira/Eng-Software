@@ -46,3 +46,19 @@ accounts {
 .box-text h1 {
     color: #022859;
 }
+
+.container {
+    width: 4000px;
+    margin-top: 20px;
+    padding: 40px;
+    margin-left: 150px;
+}
+
+.container-element {
+    border: 3px solid blue;
+}
+
+.img-x{
+    width: 80px;
+    right: 150;
+}
