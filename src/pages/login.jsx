@@ -18,20 +18,20 @@ function Login(){
                     </div>
 
                     {/* Titulo */}
-                    <div id="titulo">Administrator Login</div>
+                    <div id="titulo">Login Administrador</div>
                    
                     {/* Caixa */}
                     <div class="row caixa">
                         {/* Email */}
-                        <div class="text">Email Adress</div>
+                        <div class="text">Email</div>
                         <div><input type="text" class="input-box"/></div>
                         {/* Password */}
-                        <div class="text">Password</div>
+                        <div class="text">Senha</div>
                         <div><input type="password" class="input-box"/></div>
                         {/* Login */}
                         <button class="login-button">Login</button>
                         {/* Forgot password */}
-                        <div class="forgot-password-text">Forgot password? <a href="">Click here</a></div>
+                        <div class="forgot-password-text">Esqueceu a senha? <a href="">Clique aqui</a></div>
                     </div>
                 </div>
             </div>

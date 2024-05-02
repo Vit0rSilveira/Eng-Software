@@ -21,22 +21,22 @@ function CRUD_Conta(){
                     </div>
 
                     {/* Titulo */}
-                    <div id="titulo">Change Account Information</div>
+                    <div id="titulo">Modificar informações da conta</div>
                    
                     {/* Caixa */}
                     <div class="row caixa">
                         {/* Email */}
-                        <div class="text">Old Email Adress</div>
+                        <div class="text">Email Antigo</div>
                         <div><input type="text" class="input-box"/></div>
-                        <div class="text">New Email Adress</div>
+                        <div class="text">Email Novo</div>
                         <div><input type="text" class="input-box"/></div>
                         {/* Password */}
-                        <div class="text">Old Password</div>
+                        <div class="text">Senha Antiga</div>
                         <div><input type="password" class="input-box"/></div>
-                        <div class="text">New Password</div>
+                        <div class="text">Senha Nova</div>
                         <div><input type="password" class="input-box"/></div>
                         {/* Login */}
-                        <button class="confirm-button">Confirm</button>
+                        <button class="confirm-button">Confirmar</button>
                     </div>
                 </div>
             </div>

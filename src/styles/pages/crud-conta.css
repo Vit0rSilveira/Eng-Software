@@ -88,7 +88,7 @@ div, p, button{
 .confirm-button {
     width: 100px;
     margin-top: 20px;
-    padding: 5px 16px;
+    padding: 5px 0px;
     background-color: #A1AFCB;
     border: 1px solid rgba(27, 31, 35, 0.15);
     border-radius: 6px;
