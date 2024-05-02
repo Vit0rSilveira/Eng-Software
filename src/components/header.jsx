@@ -6,15 +6,8 @@ function Header() {
 
     function handleMenuClick(){
         let a = document.getElementsByName('menu')[0];
-        let clss = a.classList[0];
-        if(clss == 'menu-onclick-hidden'){
-            a.classList.remove('menu-onclick-hidden');
-            a.classList.add('menu-onclick-show');
-            return;
-        }
-        a.classList.remove('menu-onclick-show');
-        a.classList.add('menu-onclick-hidden');
-        
+        let clss = a.classList;
+        clss.toggle('show')        
     }
 
     return (
@@ -25,7 +18,7 @@ function Header() {
                 <h4 >Grupo Pão Fraterno</h4>
                 <h4>André Luiz</h4>
             </div>
-            <ul class='collapse-xl'>
+            <ul class='collapse-xl header-ul'>
                 <li> <a href='#'>Quem somos</a></li>
                 <li> <a href='#'>Notícias</a></li>
                 <li> <a href='#'>Doação</a></li>
@@ -36,7 +29,7 @@ function Header() {
                 <RxHamburgerMenu onClick= {handleMenuClick} size={60}/>
             </div>
         </header>
-        <ul name='menu' class='menu-onclick-hidden'>
+        <ul name='menu' class='header-ul menu-onclick'>
                 <a href='#'><li>Quem Somos</li></a>
                 <a href='#'><li>Notícias</li></a>
                 <a href='#'><li>Doação</li></a>
