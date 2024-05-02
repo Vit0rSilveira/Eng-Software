@@ -6,7 +6,8 @@ import Voluntariado from '../pages/voluntariado';
 import Login from '../pages/login';
 import CRUD_Conta from '../pages/crud-conta';
 import Info from '../pages/info';
-import Patrocinadores from "../pages/patrocinadores.jsx";
+import Patrocinadores from "../pages/patrocinadores";
+import Acoes from "../pages/acoes";
 
 
 
@@ -20,6 +21,7 @@ function Destiny () {
             <Route path='/crud-conta' element={<CRUD_Conta/>}/>
             <Route path='/info' element={<Info/>}/>
             <Route path="/patrocinadores" element={<Patrocinadores />} />
+            <Route path="/acoes" element={<Acoes />} />
         </Routes>
     )
 }
