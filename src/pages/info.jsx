@@ -18,7 +18,7 @@ function Info(){
                     <div class='localizacao'>
                         {/* Por enquanto só uma imagem para demonstração
                         Depois vejo como faz isso de verdade */}
-                        <img class='image' src='../../public/images/mapa.png'/>
+                        <img class='loc-image' src='../../public/images/mapa.png'/>
                     </div>
                 </div>
                 <div class='doar'>

@@ -16,7 +16,7 @@
     max-width: 50vw;
 }
 
-.image{
+.loc-image{
     align-self:center;
     height: 100%;
     width: 75%;
@@ -29,4 +29,23 @@
         min-width: 90vw;
         padding:5px;
     }
-}   
+
+    .loc-image{
+        width: 60%;
+    }
+
+
+}
+
+@media(max-width:532px){
+    #info-page div{
+        min-width: 90vw;
+        padding:5px;
+    }
+
+    .loc-image{
+        width: 100%;
+    }
+
+
+}  
