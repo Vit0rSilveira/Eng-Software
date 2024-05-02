@@ -59,6 +59,7 @@ accounts {
 }
 
 .img-x{
-    width: 80px;
-    right: 150;
+    width: 25px;
+    position: relative;
+    left: 300px;
 }

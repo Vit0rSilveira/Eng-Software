@@ -29,15 +29,15 @@ function Patrocinadores() {
         
             <accounts>
                 <div id="questions" className="box-questions">
-                    <div className="text-p">
-                        CONHECA NOSSOS PATROCINADORES
+                    <div class='text-patrocinadores'>
+                        <h1>CONHEÇA NOSSOS PATROCINADORES</h1>
                     </div>
                     <div className="patrocinadores">
-                        <img src = "../../public/images/japa.png" alt="Logotipo do Japa Acai" id="logo-japa-acai" />
-                        <img src = "../../public/images/banana.png" alt="Logotipo do Banana Brasil" id="logo-banana-brasil" />
-                        <img src = "../../public/images/cea.png" alt="Logotipo do C&A" id="logo-cea" />
-                        <img src = "../../public/images/ifood.png" alt="Logotipo do IFood" id="logo-ifood" />
-                        <img src = "../../public/images/unimed.png" alt="Logotipo do Unimed" id="logo-unimed" />
+                        <img className = "img-patrocinadores" src = "../../public/images/japa.png" alt="Logotipo do Japa Acai" id="logo-japa-acai" />
+                        <img className = "img-patrocinadores" src = "../../public/images/banana.png" alt="Logotipo do Banana Brasil" id="logo-banana-brasil" />
+                        <img className = "img-patrocinadores" src = "../../public/images/cea.png" alt="Logotipo do C&A" id="logo-cea" />
+                        <img className = "img-patrocinadores" src = "../../public/images/ifood.png" alt="Logotipo do IFood" id="logo-ifood" />
+                        <img className = "img-patrocinadores" src = "../../public/images/unimed.png" alt="Logotipo do Unimed" id="logo-unimed" />
                     </div>
                     
                 </div>

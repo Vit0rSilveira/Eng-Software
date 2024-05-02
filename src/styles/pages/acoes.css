@@ -1,4 +1,13 @@
-img {
-    width: 200px;
+.img-acoes {
+    width: 500px;
     padding: 30px;
+}
+
+.text-acoes p{
+    font: 1em "palanquin", sans-serif ;
+    font-weight: 600;
+}
+
+h1{
+    margin-bottom: 30px;
 }
