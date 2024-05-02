@@ -30,7 +30,7 @@ function Header() {
             </div>
         </header>
         <ul name='menu' class='header-ul menu-onclick'>
-                <a href='#'><li>Quem Somos</li></a>
+                <a href='/info'><li>Quem Somos</li></a>
                 <a href='#'><li>Notícias</li></a>
                 <a href='#'><li>Doação</li></a>
                 <a href='/voluntariado'><li>Seja um Voluntário</li></a>

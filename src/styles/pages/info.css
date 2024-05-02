@@ -1,4 +1,4 @@
-h1{
+#info-page h1{
     margin-bottom:15px;
     color: #022859;
 }
@@ -16,7 +16,17 @@ h1{
     max-width: 50vw;
 }
 
-.image-fluid{
+.image{
     align-self:center;
+    height: 100%;
     width: 75%;
 }
+
+
+
+@media(max-width:1062px){
+    #info-page div{
+        min-width: 90vw;
+        padding:5px;
+    }
+}   
