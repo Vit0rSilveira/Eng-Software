@@ -81,6 +81,12 @@ header h4 {
         justify-content: space-between;
     }
 
+    .header-ul{
+        border-style: solid;
+        border-width: 3px 0px 3px 0px;
+    }
+
+
     .header-ul li {
         width: auto;
         margin: 10px;

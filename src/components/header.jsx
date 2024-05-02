@@ -19,7 +19,7 @@ function Header() {
                 <h4>André Luiz</h4>
             </div>
             <ul class='collapse-xl header-ul'>
-                <li> <a href='#'>Quem somos</a></li>
+                <li> <a href='/info'>Quem somos</a></li>
                 <li> <a href='#'>Notícias</a></li>
                 <li> <a href='#'>Doação</a></li>
                 <li> <a href='/voluntariado'>Seja um voluntário</a></li>
