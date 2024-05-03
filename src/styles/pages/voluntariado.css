@@ -30,8 +30,10 @@
 
 #voluntariado h1{
     margin-bottom: 30px;
-    font-size: 2.4em;
+    justify-self: center;
+    font-size: 2.3em;
     font-weight: 500;
+    overflow-wrap: break-word;
     color: #022859;
 }
 
@@ -89,7 +91,7 @@
     padding: 5px;
 }
 
-@media(max-width:450px){
+@media(max-width:453px){
     .infos-contato div{
         width: 350px;
     }
@@ -105,5 +107,9 @@
 
     .info-email{
         width: 100%;
+    }
+
+    #voluntariado h1{
+        font-size: 1.8em;
     }
 }
