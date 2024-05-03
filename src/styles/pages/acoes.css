@@ -11,3 +11,30 @@
 h1{
     margin-bottom: 30px;
 }
+
+#main-banner {
+    padding: 10px;
+    width: 800px;
+    height: 630px;
+    /* overflow: scroll; */
+    background: grey;
+    display: inline-block;
+    /* width: 50%; Cada item ocupa 50% da largura */
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+    text-align: center; /* Centraliza o conteúdo */
+    margin-right: 200px;
+    margin-bottom: 200px;
+    margin-left: 20px;
+}
+#main-banner-back {
+    padding: 30px;
+    width: 750px;
+    height: 630px;
+    /* overflow: scroll; */
+    background: pink;
+    display: inline-block;
+    /* width: 50%; Cada item ocupa 50% da largura */
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+    text-align: center; /* Centraliza o conteúdo */
+    margin-right: 250px;
+}

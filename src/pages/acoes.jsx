@@ -33,11 +33,26 @@ function Acoes() {
                         <h1>NOSSAS AÇÕES</h1>
                     </div>
                     <div className="acoes">
-                        <img className = "img-acoes" src = "../../public/images/acao1.png" alt="Acao Social" id="acao-social4" />
-                        <img className = "img-acoes" src = "../../public/images/acao2.png" alt="Acao Social" id="acao-social3" />
-                        <img className = "img-acoes" src = "../../public/images/acao3.png" alt="Acao Social" id="acao-social3" />
-                        <img className = "img-acoes" src = "../../public/images/acao4.png" alt="Acao Social" id="acao-social4" />
-                        
+                    <div id="main-banner-back">
+                        <div id="main-banner">
+                            <img className = "img-acoes" src = "../../public/images/acao1.png" alt="Acao Social" id="acao-social4" />
+                        </div>
+                    </div>
+                    <div id="main-banner-back">
+                        <div id="main-banner">
+                            <img className = "img-acoes" src = "../../public/images/acao2.png" alt="Acao Social" id="acao-social3" />
+                        </div>
+                    </div>
+                    <div id="main-banner-back">
+                        <div id="main-banner">
+                            <img className = "img-acoes" src = "../../public/images/acao3.png" alt="Acao Social" id="acao-social3" />
+                        </div>
+                    </div>
+                    <div id="main-banner-back">
+                        <div id="main-banner">
+                            <img className = "img-acoes" src = "../../public/images/acao4.png" alt="Acao Social" id="acao-social4" />
+                        </div>
+                    </div>
                     </div>
                     
                 </div>
