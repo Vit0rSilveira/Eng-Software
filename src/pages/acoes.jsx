@@ -35,20 +35,24 @@ function Acoes() {
                     <div className="acoes">
                     <div id="main-banner-back">
                         <div id="main-banner">
+                            NOSSA PASCOA 2024
                             <img className = "img-acoes" src = "../../public/images/acao1.png" alt="Acao Social" id="acao-social4" />
                         </div>
                     </div>
                     <div id="main-banner-back">
+                        AÇÃO FRATERNIDADE ESPIRITA
                         <div id="main-banner">
                             <img className = "img-acoes" src = "../../public/images/acao2.png" alt="Acao Social" id="acao-social3" />
                         </div>
                     </div>
                     <div id="main-banner-back">
+                        NOSSO NATAL 2023
                         <div id="main-banner">
                             <img className = "img-acoes" src = "../../public/images/acao3.png" alt="Acao Social" id="acao-social3" />
                         </div>
                     </div>
                     <div id="main-banner-back">
+                        DOAÇÃO DE CESTAS
                         <div id="main-banner">
                             <img className = "img-acoes" src = "../../public/images/acao4.png" alt="Acao Social" id="acao-social4" />
                         </div>

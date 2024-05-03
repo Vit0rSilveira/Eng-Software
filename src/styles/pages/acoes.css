@@ -25,6 +25,7 @@ h1{
     margin-right: 200px;
     margin-bottom: 200px;
     margin-left: 20px;
+    
 }
 #main-banner-back {
     padding: 30px;
@@ -36,5 +37,9 @@ h1{
     /* width: 50%; Cada item ocupa 50% da largura */
     box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
     text-align: center; /* Centraliza o conteúdo */
-    margin-right: 250px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+    margin-left: 20px;
+    font: 1em "palanquin", sans-serif ;
+    font-weight: 600;
 }
