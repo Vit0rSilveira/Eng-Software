@@ -14,14 +14,14 @@ function Voluntariado(){
                         <input class='input-nome'></input>
                     </div>
                     <div class='info-email-telefone'>
-                        <div class='info-email'>
+                        <section class='info-email'>
                             <p>Email</p>
                             <input class ='input-email'></input>
-                        </div>
-                        <div class='info-telefone'>
+                        </section>
+                        <section class='info-telefone'>
                             <p>Telefone</p>
                             <input class='input-telefone'></input>
-                        </div>
+                        </section>
                     </div>
                     <div class='info-pessoal'>
                         <h1>Sobre você</h1>

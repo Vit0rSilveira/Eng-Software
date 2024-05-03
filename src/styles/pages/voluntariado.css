@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 80vh;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .infos-contato{
@@ -14,19 +16,23 @@
 
 .infos-contato p{
     font: 1em "palanquin", sans-serif ;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .infos-contato div{
-    width: 30vw;
+    width: 400px;
 }
 
-input{
+#voluntariado input{
     height: 25px;
+    padding:5px;
 }
 
-h1{
+#voluntariado h1{
     margin-bottom: 30px;
+    font-size: 2.4em;
+    font-weight: 500;
+    color: #022859;
 }
 
 .info-nome{
@@ -46,25 +52,25 @@ h1{
 
 .info-email-telefone{
     display: flex;
-    width: 30vw;
+    justify-content: flex-start;
     margin-bottom: 70px;
 }
 
 .info-email{
-    width: 20vw;
+    width: 65%;
 }
 
 .input-email{
-    width: 17vw;
+    width: 100%;
 }
 
 .info-telefone{
-    padding-left: 3vw;
-    width: 10vw;
+    padding-left: 5%;
+    width:35%;
 }
 
 .input-telefone{
-    width: 10vw;
+    width: 100%;
 }
 
 .info-pessoal{
@@ -80,4 +86,24 @@ h1{
 .input-info-pessoal{
     resize: none;
     width: 100%;
+    padding: 5px;
+}
+
+@media(max-width:450px){
+    .infos-contato div{
+        width: 350px;
+    }
+
+    .info-email-telefone{
+        flex-direction: column;
+    }
+
+    .info-telefone{
+        padding-top:20px;
+        padding-left:0;
+    }
+
+    .info-email{
+        width: 100%;
+    }
 }
