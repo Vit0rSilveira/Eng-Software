@@ -3,9 +3,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 80vh;
+    min-height: 80vh;
     padding-left: 10px;
     padding-right: 10px;
+    margin-bottom: 20px;
 }
 
 .infos-contato{
