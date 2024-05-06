@@ -1,0 +1,49 @@
+.doacao-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .image-container {
+    position: relative;
+    text-align: center;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .text-over {
+    position: top;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #022859;
+    font-size: 44px;
+    font: "palanquin";
+  }
+  .text-under {
+    position: top;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #022859;
+    font-size: 20px;
+    font: "palanquin";
+  }
+  
+  .text-over {
+    top: 20px; /* ajuste conforme necessário */
+  }
+  
+  .text-under {
+    bottom: 20px; /* ajuste conforme necessário */
+  }
+  

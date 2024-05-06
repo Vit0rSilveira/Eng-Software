@@ -8,6 +8,7 @@ import CRUD_Conta from '../pages/crud-conta';
 import Info from '../pages/info';
 import Patrocinadores from "../pages/patrocinadores";
 import Acoes from "../pages/acoes";
+import Doacao from "../pages/doacao"
 
 
 
@@ -22,6 +23,7 @@ function Destiny () {
             <Route path='/info' element={<Info/>}/>
             <Route path="/patrocinadores" element={<Patrocinadores />} />
             <Route path="/acoes" element={<Acoes />} />
+            <Route path="/doacao" element={<Doacao />} />
         </Routes>
     )
 }
