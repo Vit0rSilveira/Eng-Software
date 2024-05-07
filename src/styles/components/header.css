@@ -9,7 +9,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items : center;
-    background-color: #93A2BF;
+    background-color: #f9e445;
 }
 
 #logo, h4 {
@@ -23,6 +23,7 @@ header {
 
 header h4 {
     font-size: 1rem;
+    font-weight: 1000;
 }
 
 #logo {
@@ -33,7 +34,8 @@ header h4 {
 
 #logo-pao-fraterno {
     width: 100px;
-    border-radius: 5%;
+    border-radius: 50%;
+
 }
 
 .header-ul {
@@ -44,15 +46,16 @@ header h4 {
 
 .header-ul li {
     width: 20%;
-    margin: 0.75em;
-    font: 1.5em "palanquin", sans-serif ;
-    font-weight: 400;
+    margin: 1em;
+    font: 1.5em "palanquin", sans-serif;
+    font-weight: 1000;
     text-align: center;
+    text-wrap: nowrap;
 }
 
 .header-ul a{
     text-decoration: none;
-    color: black;
+    color: #2f2f2f;
     display:block
 }
 

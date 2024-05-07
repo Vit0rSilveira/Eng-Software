@@ -14,8 +14,8 @@ function Header() {
         <>
         <header>
             <div id="logo">
-                <a href='/'><img src="../../public/images/logo.jpg" alt="Logotipo do Pão Fraterno" id="logo-pao-fraterno"/></a>
-                <h4 >Grupo Pão Fraterno</h4>
+                <a href='/'><img src="../../public/images/logo2.jpg" alt="Logotipo do Pão Fraterno" id="logo-pao-fraterno"/></a>
+                <h4 >Pão Fraterno</h4>
                 <h4>André Luiz</h4>
             </div>
             <ul class='collapse-xl header-ul'>
