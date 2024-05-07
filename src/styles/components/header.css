@@ -24,6 +24,7 @@ header {
 header h4 {
     font-size: 1rem;
     font-weight: 1000;
+    color: #2f2f2f;
 }
 
 #logo {
@@ -74,11 +75,11 @@ header h4 {
     transform:scaleY(0);
     transition: transform 0.3s ease-out, max-height 0.5s ease-out;
     transform-origin:top;
-    background-color: #54678c;
+    background-color: #f9e445;
 }
 
 
-@media(max-width:1062px){
+@media(max-width:1162px){
     header{
         justify-content: space-between;
     }

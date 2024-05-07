@@ -10,7 +10,10 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items : center;
-    background-color: #93A2BF;
+    background-color: #f9e445;
+    margin-top: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 footer p {
@@ -18,6 +21,7 @@ footer p {
     font-weight: 300;
     text-align: center;
     margin-bottom: 10px;
+    color: #2f2f2f;
 }
 
 .localizacao{
@@ -38,6 +42,7 @@ footer p {
     display:flex;
     width: 100%;
     justify-content: space-around;
+    color: #2f2f2f;
 }
 
 .contrast-text{
@@ -49,6 +54,7 @@ footer p {
     display:flex;
     flex-direction: column;
     align-items: center;
+    color: #2f2f2f;
 }
 
 @media (max-width: 1062px){
