@@ -27,9 +27,8 @@ header h4 {
 
 #logo {
     width: auto;
-    align-items: center;
-    margin: 1%;
-    padding: 1%;
+    margin-top: 1%;
+    margin-left: 1em;
 }
 
 #logo-pao-fraterno {

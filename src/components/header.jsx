@@ -20,10 +20,10 @@ function Header() {
             </div>
             <ul class='collapse-xl header-ul'>
                 <li> <a href='/info'>Quem somos</a></li>
-                <li> <a href='#'>Notícias</a></li>
-                <li> <a href='#'>Doação</a></li>
-                <li> <a href='/voluntariado'>Seja um voluntário</a></li>
-                <li> <a href='/patrocinadores'>Seja um patrocinador</a></li>
+                <li> <a href='/acoes'>Notícias</a></li>
+                <li> <a href='/doacao'>Doação</a></li>
+                <li> <a href='/voluntariado'>Seja voluntário</a></li>
+                <li> <a href='/patrocinadores'>Patrocinadores</a></li>
             </ul>
             <div class='show-xl'>
                 <RxHamburgerMenu onClick= {handleMenuClick} size={60}/>
@@ -31,10 +31,10 @@ function Header() {
         </header>
         <ul name='menu' class='header-ul menu-onclick'>
                 <a href='/info'><li>Quem Somos</li></a>
-                <a href='#'><li>Notícias</li></a>
-                <a href='#'><li>Doação</li></a>
+                <a href='/acoes'><li>Notícias</li></a>
+                <a href='/doacao'><li>Doação</li></a>
                 <a href='/voluntariado'><li>Seja um Voluntário</li></a>
-                <a href='/patrocinadores'><li>Seja um patrocinador</li></a>
+                <a href='/patrocinadores'><li>Patrocinadores</li></a>
         </ul>
         </>
 

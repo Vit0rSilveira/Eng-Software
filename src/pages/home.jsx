@@ -37,7 +37,7 @@ function Home() {
                 </div>
 
                 <div id="last-updates" className="box-text">
-                    <h1>Últimas Ações Realizadas</h1>
+                    <h1>Ações Realizadas</h1>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda consectetur sed aliquid libero! Aliquid deserunt laudantium suscipit maxime inventore recusandae esse eos sunt nesciunt porro ut, iste vel perferendis quaerat.
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi dolorem error excepturi nemo doloremque? Maxime, nihil, mollitia accusamus assumenda earum, nulla quia rem quibusdam voluptatibus natus totam molestias provident saepe.
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit maiores qui enim quia. Ipsam, quidem quis suscipit non delectus cupiditate, ut inventore debitis numquam quam enim doloribus voluptate sunt laborum?
