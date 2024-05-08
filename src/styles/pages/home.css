@@ -53,3 +53,9 @@ main {
 .box-text h1 {
     color: #022859;
 }
+
+.box-text p {
+    color: black;
+    font-size: 30px;
+    padding-bottom: 0px;
+}
