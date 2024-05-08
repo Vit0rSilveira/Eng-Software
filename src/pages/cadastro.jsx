@@ -27,7 +27,7 @@ function Cadastro() {
         <>
             <Header />
         
-            <div class="container">
+            <div class="container-cadastro">
                 <div class="row mt-5 mb-5">
                     
                     <div class=" border border-dark rounded offset-1 col-4 bg-light p-5 mb-5" >

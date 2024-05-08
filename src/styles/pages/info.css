@@ -16,14 +16,17 @@
     align-items: center;
 }
 
-@media (min-width: 350px) {
-    .container{
+@media (min-width: 300px) {
+    .container-info{
         background-image: url(/images/fundo-degrade.png);
         background-repeat: no-repeat;
         background-size: 100%;
         border-radius: 20px;
-        position: relative;
-        left:550px;
+        padding-top: 50px;
+        margin-right: 40px;
+        margin-left: 40px;
+        padding-left: 40px;
+        padding-bottom: 50px;
     }
 }
 

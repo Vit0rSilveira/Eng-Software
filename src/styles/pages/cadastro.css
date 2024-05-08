@@ -47,11 +47,13 @@ accounts {
     color: #022859;
 }
 
-.container {
-    width: 4000px;
-    margin-top: 20px;
-    padding: 40px;
-    margin-left: 150px;
+@media (min-width: 350px) {
+    .container-cadastro {
+        width: 1800px;
+        margin-top: 20px;
+        padding: 40px;
+        margin-left: 150px;
+    }
 }
 
 .container-element {

@@ -8,8 +8,7 @@ function Info(){
         <>
             <Header/>
             <div id = 'info-page'>
-                
-                <div class='container'>
+                <div class='container-info'>
                     <div class='quem-somos'>
                         <h1> Quem somos</h1>
                         <p> Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos próprios alunos da USP de São </p>
@@ -20,8 +19,7 @@ function Info(){
                         <p>mantas. Recebemos como muita alegria e gratidão sua doação.</p>
                     </div>
                 </div>
-
-                <div class='container'>
+                <div class='container-info'>
                     <div class='local'>
                         <h1> Localizacao </h1>
                         <p>R. Costa do Sol,450 - Vila Costa do Sol, São Carlos - SP, 13566-070</p>
@@ -32,8 +30,7 @@ function Info(){
                         </div>
                     </div>
                 </div>
-                
-                <div class='container'>
+                <div class='container-info'>
                     <div class='doar'>
                     <h1>Por que doar?</h1>
                     <p> Todos nós temos dentro de nós o poder de fazer uma diferença significativa no mundo ao nosso redor. Um dos</p>
@@ -43,8 +40,8 @@ function Info(){
                     <p> recursos para causas dignas, estamos oferecendo esperança e oportunidade para aqueles que enfrentam </p>
                     <p> desafios. Cada contribuição, por menor que pareça, cria um impacto poderoso. Imagine o sorriso no </p>
                     <p> rosto de alguém que recebe ajuda quando mais precisa. Seja alimentando famílias necessitadas, doando </p>
-                    <p>um pouco do seu tempo para ajudar se voluntariando, cada gesto de doação abre portas para um futuro mais </p>
-                    <p>brilhante.</p>
+                    <p>um pouco do seu tempo para ajudar se voluntariando, cada gesto de doação abre portas para um futuro mais brilhante.</p>
+                    <p></p>
                     </div>
                 </div>
             </div>
