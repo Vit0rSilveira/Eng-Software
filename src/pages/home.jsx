@@ -31,18 +31,26 @@ function Home() {
             <main>
                 <div id="about-us" className="box-text">
                     <h1>Um pouco sobre nós</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda consectetur sed aliquid libero! Aliquid deserunt laudantium suscipit maxime inventore recusandae esse eos sunt nesciunt porro ut, iste vel perferendis quaerat.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error necessitatibus nam ducimus iste eveniet rem. Voluptatum veniam at doloribus atque cum odio minima nemo error? Neque quaerat dicta sint quisquam!
+                    <p>Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos próprios alunos da USP de São Carlos.</p>
+                    <p>Começamos como um grupo que aceitava apenas alimentos basicos, roupas e cobertores. Hoje em dia aceitamos os mais</p>
+                    <p>diversos alimentos, o nosso foco sao verduras, que é essencial para fazer nossa principal refeição, a sopa, </p>
+                    <p>distribuída todas as sextas-feiras. Aceitamos produtos de higiene básica como papel higienico e sabonetes, tambem</p>
+                    <p>recolhemos roupas para o inverno ou não, roupas intimas, cobertores e mantas. Recebemos como muita alegria e gratidão</p>
+                    <p>sua doação.
                     </p>
                 </div>
 
                 <div id="last-updates" className="box-text">
                     <h1>Ações Realizadas</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda consectetur sed aliquid libero! Aliquid deserunt laudantium suscipit maxime inventore recusandae esse eos sunt nesciunt porro ut, iste vel perferendis quaerat.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi dolorem error excepturi nemo doloremque? Maxime, nihil, mollitia accusamus assumenda earum, nulla quia rem quibusdam voluptatibus natus totam molestias provident saepe.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit maiores qui enim quia. Ipsam, quidem quis suscipit non delectus cupiditate, ut inventore debitis numquam quam enim doloribus voluptate sunt laborum?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odit distinctio, saepe placeat tempore debitis recusandae amet, porro omnis vel eveniet commodi illo non totam inventore, sit doloremque excepturi quas?
-                    </p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda consectetur sed aliquid libero! Aliquid deserunt</p>
+                    <p>laudantium suscipit maxime inventore recusandae esse eos sunt nesciunt porro ut, iste vel perferendis quaerat.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi dolorem error excepturi nemo doloremque? Maxime,</p>
+                    <p>nihil, mollitia accusamus assumenda earum, nulla quia rem quibusdam voluptatibus natus totam molestias provident saepe.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit maiores qui enim quia. Ipsam, quidem quis suscipit</p>
+                    <p>non delectus cupiditate, ut inventore debitis numquam quam enim doloribus voluptate sunt laborum?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odit distinctio, saepe placeat tempore debitis recusandae</p>
+                    <p>amet, porro omnis vel eveniet commodi illo non totam inventore, sit doloremque excepturi quas?</p>
+                    
                 </div>
 
                 <div id="questions" className="box-text">

@@ -12,12 +12,16 @@ h1{
     margin-bottom: 30px;
 }
 
+h1{
+    margin-bottom: 0px;
+}
+
 #main-banner {
     padding: 10px;
     width: 800px;
     height: 630px;
     /* overflow: scroll; */
-    background: grey;
+    background: #0693E3;
     display: inline-block;
     /* width: 50%; Cada item ocupa 50% da largura */
     box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
@@ -25,6 +29,7 @@ h1{
     margin-right: 200px;
     margin-bottom: 200px;
     margin-left: 20px;
+    border-radius: 20px;
     
 }
 #main-banner-back {
@@ -32,7 +37,7 @@ h1{
     width: 750px;
     height: 630px;
     /* overflow: scroll; */
-    background: pink;
+    background: #0693E3;
     display: inline-block;
     /* width: 50%; Cada item ocupa 50% da largura */
     box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
@@ -42,4 +47,5 @@ h1{
     margin-left: 20px;
     font: 1em "palanquin", sans-serif ;
     font-weight: 600;
+    border-radius: 20px;
 }
