@@ -52,6 +52,7 @@ main {
 
 .box-text h1 {
     color: #022859;
+    margin-bottom: 1em;
 }
 
 .box-text p {
