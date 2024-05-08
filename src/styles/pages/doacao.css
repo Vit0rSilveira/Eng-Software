@@ -5,8 +5,8 @@
   }
   
   .content {
-    width: 90%;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,8 +15,13 @@
     margin-bottom: 3%;
   }
 
-  h1, p{
+  h1{
     color: #022859;
+  }
+  
+  p{
+    color: black;
+    font-size: 25px;
   }
   
   .image-container {
@@ -37,7 +42,7 @@
     right: 0;
     text-align: center;
     color: #022859;
-    font-size: 20px;
+    font-size: 30px;
     font: "palanquin";
   }
   

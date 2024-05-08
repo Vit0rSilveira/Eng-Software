@@ -9,10 +9,10 @@ function Doacao() {
       <Header />
       <div className="content">
         <h1>Como doar?</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda consectetur sed aliquid libero! Aliquid deserunt laudantium suscipit maxime inventore recusandae esse eos sunt nesciunt porro ut, iste vel perferendis quaerat.
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi dolorem error excepturi nemo doloremque? Maxime, nihil, mollitia accusamus assumenda earum, nulla quia rem quibusdam voluptatibus natus totam molestias provident saepe.
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit maiores qui enim quia. Ipsam, quidem quis suscipit non delectus cupiditate, ut inventore debitis numquam quam enim doloribus voluptate sunt laborum?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odit distinctio, saepe placeat tempore debitis recusandae amet, porro omnis vel eveniet commodi illo non totam inventore, sit doloremque excepturi quas?<a href='/voluntariado'> Clique aqui para doar!</a></p>
+            <p>Aceitamos doacoes de alimentos, cobertores, roupas, produtos de limpeza e descartaveis</p>
+            <p>Também aceitamos doações em dinheiro, seja no cartão ou pix!</p>
+            <p>Sua doação é muito importante para continuarmos nosso caminho de fraternidade!</p>
+              <a href='/voluntariado'>  <p>Clique aqui para doar!</p></a>
             
         <div className="image-container">
           <h1>Doação por pix</h1>
