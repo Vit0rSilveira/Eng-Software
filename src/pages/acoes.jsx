@@ -34,7 +34,6 @@ function Acoes() {
                     </div>
                     <div className="acoes">
                     <div id="main-banner-back">
-                        
                         <div id="main-banner">
                             <h2>NOSSA PASCOA 2024</h2>
                             <img className = "img-acoes" src = "../../public/images/acao1.png" alt="Acao Social" id="acao-social4" />

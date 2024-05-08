@@ -1,6 +1,8 @@
 .img-acoes {
     width: 500px;
     padding: 30px;
+    border-radius: 80px;
+    max-height: 550px;
 }
 
 .text-acoes p{
@@ -29,15 +31,14 @@ h1{
     margin-right: 200px;
     margin-bottom: 200px;
     margin-left: 20px;
-    border-radius: 20px;
-    
+    border-radius: 20px;  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.15);
 }
+
 #main-banner-back {
     padding: 30px;
     width: 750px;
     height: 630px;
     /* overflow: scroll; */
-    background: #0693E3;
     display: inline-block;
     /* width: 50%; Cada item ocupa 50% da largura */
     box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
@@ -48,4 +49,7 @@ h1{
     font: 1em "palanquin", sans-serif ;
     font-weight: 600;
     border-radius: 20px;
+    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.616);
+    background-color: rgba(255, 255, 255, 0);
+    
 }

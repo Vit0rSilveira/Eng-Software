@@ -23,7 +23,7 @@ function Header() {
                 <li> <a href='/acoes'>Notícias</a></li>
                 <li> <a href='/doacao'>Doação</a></li>
                 <li> <a href='/voluntariado'>Seja voluntário</a></li>
-                <li> <a href='/patrocinadores'>Patrocinadores</a></li>
+                <li> <a href='/patrocinadores'>Colaboradores</a></li>
             </ul>
             <div class='show-xl'>
                 <RxHamburgerMenu onClick= {handleMenuClick} size={60}/>

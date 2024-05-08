@@ -38,12 +38,13 @@ function Patrocinadores() {
                         <img className = "img-patrocinadores" src = "../../public/images/cea.png" alt="Logotipo do C&A" id="logo-cea" />
                         <img className = "img-patrocinadores" src = "../../public/images/ifood.png" alt="Logotipo do IFood" id="logo-ifood" />
                         <img className = "img-patrocinadores" src = "../../public/images/unimed.png" alt="Logotipo do Unimed" id="logo-unimed" />
+                        <img className = "img-patrocinadores" src = "../../public/images/jau.png" alt="Logotipo do Jau" id="logo-jau" />
                     </div>
                     
                 </div>
             </accounts>
 
-            <div class="pos-meio"><a class="link-patrocinador" href="">Seja Patrocinador!</a></div>
+            <div class="pos-meio"><a class="link-patrocinador" href="">Seja Um Colaborador!</a></div>
             
             <Footer />
         </>
