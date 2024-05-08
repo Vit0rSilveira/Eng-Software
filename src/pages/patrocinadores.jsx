@@ -42,6 +42,9 @@ function Patrocinadores() {
                     
                 </div>
             </accounts>
+
+            <div class="pos-meio"><a class="link-patrocinador" href="">Seja Patrocinador!</a></div>
+            
             <Footer />
         </>
     )

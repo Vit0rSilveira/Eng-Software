@@ -7,27 +7,48 @@ function Voluntariado(){
         <>
             <Header/>
             <div id = 'voluntariado'>
+
                 <div class = 'infos-contato'>
-                    <h1> Informações para contato</h1>
-                    <div class='info-nome'>
-                        <p class='text-nome'> Nome Completo</p>
-                        <input class='input-nome'></input>
+                    <h1>Agendamento de visita</h1>
+                    <div class='info'>
+                        <p> Nome Completo</p>
+                        <input class='input'></input>
                     </div>
-                    <div class='info-email-telefone'>
-                        <section class='info-email'>
+
+                    <div class='info'>
                             <p>Email</p>
-                            <input class ='input-email'></input>
-                        </section>
-                        <section class='info-telefone'>
-                            <p>Telefone</p>
-                            <input class='input-telefone'></input>
-                        </section>
+                            <input class ='input'></input>
                     </div>
-                    <div class='info-pessoal'>
-                        <h1>Sobre você</h1>
-                        <p class='text-info-pessoal'>Nos conte mais sobre você, sua motivação e como pretende nos ajudar</p>
-                        <textarea class='input-info-pessoal' cols="40" rows="5" maxLength={200}></textarea>
+
+                    <div class='info'>
+                        <p>Telefone</p>
+                        <input class='input'></input>
                     </div>
+
+                    <div class='info'>
+                        <p class='input'>Motivo</p>
+                        <select>
+                            <option value="0">Preparo</option>
+                            <option value="1">Montagem</option>
+                            <option value="2">Entrega</option>
+                            <option value="3">Visita</option>
+                            <option value="4">Doação</option>
+                            <option value="5">Outros</option>
+                            {/* Depois fazer aparecer os inputs customizados para cada opcao */}
+                        </select>
+                    </div>
+
+                    <div class='info'>
+                        <p class='input'>Horário</p>
+                        <input class='input'></input>
+                        {/* Depois mudar para lista de selecao de horario(pode escolher mais de 1) */}
+                    </div>
+
+                    <div class='info'>
+                        <p class='input'>Outras informações</p>
+                        <textarea class='input-info-pessoal' cols="80" rows="5" maxLength={200}></textarea>
+                    </div>
+                    <button class="enviar-button">Enviar</button>
                 </div>
             </div>
             <Footer/>
