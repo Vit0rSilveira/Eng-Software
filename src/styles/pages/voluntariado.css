@@ -2,10 +2,6 @@
 #voluntariado{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    min-height: 80vh;
-    padding-left: 10px;
-    padding-right: 10px;
     margin-bottom: 1.5em;
     margin-top: 3em;
 }
@@ -23,7 +19,7 @@
 }
 
 .infos-contato div{
-    width: 400px;
+    width: 600px;
 }
 
 #voluntariado input, .input-info-pessoal{
@@ -41,7 +37,6 @@
 
 .info{
     margin-bottom: 30px;
-    
 }
 
 .input{
@@ -83,16 +78,8 @@
 
 
 
-@media(max-width:453px){
+@media(max-width:700px){
     .infos-contato div{
-        width: 100%;
-    }
-
-    .input{
-        width:10px;
-    }
-
-    #voluntariado h1{
-        font-size: 1.4em;
+        width: 90%;
     }
 }
