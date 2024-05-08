@@ -8,6 +8,7 @@ function Info(){
         <>
             <Header/>
             <div id = 'info-page'>
+                
                 <div class='container'>
                     <div class='quem-somos'>
                         <h1> Quem somos</h1>
@@ -19,6 +20,7 @@ function Info(){
                         <p>mantas. Recebemos como muita alegria e gratidão sua doação.</p>
                     </div>
                 </div>
+
                 <div class='container'>
                     <div class='local'>
                         <h1> Localizacao </h1>
@@ -30,6 +32,7 @@ function Info(){
                         </div>
                     </div>
                 </div>
+                
                 <div class='container'>
                     <div class='doar'>
                     <h1>Por que doar?</h1>

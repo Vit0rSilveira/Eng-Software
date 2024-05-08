@@ -42,13 +42,13 @@ function Home() {
 
                 <div id="last-updates" className="box-text">
                     <h1>Ações Realizadas</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda consectetur sed aliquid libero! Aliquid deserunt</p>
-                    <p>laudantium suscipit maxime inventore recusandae esse eos sunt nesciunt porro ut, iste vel perferendis quaerat.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi dolorem error excepturi nemo doloremque? Maxime,</p>
-                    <p>nihil, mollitia accusamus assumenda earum, nulla quia rem quibusdam voluptatibus natus totam molestias provident saepe.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit maiores qui enim quia. Ipsam, quidem quis suscipit</p>
-                    <p>non delectus cupiditate, ut inventore debitis numquam quam enim doloribus voluptate sunt laborum?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odit distinctio, saepe placeat tempore debitis recusandae</p>
+                    <p>As ações voluntarias que realizamos podem ser divididas em 4 grupos distintos de atuação. Um deles é a doação, </p>
+                    <p>que é a fonte de todas as nossas ações. As demais se baseiam em atividades que realizamos cotidianamente para </p>
+                    <p>manter o funcionamento da Pão Fraterno. Ou seja, fazer os alimentos, realizar sua montagem para distribuicao, ir</p>
+                    <p>as ruas recolher doacoes, ir em bairros que atendemos e distribuir. Todas essas constituem pilares essenciais que </p>
+                    <p>manteem a fraternidade em pe. Por mais que pareçam muitas funcoes buscamos sempre dividi-las ao maximo, o que ainda </p>
+                    <p>reforca nossa necessidade constante de voluntariado, por isso buscamos atençāo para a questao social a qual nos </p>
+                    <p>envolvemos e esperamos sua ajuda para fazer parte da nossa história. placeat tempore debitis recusandae</p>
                     <p>amet, porro omnis vel eveniet commodi illo non totam inventore, sit doloremque excepturi quas?</p>
                     
                 </div>

@@ -42,12 +42,16 @@ main {
 }
 
 .box-text {
+    width: 2000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 5%;
     margin-bottom: 5%;
+    background-color:whitesmoke;
+    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.616);
+    border-radius: 20px;
 }
 
 .box-text h1 {
