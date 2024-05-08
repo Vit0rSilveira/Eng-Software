@@ -30,7 +30,7 @@ function Patrocinadores() {
             <accounts>
                 <div id="questions" className="box-questions">
                     <div class='text-patrocinadores'>
-                        <h1>CONHEÇA NOSSOS PATROCINADORES</h1>
+                        <h1>CONHEÇA NOSSOS COLABORADORES</h1>
                     </div>
                     <div className="patrocinadores">
                         <img className = "img-patrocinadores" src = "../../public/images/japa.png" alt="Logotipo do Japa Acai" id="logo-japa-acai" />

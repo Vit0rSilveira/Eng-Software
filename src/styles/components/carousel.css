@@ -1,9 +1,8 @@
 #carousel {
-    margin: 30px;
     display: flex;
     justify-content: center;
 }
 
 img.img-fluid {
-    width: 75vw;
+    width: 100vw;
 }
