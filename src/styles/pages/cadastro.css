@@ -3,13 +3,17 @@ h1 {
     margin-bottom: 2%;
 }
 
+#titulo-cadastro{
+    margin-top: 2em;
+    margin-left: 3%;
+}
+
 accounts {
     width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto; /* Isso centraliza o elemento main na tela */
 }
 
 #questions {
@@ -47,13 +51,12 @@ accounts {
     color: #022859;
 }
 
-@media (min-width: 350px) {
-    .container-cadastro {
-        width: 1800px;
-        margin-top: 20px;
-        padding: 40px;
-        margin-left: 150px;
-    }
+.container-cadastro {
+    background-image: none;
+    width: auto;
+    margin-top: 20px;
+    padding: 40px;
+    margin-left: 150px;
 }
 
 .container-element {

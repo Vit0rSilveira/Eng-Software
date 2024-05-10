@@ -22,9 +22,9 @@ function Footer() {
             </div>
             <div class='localizacao'>
                 <p class='contrast-text media-hide'><IoLocationSharp size={30} />Localização:</p>
-                <p>Rua Alguma Coisa, Bairro não sei o que lá</p>
-                <p>Num: 123</p>
-                <p class='media-hide'>Cep: 123.456-78</p>
+                <p>R. Costa do Sol,450 - Vila Costa do Sol</p>
+                <p>São Carlos - SP</p>
+                <p class='media-hide'>CEP: 13566-070</p>
             </div>
         </footer>
         </>
