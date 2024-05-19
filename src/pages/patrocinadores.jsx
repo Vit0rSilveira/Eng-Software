@@ -27,7 +27,7 @@ function Patrocinadores() {
         <>
             <Header />
         
-            <accounts>
+            <accounts id='page-patrocinadores'>
                 <div id="questions" className="box-questions">
                     <div class='text-patrocinadores'>
                         <h1>CONHEÇA NOSSOS COLABORADORES</h1>

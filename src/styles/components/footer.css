@@ -24,13 +24,13 @@ footer p {
     color: #2f2f2f;
 }
 
-.localizacao{
+footer .localizacao{
     display:flex;
     flex-direction: column;
     align-items: center;
 }
 
-.redes{
+footer .redes{
     height: 100%;
     display:flex;
     flex-direction: column;
@@ -38,19 +38,19 @@ footer p {
     justify-content: center;
 }
 
-.redes-icons{
+footer .redes-icons{
     display:flex;
     width: 100%;
     justify-content: space-around;
     color: #2f2f2f;
 }
 
-.contrast-text{
+footer .contrast-text{
     font-weight: 1000;
     padding: 0 0 5% 0;
 }
 
-.contato{
+footer .contato{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -62,11 +62,11 @@ footer p {
         flex-direction: column-reverse;
         justify-content: space-evenly;
     }
-    .redes{
+    footer .redes{
         height: auto;
         min-width: 20vw;
     }
-    .media-hide{
+    footer .media-hide{
         display:none;
     }
 

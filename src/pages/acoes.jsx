@@ -27,7 +27,7 @@ function Acoes() {
         <>
             <Header />
         
-            <accounts>
+            <accounts id='page-acoes'>
                 <div id="questions" className="box-questions">
                     <div class='text-acoes'>
                         <h1>NOSSAS AÇÕES</h1>

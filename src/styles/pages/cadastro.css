@@ -1,5 +1,5 @@
 
-h1 {
+.container-cadastro h1 {
     margin-bottom: 2%;
 }
 
@@ -16,16 +16,16 @@ accounts {
     align-items: center;
 }
 
-#questions {
+.container-cadastro #questions {
     margin: 2%;
     width: 100%;
 }
 
-#questions h1 {
+.container-cadastro #questions h1 {
     margin-bottom: 10vh; /* Espaçamento abaixo do título "Perguntas Frequentes" */
 }
 
-#questions p {
+.container-cadastro #questions p {
     width: 100%; /* Ajusta a largura do parágrafo */
     max-width: 100%; /* Define a largura máxima */
 }
