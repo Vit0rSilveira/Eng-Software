@@ -4,7 +4,7 @@ export function HeaderADM(props){
 
     const header_items = [
         {nome:'verificar-voluntarios',ref:'',texto:'Verificar Voluntários'},
-        {nome:'editar-conta',ref:'',texto:'Editar Conta'},
+        {nome:'editar-conta',ref:'/edit-info',texto:'Editar Conta'},
         {nome:'editar-site',ref:'',texto:'Editar Site'},
     ];
 
