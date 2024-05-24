@@ -23,11 +23,11 @@ function Header() {
                 <li> <a href='/acoes'>Notícias</a></li>
                 <li> <a href='/patrocinadores'>Colaboradores</a></li>
             </ul>
-            <div class='show-xl'>
+             <div class='show-xl'>
                 <RxHamburgerMenu onClick= {handleMenuClick} size={60}/>
             </div>
         </header>
-        <ul name='menu' class='header-ul menu-onclick'>
+        <ul name='menu' class='header-ul show-xl menu-onclick'>
                 <a href='/info'><li>Quem Somos</li></a>
                 <a href='/doacao'><li>Doação</li></a>
                 <a href='/voluntariado'><li>Seja um Voluntário</li></a>

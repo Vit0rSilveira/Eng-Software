@@ -47,22 +47,9 @@ header #logo-pao-fraterno {
     display:none;
 }
 
-.menu-onclick{
-    display:flex;
-    height: auto;
-    max-height: 0;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-    transform:scaleY(0);
-    transition: transform 0.3s ease-out, max-height 0.5s ease-out;
-    transform-origin:top;
-    background-color: #f9e445;
-}
-
 
 @media(max-width:1220px){
-    header{
+    /* header{
         justify-content: space-between;
     }
 
@@ -77,7 +64,7 @@ header #logo-pao-fraterno {
         margin: 10px;
         font: 1em "palanquin", sans-serif ;
         font-weight: 800;
-    }
+    } */
 
     .collapse-xl{
         display:none;
@@ -86,7 +73,40 @@ header #logo-pao-fraterno {
         display:block;
     }
 
-    .menu-onclick.show{
+    /* .menu-onclick.show{
+        max-height: 500px;
         transform:scaleY(1);
+    }
+
+    .menu-onclick{
+        position: fixed;
+        top: 0;
+        right: -75%;
+        height: 100vh;
+        width: 75%;
+        background-color: #f9e445;
+        transition: right .5s;
+    }
+
+    .menu-screen-menu.active{
+        right: 0;
+    } */
+    .menu-onclick{
+        position: absolute;
+        z-index: 2;
+        height: 0;
+        width: 100%;
+
+        transition: all 0.7s;
+        overflow: hidden;
+        
+        border-width: 0px 0px 0px 0px;
+        border-style: solid;
+        border-color: #83591a;
+        background-color: #f9e445;
+    }
+    .menu-onclick.show{
+        height: 13em;
+        border-width: 2px 0px 0px 0px;
     }
 }
