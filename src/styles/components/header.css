@@ -1,4 +1,5 @@
 
+/* geral */
 header {
     width: 100%;
     display: flex;
@@ -7,6 +8,7 @@ header {
     background-color: #f9e445;
 }
 
+/* logo */
 header #logo {
     display: flex;
     width: auto;
@@ -21,6 +23,7 @@ header #logo-pao-fraterno {
 
 }
 
+/* navbar */
 .header-ul {
     list-style-type: none;
     display: flex;
@@ -47,25 +50,44 @@ header #logo-pao-fraterno {
     display:none;
 }
 
+/* Header Image */
+#headerImage{
+    /* background settings */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../../public/images/headerImage.png);
+    width: auto;
+    height: 31.4vw;
+
+    /* Text Settings */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#headerImage>h1{
+    margin-left: 4%;
+    font: 3.7vw "palanquin", sans-serif;
+    font-weight: 700;
+    line-height: 6vw;
+    color: #FFFFFF;
+    white-space: pre-wrap;
+}
+
+/* HomePage Button */
+.homePageButton{
+    /* text settings */
+    font: 2vw "palanquin", sans-serif !important;
+    font-weight: 600 !important;
+    
+    /* button settings */
+    margin-left: 4%;
+    margin-top: 1%;
+    box-shadow: none !important;
+}
+
+
 
 @media(max-width:1220px){
-    /* header{
-        justify-content: space-between;
-    }
-
-    .header-ul{
-        border-style: solid;
-        border-width: 3px 0px 3px 0px;
-    }
-
-
-    .header-ul li {
-        width: auto;
-        margin: 10px;
-        font: 1em "palanquin", sans-serif ;
-        font-weight: 800;
-    } */
-
     .collapse-xl{
         display:none;
     }
@@ -73,24 +95,6 @@ header #logo-pao-fraterno {
         display:block;
     }
 
-    /* .menu-onclick.show{
-        max-height: 500px;
-        transform:scaleY(1);
-    }
-
-    .menu-onclick{
-        position: fixed;
-        top: 0;
-        right: -75%;
-        height: 100vh;
-        width: 75%;
-        background-color: #f9e445;
-        transition: right .5s;
-    }
-
-    .menu-screen-menu.active{
-        right: 0;
-    } */
     .menu-onclick{
         position: absolute;
         z-index: 2;
@@ -100,13 +104,22 @@ header #logo-pao-fraterno {
         transition: all 0.7s;
         overflow: hidden;
         
-        border-width: 0px 0px 0px 0px;
+        border-width: 0;
         border-style: solid;
         border-color: #83591a;
         background-color: #f9e445;
     }
+    .show-xl > .boxline{
+        border-color: #f3dd3b;
+        border-style: solid;
+        border-width: 1px;
+        width: 90%;
+        margin-top: -0.5em;
+        margin-bottom: -0.5em;
+        height: 0;
+    }
     .menu-onclick.show{
         height: 13em;
-        border-width: 2px 0px 0px 0px;
+        border-width: 1px 0px 0px 0px;
     }
 }

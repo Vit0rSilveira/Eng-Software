@@ -1,8 +1,19 @@
+// Componente de Header
+
+// Exemplo de Uso:
+    //<Header 
+        //headerText1 = {'Linha1'} 
+        //headerText2 = {'Linha2'}/>
+        //isHomePage = {true}/>
+//Coloque apenas o headerText1 caso tenha somente uma linha no header
+//nao precisa do isHomePage caso nao seja o home page
+
 import React from "react";
+import "../styles/components/padrao.css"
 import "../styles/components/header.css"
 import { RxHamburgerMenu } from "react-icons/rx";
 
-function Header() {
+function Header(props) {
 
     function handleMenuClick(){
         let a = document.getElementsByName('menu')[0];
@@ -12,10 +23,13 @@ function Header() {
 
     return (
         <>
+
         <header>
+            {/* logo */}
             <div id="logo">
                 <a href='/'><img src="../../public/images/logo2.jpg" alt="Logotipo do Pão Fraterno" id="logo-pao-fraterno"/></a>
             </div>
+            {/* navbar */}
             <ul class='collapse-xl header-ul'>
                 <li> <a href='/info'>Quem somos</a></li>
                 <li> <a href='/doacao'>Doação</a></li>
@@ -23,17 +37,28 @@ function Header() {
                 <li> <a href='/acoes'>Notícias</a></li>
                 <li> <a href='/patrocinadores'>Colaboradores</a></li>
             </ul>
+            {/* hamburguer */}
              <div class='show-xl'>
                 <RxHamburgerMenu onClick= {handleMenuClick} size={60}/>
             </div>
         </header>
+        {/* menu para telas pequenas */}
         <ul name='menu' class='header-ul show-xl menu-onclick'>
                 <a href='/info'><li>Quem Somos</li></a>
+                <div class = "boxline"></div>
                 <a href='/doacao'><li>Doação</li></a>
+                <div class = "boxline"></div>
                 <a href='/voluntariado'><li>Seja um Voluntário</li></a>
+                <div class = "boxline"></div>
                 <a href='/acoes'><li>Notícias</li></a>
+                <div class = "boxline"></div>
                 <a href='/patrocinadores'><li>Patrocinadores</li></a>
         </ul>
+        <div id='headerImage'>
+            <h1>{props.headerText1}<br/>{props.headerText2}</h1>
+            {/* add button if homePage*/}
+            {props.isHomePage ? (<button class = "defaultButton homePageButton">Venha nos conhecer!</button>):(<></>)}
+        </div>
         </>
 
     )

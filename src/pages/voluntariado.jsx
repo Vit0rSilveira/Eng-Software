@@ -5,7 +5,11 @@ import '../styles/pages/voluntariado.css';
 function Voluntariado(){
     return(
         <>
-            <Header/>
+            <Header 
+                headerText1 = {'Cadastro de Voluntários'}
+                isHomePage = {false}
+            />
+
             <div id = 'voluntariado'>
 
                 <div class = 'infos-contato'>
