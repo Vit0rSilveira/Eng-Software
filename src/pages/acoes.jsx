@@ -21,7 +21,7 @@ function Acoes() {
     return (
         <>
             <Header 
-                headerText2 = {'Noticias'} 
+                headerText1 = {'Noticias'} 
             />
         <div id="centralize">
             <div id = "conteinerNoticia">
