@@ -1,4 +1,5 @@
 import Header from '../components/header';
+import VoluntarioCard from '../components/voluntarioCard';
 import Footer from '../components/footer';
 import '../styles/pages/voluntariado.css';
 
@@ -9,52 +10,81 @@ function Voluntariado(){
                 headerText1 = {'Cadastro de Voluntários'}
                 isHomePage = {false}
             />
-
-            <div id = 'voluntariado'>
-
-                <div class = 'infos-contato'>
-                    <h1>Agendamento de visita</h1>
-                    <div class='info'>
-                        <p> Nome Completo</p>
-                        <input class='input'></input>
-                    </div>
-
-                    <div class='info'>
-                            <p>Email</p>
-                            <input class ='input'></input>
-                    </div>
-
-                    <div class='info'>
-                        <p>Telefone</p>
-                        <input class='input'></input>
-                    </div>
-
-                    <div class='info'>
-                        <p class='input'>Motivo</p>
-                        <select>
-                            <option value="0">Preparo</option>
-                            <option value="1">Montagem</option>
-                            <option value="2">Entrega</option>
-                            <option value="3">Visita</option>
-                            <option value="4">Doação</option>
-                            <option value="5">Outros</option>
-                            {/* Depois fazer aparecer os inputs customizados para cada opcao */}
-                        </select>
-                    </div>
-
-                    <div class='info'>
-                        <p class='input'>Horário</p>
-                        <input class='input'></input>
-                        {/* Depois mudar para lista de selecao de horario(pode escolher mais de 1) */}
-                    </div>
-
-                    <div class='info'>
-                        <p class='input'>Outras informações</p>
-                        <textarea class='input-info-pessoal' cols="80" rows="5" maxLength={200}></textarea>
-                    </div>
-                    <button class="enviar-button">Enviar</button>
+            <div id = "conteinerMaster">
+                {/* titulo */}
+                <div class = "titulo">Veja o que voce consegue fazer!</div>
+                {/* explicacoes das opcoes de cadastro */}
+                <div id = "cardMargin">
+                    <VoluntarioCard
+                        color = "#F1C144"
+                        image = "public\images\cadastroVoluntario\alimento.png"
+                        title = "Doação de produtos"
+                        text = "Aceitamos doação de alimento, roupa, produtos de higiene e outros"
+                    />
+                    
+                
+                    <div id="last"><VoluntarioCard
+                        color = "#FFBA52"
+                        image = "public\images\cadastroVoluntario\sopa.png"
+                        title = "Preparo do kit de doação"
+                        text = "Temos tranalho de cozinhar, montagem de kit e entrega"
+                    /></div>
+                    <VoluntarioCard
+                        color = "#FFBA52"
+                        image = "public\images\cadastroVoluntario\carro.png"
+                        title = "Doação a partir da casa"
+                        text = "Retiramos a doação na sua casa"
+                    />
+                    <VoluntarioCard
+                        color = "#F1C144"
+                        image = "public\images\cadastroVoluntario\casa.png"
+                        title = "Visita no Pão Fraterno"
+                        text = "Venha conhecer nossa casa!"
+                    />
                 </div>
+                <a href="/doacao" class="textoLink">Para mais detalhes, clique aqui</a>
+
+                {/* cadastro */}
+                <div id="cinzaConteiner">
+                    <div class = "titulo">Ajude da sua forma!</div>
+                    
+                    <div id = "cadastroTextBox">
+                        <div id= "cadastroTitleBox" class = "textoBranco">
+                            Cadastro de Voluntário
+                            </div>
+                        <div class="TextoEInput">
+                            <div class = "cadastroTexto textoBranco">Nome:</div>
+                            <input class = "smallSizeInput defaultInput" type="text"/>
+                        </div>
+                        <div class="TextoEInput">
+                            <div class = "cadastroTexto textoBranco">Email:</div>
+                            <input class = "smallSizeInput defaultInput" type="text" />
+                        </div>
+                        <div class="TextoEInput">
+                            <div class = "cadastroTexto textoBranco">Tipo:</div>
+                            <input class = "smallSizeInput defaultInput" type="text" />
+                        </div>
+                        <div class="TextoEInput">
+                            <div class = "cadastroTexto textoBranco">Data:</div>
+                            <input class = "smallSizeInput defaultInput" type="date" />
+                        </div>
+                        <div class="TextoEInput">
+                            <div class = "cadastroTexto textoBranco">Horário:</div>
+                            <input class = "smallSizeInput defaultInput" type="time" />
+                            <div class = "textoBranco mx-2">até</div>
+                            <input class = "smallSizeInput defaultInput" type="time" />
+                        </div>
+                        <div class = "TextoEInput textoBranco">Outras informações:</div>
+                        <textarea id = "outrasInput" class = "TextoEInput defaultInput"  type="text" />
+                        <div id = "buttonPlace">
+                            <button id = "cadastroButton" class="defaultButton">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+            
+
             <Footer/>
         </>
     )

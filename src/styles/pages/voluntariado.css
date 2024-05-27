@@ -1,85 +1,119 @@
 
-#voluntariado{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.5em;
-    margin-top: 3em;
-}
-
-.infos-contato{
+/* container geral */
+#conteinerMaster{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 3em;
 }
 
-.infos-contato p{
-    font: 1em "palanquin", sans-serif ;
-    font-weight: 700;
-    margin-bottom: 5px;
+/* explicacoes de cadastro */
+#cardMargin{
+    display: grid;
+    padding: 5%;
+    grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas de largura igual */
+    row-gap: 2em; 
+    column-gap: 4em;
+    transition-duration: 1s;
 }
 
-.infos-contato div{
-    width: 600px;
-}
 
-#voluntariado input, .input-info-pessoal{
+/* conteiners */
+#cinzaConteiner{
+    background-color: #eaeaea4a;
     width: 100%;
-    border: 1px;
-    border-style: solid;
-    border-color: #b9b9b9;
-    border-radius: 3px;
-    background-color: #F8F8F8;
-    height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7em;
+    padding: 3em 0 6em 0;
 }
-
-
-
-
-.info{
-    margin-bottom: 30px;
+#cadastroTextBox{
+    width: 33em;
+    font-size: 1.1em;
+    background-color: #F9C745;
+    margin-top: 2em;
+    padding: 0 0 2em 0;
 }
-
-.input{
+#cadastroTitleBox{
     width: 100%;
+    font-size: 1.3em;
+    background-color: #F9A645;
+    padding: 0.5em 0.5em 0.2em 0.5em;
+    margin-bottom: 2em;
 }
 
-.input-info-pessoal{
-    resize: none;
-    padding: 5px;
-    height: 10em;
+/* inputs e textos*/
+#cadastroTextBox>.TextoEInput{
+    display: flex;
+    flex-direction: row;
+    margin: 1em 0 2em 3%;
+}
+.cadastroTexto{
+    width: 14%;
+}
+#outrasInput{
+    margin-top:-1em !important;
+    width: 18em;
+    height: 5em;
+}
+#buttonPlace{
+    display: flex;
+    justify-content: center;
+}
+/* botao */
+#cadastroButton{
+    background-color: #F9DC45;
+    font-size: 1.1em;
+}
+#cadastroButton:hover {
+    background: #f3d643;
+}
+#cadastroButton:active {
+    background-color: #e6ca3d;
+}
+#cadastroButton:disabled {
+    background-color: #F9DC45;
 }
 
+/* para telas menores */
+@media(max-width: 41em){
+    /* explicacao de cadastro */
+    #cardMargin{
+        display: grid;
+        padding: 5%;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 2em; 
+        column-gap: 4em;
+        transition-duration: 1s;
+    }
+    #last{
+        order: 1;
+    }
 
-
-
-.enviar-button {
-    width: 100px;
-    margin-top: 20px;
-    padding: 5px 16px;
-    background-color: #A1AFCB;
-    border: 1px solid rgba(27, 31, 35, 0.15);
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
-}
-.enviar-button:hover {
-  background-color: #93a1bb;
-  transition-duration: 0.1s;
-}
-.enviar-button:disabled {
-  background-color: #A1AFCB;
-  border-color: rgba(27, 31, 35, 0.15);
-}
-.enviar-button:active {
-  background-color: #8a97b0;
-}
-
-
-
-
-
-@media(max-width:700px){
-    .infos-contato div{
+    /*area de cadastro*/
+    #cadastroTextBox{
         width: 90%;
     }
+    #cadastroTextBox>.TextoEInput{
+        flex-direction: column;
+        margin: 1em 1em 2em 1em;
+    }
+    .TextoEInput>.smallSizeInput{
+        margin-top: 0.5em;
+        width: 12em;
+    }
+    #outrasInput{
+        width: 12em;
+    }
+
 }
+
+/*tamanho para telas pequenas e mobile*/
+@media (max-width:600px) and (pointer: coarse){
+    #cadastroTitleBox{font-size: 1.1em;}
+    #cadastroButton{font-size: 0.9em;}
+}
+
+
+

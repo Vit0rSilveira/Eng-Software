@@ -20,7 +20,6 @@ header #logo {
 header #logo-pao-fraterno {
     width: 100px;
     border-radius: 50%;
-
 }
 
 /* navbar */
@@ -57,7 +56,7 @@ header #logo-pao-fraterno {
     background-repeat: no-repeat;
     background-image: url(../../public/images/headerImage.png);
     width: auto;
-    height: 31.4vw;
+    height: 31.7vw;
 
     /* Text Settings */
     display: flex;
@@ -121,5 +120,23 @@ header #logo-pao-fraterno {
     .menu-onclick.show{
         height: 13em;
         border-width: 1px 0px 0px 0px;
+    }
+
+    
+}
+
+/*tamanho para telas pequenas e mobile*/
+@media (max-width:600px) and (pointer: coarse){
+    header #logo-pao-fraterno {
+        width: 5em;
+    }
+    #headerImage>h1{
+        font-size: 1.4em;
+    }
+    .header-ul li {
+        font-size: 0.7em;
+    }
+    .menu-onclick.show{
+        height: 8em;
     }
 }
