@@ -6,8 +6,8 @@ function NoticiaCard(props) {
   return (
     <div id = "containerNoticiaCard">
         <img src={props.image} id = "image"/>
-        <a href = "" id = "saibaMais" class = "textoLink">Saiba Mais</a>
-        <div id = "t1" class = "titulo">{props.title}</div>
+        <button onClick={() => props.onShow(props)} class = "saibaMais textoLink">Saiba Mais</button>
+        <div id = "noticiaTitle" class = "titulo">{props.title}</div>
     </div>
 
 

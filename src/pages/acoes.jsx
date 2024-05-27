@@ -3,9 +3,20 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import '../styles/pages/acoes.css'
 import NoticiaCard from "../components/noticiaCard";
+import NoticiaDetaildCard from "../components/noticiaDetailedCard";
 
 
 function Acoes() {
+    const[isShow, setShow] = useState(false);
+    const[propriedade, setPropriedade] = useState([]);
+
+    const showNoticia = (props) => {
+        setShow(true)
+        setPropriedade(props)
+    }
+    const cancelShowNoticia = () => {
+        setShow(false)
+    }
 
     return (
         <>
@@ -15,32 +26,55 @@ function Acoes() {
         <div id="centralize">
             <div id = "conteinerNoticia">
                 <NoticiaCard
-                    image = "public\images\noticia\noticia1.png"
                     title = "Doação de kit alimentos na igreja Papa Roho"
-                    descricao = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                    link=  "https://oaf.org.br/"
-                />
-
-                <NoticiaCard
                     image = "public\images\noticia\noticia1.png"
-                    title = "Doação de kit alimentos na igreja Papa Roho"
-                    descricao = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                    link=  "https://oaf.org.br/"
+                    descricao = "Escrever a descrição da notícia a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss. a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss"
+                    data = "13/4/2024"
+                    link =  "https://edisciplinas.usp.br"
+                    onShow = {showNoticia}
                 />
                 <NoticiaCard
-                    image = "public\images\noticia\noticia1.png"
                     title = "Doação de kit alimentos na igreja Papa Roho"
-                    descricao = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                    link=  "https://oaf.org.br/"
+                    image = "public\images\noticia\noticia1.png"
+                    descricao = "Escrever a descrição da notícia a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss. a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss"
+                    data = "13/4/2024"
+                    link=  "https://edisciplinas.usp.br"
+                    onShow = {showNoticia}
                 />
                 <NoticiaCard
+                    title = "Doação de kit alimentos na igreja Papa Roho"
                     image = "public\images\noticia\noticia1.png"
+                    descricao = "Escrever a descrição da notícia a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss. a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss"
+                    data = "13/4/2024"
+                    link=  "https://edisciplinas.usp.br"
+                    onShow = {showNoticia}
+                />
+                <NoticiaCard
                     title = "Doação de kit alimentos na igreja Papa Roho RoRo"
-                    descricao = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                    link=  "https://oaf.org.br/"
+                    image = "public\images\noticia\noticia1.png"
+                    descricao = "Escrever a descrição da notícia a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss. a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss"
+                    data = "13/4/2024"
+                    link =  "https://edisciplinas.usp.br"
+                    onShow = {showNoticia}
                 />
             </div>
         </div>
+
+        {/* quando clica no 'Saiba Mais' aparece */}
+        {(isShow === true &&
+            <div id = "conteinerNoticiaDetalhe">
+                <NoticiaDetaildCard
+                    title = {propriedade.title}   
+                    image = {propriedade.image}   
+                    descricao = {propriedade.descricao}
+                    data = {propriedade.data}
+                    link = {propriedade.link}
+                    onNotShow = {cancelShowNoticia}
+
+                />
+            </div>
+        )}
+        
             
             <Footer />
         </>

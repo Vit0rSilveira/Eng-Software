@@ -6,22 +6,26 @@
 .textoBranco{
     font: 1em "palanquin", sans-serif;
     font-weight: 800;
+    line-height: 180%;
     color: #fff;
 }
 .textoLaranja{
     font: 1em "palanquin", sans-serif;
     font-weight: 800;
+    line-height: 180%;
     color: #DE9E3E;
 }
 .textoLink{
     font: 1em "palanquin", sans-serif;
     font-weight: 800;
+    line-height: 180%;
     color: #594614;
     text-decoration: none;
 }
 .titulo{
     font: 2em "palanquin", sans-serif;
     font-weight: 800;
+    line-height: 180%;
     color: #594614;
     text-align: center;
 }
