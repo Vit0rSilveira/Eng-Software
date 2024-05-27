@@ -1,4 +1,4 @@
-#containerMaster{
+#containerVoluntarioCard{
     width: 16em;
     height: auto;
     border-radius: 1em;
@@ -9,17 +9,17 @@
     justify-content: center;
     align-items: center;
 }
-#image{
+#doacaoCardImage{
     width: 60%;
     height: fit-content;
 }
-#t1{
+#containerVoluntarioCard>#t1{
     margin-top: 0.5em;
     margin-bottom: 1em;
     font-size: 1.1em;
     text-align: center;
 }
-#t2{
+#containerVoluntarioCard>#t2{
     font-size: 0.8em;
     text-align: center;
 }

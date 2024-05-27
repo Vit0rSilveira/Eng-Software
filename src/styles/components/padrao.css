@@ -25,8 +25,8 @@
     color: #594614;
     text-align: center;
 }
-/*tamanho para telas pequenas e mobile*/
-@media (max-width:600px) and (pointer: coarse){
+/*tamanho para telas pequenas*/
+@media (max-width:600px){
     .titulo{ font-size: 1.5em;}
 }
 

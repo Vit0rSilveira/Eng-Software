@@ -12,7 +12,7 @@ function Voluntariado(){
             />
             <div id = "conteinerMaster">
                 {/* titulo */}
-                <div class = "titulo">Veja o que voce consegue fazer!</div>
+                <div class = "titulo">Veja o que você consegue fazer!</div>
                 {/* explicacoes das opcoes de cadastro */}
                 <div id = "cardMargin">
                     <VoluntarioCard
@@ -49,9 +49,7 @@ function Voluntariado(){
                     <div class = "titulo">Ajude da sua forma!</div>
                     
                     <div id = "cadastroTextBox">
-                        <div id= "cadastroTitleBox" class = "textoBranco">
-                            Cadastro de Voluntário
-                            </div>
+                        <div id= "cadastroTitleBox" class = "textoBranco">Cadastro de Voluntário</div>
                         <div class="TextoEInput">
                             <div class = "cadastroTexto textoBranco">Nome:</div>
                             <input class = "smallSizeInput defaultInput" type="text"/>

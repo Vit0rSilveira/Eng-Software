@@ -109,8 +109,8 @@
 
 }
 
-/*tamanho para telas pequenas e mobile*/
-@media (max-width:600px) and (pointer: coarse){
+/*tamanho para telas pequenas*/
+@media (max-width:600px){
     #cadastroTitleBox{font-size: 1.1em;}
     #cadastroButton{font-size: 0.9em;}
 }

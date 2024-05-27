@@ -1,51 +1,34 @@
-#page-acoes .img-acoes {
-    width: 500px;
-    padding: 30px;
-    border-radius: 80px;
-    max-height: 550px;
-}
 
-#page-acoes .text-acoes p{
-    font: 1em "palanquin", sans-serif ;
-    font-weight: 600;
-}
-
-#page-acoes h1{
-    margin-bottom: 30px;
-}
-
-#page-acoes #main-banner {
-    padding: 10px;
-    width: 800px;
-    height: 630px;
-    /* overflow: scroll; */
-    background: #0693E3;
-    display: inline-block;
-    /* width: 50%; Cada item ocupa 50% da largura */
-    box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
-    text-align: center; /* Centraliza o conteúdo */
-    margin-right: 200px;
-    margin-bottom: 200px;
-    margin-left: 20px;
-    border-radius: 20px;  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.15);
-}
-
-#page-acoes #main-banner-back {
-    padding: 30px;
-    width: 750px;
-    height: 630px;
-    /* overflow: scroll; */
-    display: inline-block;
-    /* width: 50%; Cada item ocupa 50% da largura */
-    box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
-    text-align: center; /* Centraliza o conteúdo */
-    margin-right: 200px;
-    margin-bottom: 200px;
-    margin-left: 20px;
-    font: 1em "palanquin", sans-serif ;
-    font-weight: 600;
-    border-radius: 20px;
-    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.616);
-    background-color: whitesmoke;
+/* container geral */
+#centralize{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAFAFA;
     
+}
+#conteinerNoticia{
+    display: grid;
+    padding: 5%;
+    grid-template-columns: repeat(3, 1fr); /* Divide em duas colunas de largura igual */
+    row-gap: 6em;
+    column-gap: 2em;
+}
+
+/*tamanho para telas medias*/
+@media (max-width:1000px){
+    #conteinerNoticia{grid-template-columns: repeat(2, 1fr);
+                        font-size: 0.8em;}
+}
+
+/*tamanho para telas pequenas*/
+@media (max-width:550px){
+    #conteinerNoticia{
+                        font-size: 0.6em;}
+}
+@media ((max-width:360px) and (pointer: coarse)) or 
+        ((max-width:450px) and (pointer: fine)){
+    #conteinerNoticia{grid-template-columns: repeat(1, 1fr);
+}
 }
