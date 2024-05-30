@@ -22,6 +22,12 @@
     color: #594614;
     text-decoration: none;
 }
+.textoErro{
+    font: 0.7em "palanquin", sans-serif;
+    font-weight: 700;
+    line-height: 160%;
+    color: #ff0000;
+}
 .titulo{
     font: 2em "palanquin", sans-serif;
     font-weight: 800;

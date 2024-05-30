@@ -1,5 +1,6 @@
 
 /* container geral */
+
 #centralize{
     display: flex;
     flex-direction: row;
@@ -19,6 +20,7 @@
 
 /* Mostrar noticia */
 #conteinerNoticiaDetalhe{
+    overflow-y: auto;
     position: fixed;
     top: 0px;
     width: 100%;

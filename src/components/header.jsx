@@ -5,8 +5,10 @@
         //headerText1 = {'Linha1'} 
         //headerText2 = {'Linha2'}/>
         //isHomePage = {true}/>
+        //isImage = {true}/>
 //Coloque apenas o headerText1 caso tenha somente uma linha no header
-//nao precisa do isHomePage caso nao seja o home page
+//default do isHomePage = false
+//default do isImage = true
 
 import React from "react";
 import "../styles/components/padrao.css"
@@ -52,13 +54,16 @@ function Header(props) {
                 <div class = "boxline"></div>
                 <a href='/acoes'><li>Notícias</li></a>
                 <div class = "boxline"></div>
-                <a href='/patrocinadores'><li>Patrocinadores</li></a>
+                <a href='/patrocinadores'><li>Colaboradores</li></a>
         </ul>
-        <div id='headerImage'>
-            <h1>{props.headerText1}<br/>{props.headerText2}</h1>
-            {/* add button if homePage*/}
-            {props.isHomePage ? (<button class = "defaultButton homePageButton">Venha nos conhecer!</button>):(<></>)}
-        </div>
+        {props.isImage ? (<></>):(
+            <>
+                <div id='headerImage'>
+                    <h1>{props.headerText1}<br/>{props.headerText2}</h1>
+                    {props.isHomePage ? (<button class = "defaultButton homePageButton">Venha nos conhecer!</button>):(<></>)}
+                </div>
+            </>
+        )}
         </>
 
     )

@@ -1,12 +1,16 @@
 #contNoticiaDetCard{
     width: 40em;
-    height: auto;
+    height: 80vh;
     border-radius: 2em 2em 1em 1em;
     background-color: white;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
     padding-bottom: 3em;
     font-size: 1.1em;
     transition-duration: 0.1s;
+}
+#noticiaDetTopScroll{
+    overflow-y: auto;
+    height: 75vh;
 }
 #noticiaDetTop{
     color: white;
@@ -24,6 +28,7 @@
     background: none;
 }
 #noticiaDetCentralize{
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,6 +66,7 @@
     font-size: 0.75em;
     margin-left: 5.5em;
     margin-top: 5em;
+padding-bottom: 4em;
 }
 
 /*tamanho para telas medias*/

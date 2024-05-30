@@ -50,7 +50,14 @@
     margin: 1em 0 2em 3%;
 }
 .cadastroTexto{
-    width: 14%;
+    width: 18%;
+}
+.textoErroCadastroVol{
+    margin: -2.5em 0 2em 3%;
+}
+.textoExplicacaoTipo{
+    margin: -2em 3% 2em 3%;
+    font-size: 0.8em;
 }
 #outrasInput{
     margin-top:-1em !important;

@@ -20,9 +20,9 @@ function Acoes() {
 
     return (
         <>
-            <Header 
-                headerText1 = {'Noticias'} 
-            />
+        <Header 
+            headerText1 = {'Noticias'} 
+        />
         <div id="centralize">
             <div id = "conteinerNoticia">
                 <NoticiaCard
@@ -76,7 +76,7 @@ function Acoes() {
         )}
         
             
-            <Footer />
+        <Footer />
         </>
     )
 }
