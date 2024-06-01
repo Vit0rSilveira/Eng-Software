@@ -1,0 +1,8 @@
+#carousel {
+    display: flex;
+    justify-content: center;
+}
+
+img.img-fluid {
+    width: 100vw;
+}

@@ -1,0 +1,35 @@
+#contVolunConf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3em;
+    margin: 3em 0 2em 0;
+}
+#textoVolunConf{
+    font-size: 1.3em;
+    margin-bottom: 1.5em;
+}
+#botaoVolunConf{
+    font-size: 1em;
+}
+#fixarFooter{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+/*tamanho para telas medias*/
+@media (max-width:1000px){
+    #contVolunConf{font-size: 1.1em;}
+}
+/*tamanho para telas pequenas*/
+@media (max-width:600px){
+    #contVolunConf{font-size: 1.0em;}
+}
+/*tamanho para telas mais pequenas*/
+@media (max-width:450px){
+    #contVolunConf{font-size: 0.9em;}
+}
+
+

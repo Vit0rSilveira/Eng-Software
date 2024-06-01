@@ -1,0 +1,70 @@
+
+.container-cadastro h1 {
+    margin-bottom: 2%;
+}
+
+#titulo-cadastro{
+    margin-top: 2em;
+    margin-left: 3%;
+}
+
+accounts {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-cadastro #questions {
+    margin: 2%;
+    width: 100%;
+}
+
+.container-cadastro #questions h1 {
+    margin-bottom: 10vh; /* Espaçamento abaixo do título "Perguntas Frequentes" */
+}
+
+.container-cadastro #questions p {
+    width: 100%; /* Ajusta a largura do parágrafo */
+    max-width: 100%; /* Define a largura máxima */
+}
+
+#box-questions {
+    display: grid;
+    padding: 5%;
+    grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas de largura igual */
+    gap: 40px; /* Espaçamento entre as perguntas */
+    margin: auto;
+}
+
+.box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.box-text h1 {
+    color: #022859;
+}
+
+.container-cadastro {
+    background-image: none;
+    width: auto;
+    margin-top: 20px;
+    padding: 40px;
+    margin-left: 150px;
+}
+
+.container-element {
+    border: 3px solid blue;
+}
+
+.img-x{
+    width: 25px;
+    position: relative;
+    left: 300px;
+}

@@ -1,0 +1,55 @@
+#conteinerColabCard{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+#conteinerColabImagem{
+    width: 30%;
+    height: auto;
+    margin: 2em 0 2em 1em;
+}
+#conteinerColabCardDir{
+    display: flex;
+    flex-direction: column;
+
+    margin: 1em 2em 1em 1.5em;
+
+}
+#conteinerColabTitle{
+    text-align: left;
+    color: #392600;
+    font-size: 1.3em;
+    margin-bottom: 0.6em;
+}
+#conteinerColabDescricao{
+    text-align: left;
+    color: #fff;
+    font-size: 0.9em;
+    margin-bottom: 0.6em;
+}
+#conteinerColabLink{
+    font-size: 1em;
+    color: #392600;
+    margin-bottom: 1em;
+}
+
+    
+
+/* tamanho para telas medias */
+@media (min-width:1050px){
+    #conteinerColabImagem{width: 20em;}
+    #conteinerColabCardDir{width: 40em;}
+}
+
+/*tamanho para telas pequenas*/
+@media (max-width:650px){
+    #conteinerColabCard{flex-direction: column;}
+    #conteinerColabImagem{margin-top: 1em;
+                            width: 50%;}
+    #conteinerColabTitle{font-size: 1.2em;}
+    #conteinerColabDescricao{font-size: 0.8em;}
+    #conteinerColabLink{font-size: 0.8em;}
+    #conteinerColabCardDir{margin-top: 0;}
+}

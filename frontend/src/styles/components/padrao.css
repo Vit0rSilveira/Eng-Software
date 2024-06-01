@@ -1,0 +1,93 @@
+/* padroes de visual */
+
+
+
+/* Textos */
+.textoBranco{
+    font: 1em "palanquin", sans-serif;
+    font-weight: 800;
+    line-height: 180%;
+    color: #fff;
+}
+.textoLaranja{
+    font: 1em "palanquin", sans-serif;
+    font-weight: 800;
+    line-height: 180%;
+    color: #DE9E3E;
+}
+.textoLink{
+    font: 1em "palanquin", sans-serif;
+    font-weight: 800;
+    line-height: 180%;
+    color: #594614;
+    text-decoration: none;
+}
+.textoErro{
+    font: 0.7em "palanquin", sans-serif;
+    font-weight: 700;
+    line-height: 160%;
+    color: #ff0000;
+}
+.titulo{
+    font: 2em "palanquin", sans-serif;
+    font-weight: 800;
+    line-height: 180%;
+    color: #594614;
+    text-align: center;
+}
+/*tamanho para telas pequenas*/
+@media (max-width:600px){
+    .titulo{ font-size: 1.5em;}
+}
+
+/* Input */
+.defaultInput{
+    font: 1em "palanquin", sans-serif;
+    font-weight: 500;
+    color: #392600;
+
+    background-color: #FFF7BA;
+    box-sizing: border-box;
+    border: 2px solid #A89B36;
+    outline: none;
+    padding-left: 2px;
+
+    transition: 0.2s;
+}
+.defaultInput:focus{
+    border: 2px solid #A89B36;
+}
+
+/* button */
+.defaultButton {
+    /* text settings */
+    font: 1.2em "palanquin", sans-serif;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    overflow: none;
+    color: #fff;
+
+    /* button settings */
+    background-color: #F9C745;
+    width: fit-content;
+    height: auto;
+    padding: 0.3em 1em 0.3em 1em;
+    border-radius: 10em;
+    border-style: none;
+    box-shadow: 0 0.2em 0.1em rgba(0, 0, 0, 0.25);
+}
+.defaultButton:hover {
+    background: rgb(241, 189, 56);
+    transition-duration: 0.1s;
+}
+.defaultButton:active {
+    background-color: #d7a72e;
+   
+}
+.defaultButton:disabled {
+    background-color: #F9C745;
+}
+
+
+ 
