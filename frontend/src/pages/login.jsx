@@ -1,37 +1,103 @@
-//pagina de login do administrador
-//Criado por Kaito Hayashi
-
 import '../styles/pages/login.css';
+import React, { useState, useEffect } from "react";
 
 function Login(){
+
+    //usados na verificacao de erros
+    const [primeiro, setPrimeiro] = useState(true);
+    const [verificar, setVerificar] = useState(false);
+
+    //valor dos inputs
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
+    //erros
+    const [invalido, setInvalido] = useState(false);
+    const [senhaVazia, setSenhaVazia] = useState(false);
+    const [emailVazio, setEmailVazio] = useState(false);
+
+
+
+    //reseta os mensagens de erro
+    const resetarErro = () => {
+        setInvalido(false);
+        setSenhaVazia(false);
+        setEmailVazio(false);
+    }
+
+
+    
+    //ativado com o botao confirmar
+    //validada os itens do login
+    const validarLogin = () => {
+        
+        //reseta os variaveis de erro
+        resetarErro()
+        
+        //verifica erro
+        if(email === "")
+            setEmailVazio(true)
+        if(senha === "")
+            setSenhaVazia(true)
+
+        //////////////////////////////////
+        //Modificar essa parte para conectar com o backend
+        //
+        //else if((email != emailDB || senha != senhaDB) && email != "" && senha != "")
+        //   setInvalido(true)
+        //////////////////////////////////
+        
+        //atualiza verificar para entrar no useEffect 
+        setVerificar(!verificar)
+    }
+
+    //se nao tiver erro, vai para aba de administrador
+    //foi colocado no useEffect, porque nao da para atualizar um state e ver o state atualizado na mesma funcao
+    useEffect(()=>{
+        if(primeiro) setPrimeiro(false)
+        else if(!invalido && !senhaVazia && !emailVazio)
+        {
+            window.location.href = "/cadastro"
+        }
+    }, [verificar])
+
     return(
         <>
 
-            <div id = 'login'>
-                <div id="big-box" class="row">
-                    {/* header */}
-                    <div id="header">
-                        {/* logo */}
-                        <img src="public\images\logo.jpg" id="imagem-logo" alt="logo"></img>  
-                        {/* Texto */}
-                        <p id="texto-logo" class="align-self-center">Grupo Pão Fraterno André Luiz</p>
-                    </div>
+            <div id = 'loginPage'>
+                {/* header */}
+                <div id="loginHeader">
+                    {/* logo */}
+                    <img src="public\images\logo2.jpg" id="imagemLogoLogin" alt="logo"></img>  
+                    {/* Texto */}
+                    <p id="textoLogoLogin" class="titulo">Pão Fraterno André Luiz</p>
+                </div>
 
-                    {/* Titulo */}
-                    <div id="titulo">Login Administrador</div>
-                   
-                    {/* Caixa */}
-                    <div class="row caixa">
-                        {/* Email */}
-                        <div class="text">Email</div>
-                        <div><input type="text" class="input-box"/></div>
-                        {/* Password */}
-                        <div class="text">Senha</div>
-                        <div><input type="password" class="input-box"/></div>
-                        {/* Login */}
-                        <button class="login-button">Login</button>
-                        {/* Forgot password */}
-                        <div class="forgot-password-text">Esqueceu a senha? <a href="">Clique aqui</a></div>
+                {/* Titulo */}
+                <div id = "loginTextBox">
+                    <div id= "loginTitleBox" class = "textoBranco">Login Administrador</div>
+                    {(invalido && <div class = "textoErroLogin textoErro">Email ou senha invalida</div>)}
+                    {/* Nome */}
+                    <div class="TextoEInputLogin">
+                        <div class = "loginTexto textoBranco">Email:</div>
+                        <input onChange={(event) => setEmail(event.target.value)} class = "loginInput defaultInput" type="text"/>
+                    </div>
+                    {(emailVazio && <div class = "textoErroLogin textoErro">Preencha o email</div>)}
+                    
+                    {/* Email */}
+                    <div class="TextoEInputLogin">
+                        <div class = "loginTexto textoBranco">Senha:</div>
+                        <input onChange={(event) => setSenha(event.target.value)}  class = "loginInput defaultInput" type="password" />
+                    </div>
+                    {(senhaVazia && <div class = "textoErroLogin textoErro">Preencha a senha</div>)}
+                    {/* cadastro Button */}
+                    <div id = "buttonPlaceLogin">
+                        <button onClick={validarLogin} id="loginButton" class="defaultButton">Login</button>
+                    </div>
+                    {/* esqueceu a senha */}
+                    <div id ="textoEsqSenha" class = "textoBranco mt-5 mx-3">
+                         Esqueceu a senha?
+                        <a  id ="linkEsqSenha"  class='textoLink mx-1' href="/login-esqueceu-senha">Clique aqui</a>
                     </div>
                 </div>
             </div>

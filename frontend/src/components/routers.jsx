@@ -5,6 +5,8 @@ import Cadastro from '../pages/cadastro';
 import Voluntariado from '../pages/voluntariado';
 import VoluntarioConfirmado from '../pages/voluntario-confirmado';
 import Login from '../pages/login';
+import LoginEsqueceuSenha from '../pages/login_esqueceu_senha.jsx';
+import LoginConfirmarEmail from '../pages/login_confirmar_email.jsx';
 import CRUD_Conta from '../pages/crud-conta';
 import Info from '../pages/info';
 import Patrocinadores from "../pages/patrocinadores";
@@ -22,6 +24,8 @@ function Destiny () {
             <Route path='/voluntariado' element={<Voluntariado/>}/>
             <Route path='/voluntario-confirmado' element={<VoluntarioConfirmado/>}/>
             <Route path='/login' element={<Login/>}/>
+            <Route path='/login-esqueceu-senha' element={<LoginEsqueceuSenha/>}/>
+            <Route path='/login-email-enviado' element={<LoginConfirmarEmail/>}/>
             <Route path='/crud-conta' element={<CRUD_Conta/>}/>
             <Route path='/info' element={<Info/>}/>
             <Route path="/patrocinadores" element={<Patrocinadores />} />

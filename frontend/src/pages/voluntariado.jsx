@@ -76,7 +76,6 @@ function Voluntariado(){
 
         //atualiza verificar para entrar no useEffect 
         setVerificar(!verificar)
-        console.log(verificar)
     }
 
     //se nao tiver erro, vai para pagina de confirmacao

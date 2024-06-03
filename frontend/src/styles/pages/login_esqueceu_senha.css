@@ -1,0 +1,32 @@
+#contLoginConf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3em;
+    margin: 3em 0 2em 0;
+}
+#textoLoginConf{
+    font-size: 1.3em;
+    margin-bottom: 1.5em;
+}
+
+#botaoLoginConf{
+    margin: 1em 3em 0 3em;
+    font-size: 1.2em;
+}
+
+
+/*tamanho para telas medias*/
+@media (max-width:1000px){
+    #contLoginConf{font-size: 1.1em;}
+}
+/*tamanho para telas pequenas*/
+@media (max-width:600px){
+    #contLoginConf{font-size: 1.0em;}
+}
+/*tamanho para telas mais pequenas*/
+@media (max-width:450px){
+    #contLoginConf{font-size: 0.9em;}
+}
+
+
