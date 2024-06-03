@@ -1,25 +1,25 @@
 #edit-info{
     display: flex;
     background-color: white;
+    justify-content: space-evenly;
     margin-bottom:100px;
 }
 
 #edit-info .select-mode{
     display:flex;
     flex-direction: column;
-    margin-left:2vw;
+    align-items: center;
     width: 260px;
     height: 140px;
 }
 
 .select-mode button{
     font-family: "palanquin", Helvetica, sans-serif;
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: 1000;
     width: 260px;
     height: 70px;
     background-color: #f9e445;
-    padding: 9px 50px;
     border: none;
     color: white;
 }
@@ -34,17 +34,19 @@
     display: flex;
     flex-direction: column;
     background-color: #f9e445;
-    margin-left:5vw;
+    margin-left:-50px;
 }
 
 .container-edit .Titulo{
     padding-left: 20px;
     font-family: "palanquin", Helvetica, sans-serif;
     font-weight: 800;
-    font-size: 3em;
-    height:70px;
+    font-size: 2.3em;
+    height:60px;
     background-color:#F9C745 ;
     color: white;
+    text-align: center;
+    width: 100%;
 }
 
 .container-edit div{
@@ -54,7 +56,7 @@
 
 .container-edit h2{
     font-family: "palanquin", Helvetica, sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 700;
     padding-left: 30px;
     color: white;
