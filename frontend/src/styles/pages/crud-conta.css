@@ -1,118 +1,62 @@
 
 /* geral */
-#crud-conta{
-    height: auto;
-    width: auto;
+#editContaPage{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 200px;
-}
-
-#big-box{
-    display: flex;
-    justify-content: center;
-    width: 500px;
-}
-
-#crud-conta div, p, button{
-    font: 16px "palanquin", sans-serif;
-    font-weight: 600;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5em;
+    margin-bottom: 10em;
 }
 
 
-
-/* header */
-#header{
-    display: flex;
-    justify-content: center;
+#editCTextBox{
+    width: 25em;
+    font-size: 1.1em;
+    background-color: #F9DC45;
+    padding: 0 0 2em 0;
 }
-
-#texto-logo
-{
-    margin-left: 20px;
-    font-size: 16px;
-}
-
-#imagem-logo{
-    max-width:100px;
-    max-height:100px;
-}
-
-
-
-
-/* Titulo */
-
-#titulo{
-    width: 75%;
-    font-size: 20px;
-    margin: 50px 0px 2px -20px;
-    color: #022859;
-    display: flex;
-    justify-content: left;
-}
-
-
-
-/* Caixa */
-
-.caixa{
-    display: flex;
-    justify-content: center;
-    width: 75%;
-    padding: 10px;
-    padding-bottom: 20px;
-    border: 1px;
-    border-style: solid;
-    border-color: #393939;
-    border-radius: 4px;
-}
-
-.text{
-    margin-top: 15px;
-    margin-bottom: 3px;
-    font-size: 16px;
-    color: #4c4c4c;
-}
-
-.input-box{
+#editCTitleBox{
     width: 100%;
-    border: 1px;
-    border-style: solid;
-    border-color: #b9b9b9;
-    border-radius: 3px;
-    background-color: #F8F8F8;
+    font-size: 1.3em;
+    font-weight: 700;
+    background-color: #F9C745;
+    padding: 0em 0.5em 0em 0.5em;
+    margin-bottom: 1.5em;
 }
 
-.confirm-button {
-    width: 100px;
-    margin-top: 20px;
-    padding: 5px 0px;
-    background-color: #A1AFCB;
-    border: 1px solid rgba(27, 31, 35, 0.15);
-    border-radius: 6px;
-    font-size: 16px;
+/* inputs e textos*/
+#editCTextBox>.TextoEInputEditC{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1em 5%;
+}
+.editCTexto{
+    width: 75%;
     font-weight: 600;
 }
-.confirm-button:hover {
-  background-color: #93a1bb;
-  transition-duration: 0.1s;
+.editCInput{
+    width: 70%;
 }
-.confirm-button:disabled {
-  background-color: #A1AFCB;
-  border-color: rgba(27, 31, 35, 0.15);
+.textoErroEditC{
+    margin: -1em 0 2em 3%;
 }
-.confirm-button:active {
-  background-color: #8a97b0;
+#textoAuxEditC{
+    font-weight: 600;
+    font-size: 0.8em;
+}
+#buttonPlaceEditC{
+    display: flex;
+    justify-content: center;
+}
+#editButton{
+    margin-top: 1em;
+    font-size: 1em;
 }
 
-
-
-
-
-
-
-
+/*tamanho para telas mais pequenas*/
+@media (max-width:500px){
+    #editContaPage{font-size: 0.75em;}
+}
 
 

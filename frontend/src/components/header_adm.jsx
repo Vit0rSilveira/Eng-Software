@@ -4,8 +4,8 @@ export function HeaderADM(props){
 
     const header_items = [
         {nome:'verificar-voluntarios',ref:'',texto:'Verificar Voluntários'},
-        {nome:'editar-conta',ref:'/edit-info',texto:'Editar Conta'},
-        {nome:'editar-site',ref:'',texto:'Editar Site'},
+        {nome:'editar-conta',ref:'/crud-conta',texto:'Editar Conta'},
+        {nome:'editar-site',ref:'/edit-info',texto:'Editar Site'},
     ];
 
     const pagina_atual = props.page;
