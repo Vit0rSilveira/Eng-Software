@@ -15,6 +15,7 @@ function Edit_Info(){
     else if(selection == 'colaboradores')
         btnColaboradoresClass = 'selected-btn';
 
+    // callback btn adicionar
     function handleBtnAdicionar(){
         alert("Adicionado com sucesso!");
     }
@@ -43,13 +44,13 @@ function Edit_Info(){
                     </div>
                     <div>
                         <h2>Data:</h2>
-                        <input type="text" className='input-data' placeholder='dd/mm/yyyy'></input>
+                        <input type="date" className='input-data'></input>
                     </div>
                     <div>
                         <h2>Horário:</h2>
-                        <input type="text" className='input-horario' placeholder='HH:MM'></input>
+                        <input type="time" className='input-horario'></input>
                         <p className='inline-text'>até</p>
-                        <input type="text" className='input-horario' placeholder="HH:MM"></input>
+                        <input type="time" className='input-horario'></input>
                     </div>
                     <div>
                         <h2>Endereço:</h2>

@@ -15,8 +15,6 @@ export function HeaderADM(props){
         <header id ="header-adm">
             <div id="logo">
                 <a href='/'><img src="../../public/images/logo2.jpg" alt="Logotipo do Pão Fraterno" id="logo-pao-fraterno"/></a>
-                <h4 >Pão Fraterno</h4>
-                <h4>André Luiz</h4>
             </div>
             <ul class='header-adm-ul'>
                 {header_items.map((i) => i.nome == pagina_atual
