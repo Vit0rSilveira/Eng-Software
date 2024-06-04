@@ -1,0 +1,25 @@
+#containerDoacaoCard{
+    width: 16em;
+    height: auto;
+    border-radius: 1em;
+    padding: 1.5em 0.5em 2em 0.5em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#doacaoCardImage{
+    width: 60%;
+    height: fit-content;
+}
+#containerDoacaoCard>#t1{
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+    text-align: center;
+}
+#containerDoacaoCard>#t2{
+    font-size: 0.8em;
+    text-align: center;
+}

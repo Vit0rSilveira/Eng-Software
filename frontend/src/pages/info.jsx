@@ -6,9 +6,12 @@ import Footer from '../components/footer';
 function Info(){
     return(
         <>
-            <Header/>
+            <Header 
+                headerText1 = {'Pão Fraterno André Luiz'}
+                isHomePage = {false}
+            />
             <div id = 'info-page'>
-                <div class='container quem-somos'>
+                <div id="identidade" className="iden">
                     <h1> Quem somos</h1>
                     <p> Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos próprios alunos da USP de São 
                     Carlos.</p> 
@@ -19,7 +22,7 @@ function Info(){
                     higienico e sabonetes, tambem recolhemos roupas para o inverno ou não, roupas intimas, cobertores e 
                     mantas. Recebemos como muita alegria e gratidão sua doação.</p>
                 </div>
-                <div class='container'>
+                <div id="identidade" className="iden">
                     <h1> Localizacao </h1>
                     <p>R. Costa do Sol,450 - Vila Costa do Sol, São Carlos - SP, 13566-070</p>
                     <div class='localizacao'>
@@ -28,7 +31,7 @@ function Info(){
                         <img class='loc-image' src='../../public/images/mapa.png'/>
                     </div>
                 </div>
-                <div class='container'>
+                <div id="identidade" className="iden">
                     <h1>Por que doar?</h1>
                     <p> Todos nós temos dentro de nós o poder de fazer uma diferença significativa no mundo ao nosso redor. Um dos
                     atos mais impactantes que podemos realizar é a doação. Quando decidimos dar de nós mesmos, não apenas

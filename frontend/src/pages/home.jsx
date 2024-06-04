@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Images_carousel from '../components/carrousel'
+// import Images_carousel from '../components/carrousel'
 import Header from '../components/header';
 import Question from "../components/questions";
 import Footer from '../components/footer';
@@ -26,14 +26,22 @@ function Home() {
 
     return (
         <>
-            <Header />
-            <Images_carousel/>
+            <Header 
+                headerText1 = {'Conheça a Organização Pão Fraterno André Luiz'}
+                isHomePage = {true}
+            />
+            {/* <Images_carousel/> */}
             <main>
                 <div id="about-us" className="box-text">
-                <h1>Um pouco sobre nós</h1>
+                    <h1>Um pouco sobre nós</h1>
                     <p>Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos próprios alunos da USP de São Carlos.
                     Começamos como um grupo que aceitava apenas alimentos basicos, roupas e cobertores. 
                     </p>
+                    <img
+                    className="img-fluid"
+                    src="../../public/images/quem_somos.png"
+                    alt="First slide"
+                    />
                     <p>Hoje em dia aceitamos os mais
                     diversos alimentos, o nosso foco sao verduras, que é essencial para fazer nossa principal refeição, a sopa, 
                     distribuída todas as sextas-feiras. Aceitamos produtos de higiene básica como papel higienico e sabonetes, tambem
@@ -42,13 +50,18 @@ function Home() {
                     </p>
                 </div>
 
-                <div id="last-updates" className="box-text">
+                <div id="last-updates" className="box-text-alter">
                     <h1>Ações Realizadas</h1>
                     <p>As ações voluntarias que realizamos podem ser divididas em 4 grupos distintos de atuação. Um deles é a doação, 
                     que é a fonte de todas as nossas ações. As demais se baseiam em atividades que realizamos cotidianamente para 
                     manter o funcionamento da Pão Fraterno. Ou seja, fazer os alimentos, realizar sua montagem para distribuicao, ir
                     as ruas recolher doacoes, ir em bairros que atendemos e distribuir. Todas essas constituem pilares essenciais que 
                     manteem a fraternidade em pe. </p>
+                    <img
+                    className="img-fluid"
+                    src="../../public/images/entrega_doacoes.png"
+                    alt="First slide"
+                    />
                     <p>Por mais que pareçam muitas funcoes buscamos sempre dividi-las ao maximo, o que ainda 
                     reforca nossa necessidade constante de voluntariado, por isso buscamos atençāo para a questao social a qual nos 
                     envolvemos e esperamos sua ajuda para fazer parte da nossa história. placeat tempore debitis recusandae
@@ -68,8 +81,30 @@ function Home() {
                             />
                         ))}
                     </div>
-
+                    <img
+                    className="img-fluid"
+                    src="../../public/images/cenario_doacao.png"
+                    alt="First slide"
+                    />
                 </div>
+
+                <div id="eventos" className="eventos">
+                    <h1>Eventos</h1>
+                    <p>Venha participar!</p>
+                    <div id="about-us" className="eventos-text">
+                        <h2> Brechó de roupas    Dia: 15/4     11:00-15:00   </h2>
+                        <p2>  Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070
+                        </p2>
+                    </div>
+                    <div id="about-us" className="eventos-text">
+                        <h2> Venda de pizzas    Dia: 5/5      16:00-19:00    </h2>
+                        <p2>  Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070
+                        </p2>
+                    </div>
+                </div>
+
+                <button class = "defaultButton homePageButton"
+                >Venha nos conhecer!</button>
             </main>
             <Footer />
         </>

@@ -21,14 +21,25 @@
     
 }
 
+@media(max-width:800px){
+    .iden{
+        width: 80px;
+        border-radius: 20px;
+        margin-left: 5%;
+        margin-top: 2%;
+    }
 
-.container{
-    background-image: url(../../public/images/fundo-degrade.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 20px;
-    margin-left: 5%;
-    margin-top: 2%;
+    .iden h1 {
+        color: #594614;
+        margin-bottom: 0em;
+        font-size: 70px;
+    }
+    
+    .iden p {
+        color: #DE9E3E;
+        font-size: 50px;
+        padding-bottom: 0px;
+    }
 }
 
 #info-page div{
@@ -43,7 +54,6 @@
 }
 
 
-
 @media(max-width:1062px){
     #info-page div{
         min-width: 90vw;
@@ -53,8 +63,6 @@
     .loc-image{
         width: 60%;
     }
-
-
 }
 
 @media(max-width:532px){
@@ -66,6 +74,5 @@
     .loc-image{
         width: 100%;
     }
-
-
 }  
+

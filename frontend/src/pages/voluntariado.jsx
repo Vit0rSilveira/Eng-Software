@@ -90,8 +90,6 @@ function Voluntariado(){
     }, [verificar])
 
 
-
-    
     return(
         <>
             <Header 

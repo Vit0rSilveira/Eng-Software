@@ -21,11 +21,11 @@ main {
 
 #questions {
     margin: 2%;
-    width: 100%;
+    width: 70%;
 }
 
 #questions h1 {
-    margin-bottom: 10vh; /* Espaçamento abaixo do título "Perguntas Frequentes" */
+    margin-bottom: 5vh; /* Espaçamento abaixo do título "Perguntas Frequentes" */
 }
 
 #questions p {
@@ -37,19 +37,35 @@ main {
     display: grid;
     padding: 5%;
     grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas de largura igual */
-    gap: 40px; /* Espaçamento entre as perguntas */
+    gap: 10px; /* Espaçamento entre as perguntas */
     margin: auto;
 }
 
 .box-text {
-    width: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color:#F9C745;
+    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.616);
+    border-radius: 20px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+}
+
+.box-text-alter {
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 5%;
     margin-bottom: 5%;
-    background-color:whitesmoke;
+    background-color:#F9B145;
     box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.616);
     border-radius: 20px;
     padding-left: 3%;
@@ -58,12 +74,76 @@ main {
 }
 
 .box-text h1 {
-    color: #022859;
+    color: black;
     margin-bottom: 1em;
 }
 
 .box-text p {
-    color: black;
+    color: white;
     font-size: 30px;
     padding-bottom: 0px;
+}
+
+.box-text-alter h1 {
+    color: black;
+    margin-bottom: 1em;
+}
+
+.box-text-alter p {
+    color: white;
+    font-size: 30px;
+    padding-bottom: 0px;
+}
+
+.eventos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    /*margin-bottom: 5%; */
+    background-color:white;
+    /* padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%; */
+}
+
+.eventos h1 {
+    color: #594614;
+    margin-bottom: 0em;
+    font-size: 70px;
+}
+
+.eventos p {
+    color: #DE9E3E;
+    font-size: 50px;
+    padding-bottom: 0px;
+}
+
+.eventos-text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    background-color:#F9B145;
+    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.616);
+    border-radius: 20px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+}
+
+.eventos-text h2 {
+    color: black;
+    margin-bottom: 1em;
+}
+
+.eventos-text p2 {
+    color: white;
+    font-size: 30px;
+    padding-bottom: 5px;
+    margin-bottom: 50px;
 }
