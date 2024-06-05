@@ -22,6 +22,7 @@ function Acoes() {
         <>
         <Header 
             headerText1 = {'Noticias'} 
+            page = "noticias"
         />
         <div id="centralize">
             <div id = "conteinerNoticia">

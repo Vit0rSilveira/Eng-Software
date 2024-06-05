@@ -6,7 +6,9 @@
         //headerText2 = {'Linha2'}/>
         //isHomePage = {true}/>
         //isImage = {true}/>
+        //page = ''
 //Coloque apenas o headerText1 caso tenha somente uma linha no header
+//Cosulte a page no header_items abaixo
 //default do isHomePage = false
 //default do isImage = true
 
@@ -16,6 +18,15 @@ import "../styles/components/header.css"
 import { RxHamburgerMenu } from "react-icons/rx";
 
 function Header(props) {
+
+    const header_items = [
+        {nome:'quem-somos',ref:'/info',texto:'Quem Somos'},
+        {nome:'doacao',ref:'/doacao',texto:'Doacao'},
+        {nome:'seja-voluntario',ref:'/voluntariado',texto:'Seja Voluntario'},
+        {nome:'noticias',ref:'/acoes',texto:'Noticias'},
+        {nome:'colaboradores',ref:'/patrocinadores',texto:'Colaboradores'},
+    ];
+    const pagina_atual = props.page;
 
     function handleMenuClick(){
         let a = document.getElementsByName('menu')[0];
@@ -32,12 +43,12 @@ function Header(props) {
                 <a href='/'><img src="../../public/images/logo2.jpg" alt="Logotipo do Pão Fraterno" id="logo-pao-fraterno"/></a>
             </div>
             {/* navbar */}
+            
             <ul class='collapse-xl header-ul'>
-                <li> <a href='/info'>Quem somos</a></li>
-                <li> <a href='/doacao'>Doação</a></li>
-                <li> <a href='/voluntariado'>Seja voluntário</a></li>
-                <li> <a href='/acoes'>Notícias</a></li>
-                <li> <a href='/patrocinadores'>Colaboradores</a></li>
+                {header_items.map((i) => i.nome == pagina_atual
+                    ? <li class='header-li selected-page-header'><a href = {i.ref}>{i.texto} </a></li>
+                    : <li class='header-li'><a href = {i.ref}>{i.texto} </a></li>
+                )}
             </ul>
             {/* hamburguer */}
              <div class='show-xl'>

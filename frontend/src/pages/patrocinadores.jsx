@@ -8,7 +8,9 @@ function Patrocinadores() {
 
     return (
         <>
-            <Header headerText1 = {'Colaboradores'} />
+            <Header headerText1 = {'Colaboradores'} 
+            page = "colaboradores"/>
+            
             <div className="conteinerColaborador">
                 <ColaboradorCard
                     nome = "Universidade de São Paulo"

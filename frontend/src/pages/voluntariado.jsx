@@ -95,6 +95,7 @@ function Voluntariado(){
             <Header 
                 headerText1 = {'Cadastro de Voluntários'}
                 isHomePage = {false}
+                page='seja-voluntario'
             />
 
 

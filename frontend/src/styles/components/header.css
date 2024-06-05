@@ -27,6 +27,7 @@ header #logo-pao-fraterno {
     list-style-type: none;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 24px;
     margin-right: 1em;
 }
@@ -47,6 +48,12 @@ header #logo-pao-fraterno {
 .show-xl{
     margin-right: 40px;
     display:none;
+}
+
+.selected-page-header{
+    background-color: #F9C745;
+    border-radius: 2em;
+    padding: 0.4em;
 }
 
 /* Header Image */
