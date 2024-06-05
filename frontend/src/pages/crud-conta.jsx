@@ -1,12 +1,15 @@
 import '../styles/pages/crud-conta.css';
 import HeaderADM from '../components/header_adm';
 import React, { useState, useEffect } from "react";
+import { deleteUsuario, getUsuario, postUsuario} from '../services/usuarioService';
+import bcrypt from 'bcryptjs'
 
 
 function CRUD_Conta(){
     //usados na verificacao de erros
     const [primeiro, setPrimeiro] = useState(true);
     const [verificar, setVerificar] = useState(false);
+    const [validado, setValidado] = useState(false);
 
     //valor dos inputs
     const [emailAnt, setEmailAnt] = useState('');
@@ -43,7 +46,16 @@ function CRUD_Conta(){
     
     //ativado com o botao confirmar
     //validada os itens do login
-    const validarEdit = () => {
+    async function validarEdit () {
+        
+        //pega usuario do banco
+        let usuarios = await getUsuario()
+        if(usuarios.length > 1) 
+        {
+            console.log("Tem mais de 1 usuario!")
+            return
+        }
+        let usuario = usuarios[0]
         
         //reseta os variaveis de erro
         resetarErro()
@@ -52,7 +64,8 @@ function CRUD_Conta(){
         if(emailAnt == "")
             setErroEmailAnt(true);
 
-        if (emailNovo == "")
+        const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/ //para validar email
+        if (!regex.test(emailNovo))
             setErroEmailNovo(true);
 
         if(emailNovo !== emailNovoConf)
@@ -70,27 +83,40 @@ function CRUD_Conta(){
         if(textoConf == "")
             setErroTextoConf(true);
 
-        //////////////////////////////////
-        //Modificar essa parte para conectar com o backend
-        //
-        //if(emailAnt != emailDB)
-        //    setErroEmailAnt(true);
-        //if(senhaAnt != senhaDB)
-        //    setErroSenhaAnt(true);
-        //////////////////////////////////
+        if(emailAnt != usuario.login)
+           setErroEmailAnt(true);
+
+        if(!bcrypt.compareSync(senhaAnt,usuario.senha ))
+           setErroSenhaAnt(true);
         
         //atualiza verificar para entrar no useEffect 
         setVerificar(!verificar)
     }
 
-    //se nao tiver erro, vai para aba de administrador
+    async function updateUsuario(){
+        //delete usuario
+        let deletado = await deleteUsuario(emailAnt)
+        if(!deletado) return
+        
+        //post usuario
+        const salt = bcrypt.genSaltSync()
+        const hashedPassWord = bcrypt.hashSync(senhaNova, salt)
+        let postado = await postUsuario(emailNovo, hashedPassWord, textoConf)
+        if(!postado) return
+
+        //vai para tela de sucesso
+        window.location.href = "/crud_conta_sucesso"
+    }
+
+    //se nao tiver erro, atualiza usuario e vai para aba de administrador
     //foi colocado no useEffect, porque nao da para atualizar um state e ver o state atualizado na mesma funcao
     useEffect(()=>{
         if(primeiro) setPrimeiro(false)
-        else if(!erroEmailAnt && !erroEmailNovo && !erroEmailNovoConf &&
-                !erroSenhaAnt && !erroSenhaNova && !erroSenhaNovaConf && !erroTextoConf)
+            else if(!validado && !erroEmailAnt && !erroEmailNovo && !erroEmailNovoConf &&
+        !erroSenhaAnt && !erroSenhaNova && !erroSenhaNovaConf && !erroTextoConf)
         {
-            window.location.href = "/crud_conta_sucesso"
+            setValidado(true);
+            updateUsuario()
         }
     }, [verificar])
 
@@ -117,7 +143,7 @@ function CRUD_Conta(){
                             type="text" 
                         />
                     </div>
-                    {erroEmailAnt && <div className="textoErroEditC textoErro">Preencha o email válido</div>}
+                    {erroEmailAnt && <div className="textoErroEditC textoErro">O email está errado</div>}
 
                     {/* Email Novo */}
                     <div className="TextoEInputEditC">
@@ -150,7 +176,7 @@ function CRUD_Conta(){
                             type="password" 
                         />
                     </div>
-                    {erroSenhaAnt && <div className="textoErroEditC textoErro">Preencha a senha antiga</div>}
+                    {erroSenhaAnt && <div className="textoErroEditC textoErro">A senha está errada</div>}
 
                     {/* Senha Nova */}
                     <div className="TextoEInputEditC">
