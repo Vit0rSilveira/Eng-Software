@@ -45,7 +45,7 @@ function Header(props) {
             </div>
         </header>
         {/* menu para telas pequenas */}
-        <ul name='menu' class='header-ul show-xl menu-onclick'>
+        <ul name='menu' class='header-ul show-xl header-menu-onclick'>
                 <a href='/info'><li>Quem Somos</li></a>
                 <div class = "boxline"></div>
                 <a href='/doacao'><li>Doação</li></a>

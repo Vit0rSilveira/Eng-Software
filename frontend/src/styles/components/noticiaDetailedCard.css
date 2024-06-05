@@ -77,10 +77,10 @@ padding-bottom: 4em;
 /*tamanho para telas pequenas*/
 @media (max-width:550px){
     #contNoticiaDetCard{font-size: 0.66em;}
-    #noticiaDetDescricao{font-size: 0.9em;}
+    #noticiaDetDescricao{font-size: 1em;}
 }
 /*tamanho para telas mais pequenas*/
 @media (max-width:450px){
     #contNoticiaDetCard{font-size: 0.5em !important;}
-    #noticiaDetDescricao{font-size: 0.8em;}
+    #noticiaDetDescricao{font-size: 1em;}
 }
