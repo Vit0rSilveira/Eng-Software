@@ -19,7 +19,7 @@ router.get('/:login', async (req, res) => {
         const login = req.params.login;
         const usuario = await User.findOne({login: login})
 
-        return res.status(200).json({usuarios : usuario})
+        return res.status(200).json({usuario : usuario})
     }
     catch(erro) {
         return res.status(500).json({erro : erro})
@@ -62,9 +62,9 @@ router.patch("/:login", async (req, res) => {
     }
 
     try {
-        const updatePerson = await User.updateOne({ login: loginBuscado }, user)
+        const updateUser = await User.updateOne({ login: loginBuscado }, user)
 
-        if (updatePerson.matchedCount === 0)
+        if (updateUser.matchedCount === 0)
             return res.status(422).json({ message: "Usuário não encontrado" })
 
         return res.status(200).json({ message: "Usuário atualizado com sucesso" })
