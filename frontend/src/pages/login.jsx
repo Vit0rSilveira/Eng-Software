@@ -1,5 +1,7 @@
 import '../styles/pages/login.css';
 import React, { useState, useEffect } from "react";
+import {getUsuario} from "../services/usuarioService";
+import bcrypt from 'bcryptjs'
 
 function Login(){
 
@@ -24,28 +26,34 @@ function Login(){
         setSenhaVazia(false);
         setEmailVazio(false);
     }
-
-
     
     //ativado com o botao confirmar
     //validada os itens do login
-    const validarLogin = () => {
-        
+    async function validarLogin() {
+        //pega usuario do banco
+        let usuarios = await getUsuario()
+        if(usuarios.length != 1) 
+        {
+            console.log("Tem mais de 1 usuario!")
+            return
+        }
+        let usuario = usuarios[0]
+
         //reseta os variaveis de erro
         resetarErro()
         
-        //verifica erro
+        
+        //verificacao de erros
+        
+        //compara senha
+        const senhaCorreta = bcrypt.compareSync(senha, usuario.senha)
+        
         if(email === "")
             setEmailVazio(true)
         if(senha === "")
             setSenhaVazia(true)
-
-        //////////////////////////////////
-        //Modificar essa parte para conectar com o backend
-        //
-        //else if((email != emailDB || senha != senhaDB) && email != "" && senha != "")
-        //   setInvalido(true)
-        //////////////////////////////////
+        else if((email != usuario.login || !senhaCorreta) && email != "" && senha != "")
+            setInvalido(true)
         
         //atualiza verificar para entrar no useEffect 
         setVerificar(!verificar)
@@ -60,6 +68,7 @@ function Login(){
             window.location.href = "/cadastro"
         }
     }, [verificar])
+
 
     return(
         <>

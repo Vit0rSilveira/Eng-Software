@@ -94,13 +94,13 @@ header #logo-pao-fraterno {
         display:block;
     }
 
-    .menu-onclick{
+    .header-menu-onclick{
         position: absolute;
         z-index: 2;
         height: 0;
         width: 100%;
 
-        transition: all 0.7s;
+        transition: all 0.6s;
         overflow: hidden;
         
         border-width: 0;
@@ -117,7 +117,7 @@ header #logo-pao-fraterno {
         margin-bottom: -0.5em;
         height: 0;
     }
-    .menu-onclick.show{
+    .header-menu-onclick.show{
         height: 13em;
         border-width: 1px 0px 0px 0px;
     }
@@ -136,7 +136,7 @@ header #logo-pao-fraterno {
     .header-ul li {
         font-size: 0.7em;
     }
-    .menu-onclick.show{
+    .header-menu-onclick.show{
         height: 8em;
     }
 }
