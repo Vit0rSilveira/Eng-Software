@@ -1,78 +1,225 @@
-#info-page h1{
-    margin-bottom:15px;
-    color: #022859;
-    padding-top: 3%;
-    padding-left: 5%;
+/* geral */
+.hideInBigDisplay{
+    display: none;
 }
-#info-page p{
-    margin-bottom:15px;
-    color: black;
-    font-size: 26px;
-    padding-left: 5%;
-    padding-right: 5%;
+.hideInSmallDisplay{
+    display: block;
 }
 
-#info-page{
+/* Quem Somos */
+#info-cont{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    
-}
-
-@media(max-width:800px){
-    .iden{
-        width: 80px;
-        border-radius: 20px;
-        margin-left: 5%;
-        margin-top: 2%;
-    }
-
-    .iden h1 {
-        color: #594614;
-        margin-bottom: 0em;
-        font-size: 70px;
-    }
-    
-    .iden p {
-        color: #DE9E3E;
-        font-size: 50px;
-        padding-bottom: 0px;
-    }
-}
-
-#info-page div{
-    min-width: 60%;
-    max-width: 60%;
-}
-
-.loc-image{
-    align-self:center;
-    height: 100%;
     width: 100%;
 }
+#quem-cont{
+    margin-top: 6em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 55em;
+}
+#quem-img{
+    width: 40%;
+    box-shadow: 0.3em 0.3em 0.4em #0000004b;
+}
+#quem-texto-cont{
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items:start;
+}
+#quem-titulo{
+    text-align: left;
+}
+#quem-barra{
+    border-color: #f3dd3b;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+    margin-top: -2.5em;
+}
 
 
-@media(max-width:1062px){
-    #info-page div{
-        min-width: 90vw;
-        padding:5px;
+/* Objetivo */
+#objetivo-cont{
+    margin-top: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #F9C745;
+    padding: 3em 0 3em 0;
+}
+#objetivo-titulo{
+    color: #392600;
+}
+#objetivo-texto{
+    margin-left: 3em;
+    width: 45em;
+}
+
+
+/* Principais atividades */
+/* Doacao de kit */
+#atv-titulo{
+    margin-top: 4em;
+}
+#kitAlim-cont, #evento-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9D144;
+    width: 55em;
+    margin-top: 4em;
+    padding-bottom: 3em;
+}
+#kitAlim-titulo, #evento-titulo{
+    margin-top: 1em;
+    position: relative;
+    left: -6em;
+    color: #392600;
+    font-size: 1.8em;
+}
+#kitAlim-subcont, #evento-subcont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2em;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+#kitAlim-texto, #evento-texto{
+    width: 70%;
+    margin: -1em 0.5em -1em 0.5em;
+}
+#kitAlim-img, #evento-img{
+    width: 35%;
+    margin: -1em 0.5em -1em 0.5em;
+    box-shadow: 0.3em 0.3em 0.4em #0000004b;
+}
+
+/* Eventos */
+#evento-cont{
+    background-color: #F9C745;
+}
+#evento-titulo{
+    left: -11em;
+    margin-bottom: 0.7em;
+}
+
+/* Historia */
+#hist-cinza-cont{
+    display: flex;
+    justify-content: center;
+    background-color: #eaeaea33;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-bottom: 6em;
+    margin-top: 9em;
+    width: 100%;
+}
+#hist-cont{
+    width: 60em;
+}
+#hist-titulo{
+    font-size: 2.2em;
+    margin-bottom: 1.5em;
+}
+#hist-subcont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2em 5% 0 5%;
+    width: 90%;
+
+}
+#hist-texto{
+    width: 70%;
+    margin: -1em 0.5em -1em 0.5em;
+    font-size: 0.95em;
+}
+#hist-img{
+    width: 35%;
+    margin: -1em 1em -1em 1em;
+    box-shadow: 0.3em 0.3em 0.4em #0000004b;
+}
+
+
+
+/*tamanho para telas medias*/
+@media (max-width:1000px){
+    /* geral */
+    #quem-titulo, #objetivo-titulo, #atv-titulo, #historia-titulo{
+        font-size: 1.9em;
+    }
+    .hideInBigDisplay{
+        display: block;
+    }
+    .hideInSmallDisplay{
+        display: none;
     }
 
-    .loc-image{
+    /* quem somos */
+    #quem-cont{
+        flex-direction: column;
+        width: 85%;
+    }
+    #quem-texto-cont{margin-top: 3em;}
+
+    /* Objetivo */
+    #objetivo-cont{
+        flex-direction: column;
+        padding: 2em 0 2em 0;
+    }
+    #objetivo-titulo{
+        margin-bottom: 0.5em;
+    }
+    #objetivo-texto{
+        width: 85%;
+    }
+
+    /* Principais Atividades */
+    #kitAlim-cont, #evento-cont{
+        width: 85%;
+    }
+    #kitAlim-titulo, #evento-titulo{
+        padding-left: 1em;
+        padding-right: 1em;
+        margin-bottom: 0em;
+        left: 0;
+    }
+    #kitAlim-subcont, #evento-subcont{
+        flex-direction: column;
+    }
+    #kitAlim-texto, #kitAlim-img, #evento-texto, #evento-img{
+        margin: 1em;
+        width: 80%;
+    }
+
+    /* Historia */
+    #hist-subcont{
+        flex-direction: column;
+    }
+    #hist-titulo{
+        margin-bottom: 0em;
+    }
+    #hist-texto, #hist-img{
+        margin: 1em;
+        width: 80%;
+    }
+    #hist-img{
+        margin: 1em;
         width: 60%;
     }
 }
 
-@media(max-width:532px){
-    #info-page div{
-        min-width: 90vw;
-        padding:5px;
-    }
-
-    .loc-image{
-        width: 100%;
-    }
-}  
-
+/*tamanho para telas medias*/
+@media (max-width:500px){
+    #info-cont{font-size: 0.8em;}
+}

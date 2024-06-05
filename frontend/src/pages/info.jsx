@@ -1,51 +1,135 @@
 import '../styles/pages/info.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
 function Info(){
+
+    const imgDir = "../public/images/quemSomos/"
+
     return(
         <>
             <Header 
-                headerText1 = {'Pão Fraterno André Luiz'}
-                isHomePage = {false}
+                headerText1 = {'Pão Fraterno'}
+                headerText2 = {'André Luiz'}
+                page = "quem-somos"
             />
-            <div id = 'info-page'>
-                <div id="identidade" className="iden">
-                    <h1> Quem somos</h1>
-                    <p> Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos próprios alunos da USP de São 
-                    Carlos.</p> 
-                    <p>Começamos como um grupo que aceitava apenas alimentos basicos, roupas e cobertores. Hoje em dia 
-                    aceitamos os mais diversos alimentos, o nosso foco sao verduras, que é essencial para fazer nossa principal 
-                    refeição, a sopa, distribuída todas as sextas-feiras.</p>
-                    <p>Aceitamos produtos de higiene básica como papel 
-                    higienico e sabonetes, tambem recolhemos roupas para o inverno ou não, roupas intimas, cobertores e 
-                    mantas. Recebemos como muita alegria e gratidão sua doação.</p>
-                </div>
-                <div id="identidade" className="iden">
-                    <h1> Localizacao </h1>
-                    <p>R. Costa do Sol,450 - Vila Costa do Sol, São Carlos - SP, 13566-070</p>
-                    <div class='localizacao'>
-                        {/* Por enquanto só uma imagem para demonstração
-                        Depois vejo como faz isso de verdade */}
-                        <img class='loc-image' src='../../public/images/mapa.png'/>
+
+
+            <div id = "info-cont">
+
+            {/* Quem Somos */}
+                <div id = "quem-cont">
+                    <img id = "quem-img" src={`${imgDir}casaDoCaminho.png`} alt="" />
+                    <div id = "quem-texto-cont">  
+                        <p id="quem-titulo" className = "titulo">
+                            Quem Somos
+                        </p>
+                        <p id="quem-barra"></p>
+                        <p id="quem-texto" className = "textoLaranja">
+                        Falar sobre: area de atuacao, que tipo de grupo, numero de pessoas envolvidas envolvidas. 
+                        Pode mudar a altura do conteiner conforme o tamanho do texto e imagem colocado. 
+                        Deixar um espaco entre `saiba mais` e o texto. 
+                        </p>
                     </div>
                 </div>
-                <div id="identidade" className="iden">
-                    <h1>Por que doar?</h1>
-                    <p> Todos nós temos dentro de nós o poder de fazer uma diferença significativa no mundo ao nosso redor. Um dos
-                    atos mais impactantes que podemos realizar é a doação. Quando decidimos dar de nós mesmos, não apenas
-                     estamos ajudando aqueles que precisam, mas também estamos cultivando um espírito de generosidade e 
-                     compaixão que reverbera positivamente em toda a sociedade. 
-                     </p>
-                    <p>Quando doamos nosso tempo, dinheiro ou 
-                    recursos para causas dignas, estamos oferecendo esperança e oportunidade para aqueles que enfrentam
-                    desafios. Cada contribuição, por menor que pareça, cria um impacto poderoso. Imagine o sorriso no
-                    rosto de alguém que recebe ajuda quando mais precisa. Seja alimentando famílias necessitadas, doando 
-                    um pouco do seu tempo para ajudar se voluntariando, cada gesto de doação abre portas para um futuro mais brilhante.
+
+
+                {/* Objetivo */}
+                <div id = "objetivo-cont">
+                    <div id = "objetivo-titulo" className='titulo'>
+                        Objetivo
+                    </div>
+                    <p id="objetivo-texto" className = "textoBranco">
+                    Escrever sobre o objetivo. Pode escrever outra coisa tambem aaaaaaa aaa aaaaa aaaaaaa aaaaaaaaaaaa aaaaaaa aaaaaaaa aaa aaaa aaaaaaaaaaaaaaaaaaaaaa.  aaaaaaaaaaaa aaaaaaa aaaaaaaa aaa aaaa aaaaaaaaaaaaaaaaaaaaaa.  aaaaaaaaaaaa aaaaaaa aaaaaaaa aaa aaaa aaaaaaaaaaaaaaaaaaaaaa.
                     </p>
                 </div>
+
+                {/* Principais atividades */}
+                <div id = "atv-titulo" className='titulo'>Principais atividades</div>
+                {/* Doacao de kit de alimento*/}
+                <div id = "kitAlim-cont">
+                    <div id = "kitAlim-titulo" className='titulo'>
+                        Doações de kit de alimento
+                    </div>
+                    {/* Para tela grande */}
+                    <div className='hideInSmallDisplay'>
+                        <div id="kitAlim-subcont">
+                            <div id="kitAlim-texto" className='textoBranco'>
+                                aaaaaaa aaa aaaaa aaa aaaa aa aaaaa aaaaaaa aa aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
+                            </div>
+                            <img id = "kitAlim-img" src={`${imgDir}montagem.png`} alt="" />
+                        </div>
+                        <div id="kitAlim-subcont">
+                            <img id = "kitAlim-img" src={`${imgDir}entrega.png`} alt="" />
+                            <div id="kitAlim-texto" className='textoBranco'>
+                            aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
+                            </div>
+                        </div>
+                    </div>
+                    {/* Aparece apenas no site pequeno */}
+                    <div className='hideInBigDisplay'>
+                        <div id="kitAlim-subcont">
+                            <img id = "kitAlim-img" src={`${imgDir}montagem.png`} alt="" />
+                            <div id="kitAlim-texto" className='textoBranco'>
+                                aaaaaaa aaa aaaaa aaa aaaa aa aaaaa aaaaaaa aa aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
+                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                {/* Eventos */}
+                <div id = "evento-cont">
+                    <div id = "evento-titulo" className='titulo'>
+                        Eventos
+                    </div>
+                    <div id="evento-subcont">
+                        <img id = "evento-img" src={`${imgDir}montagem.png`} alt="" />
+                        <div id="evento-texto" className='textoBranco'>
+                        aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaaaaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaaaaaa a aaaa aaa aaa a
+                        </div>
+                    </div>
+                </div>
+                
+                {/* Historia */}
+                <div id="hist-cinza-cont">
+                    <div id="hist-cont">
+
+                        <div id="hist-titulo" className='titulo'>História</div>
+                        <div className='hideInSmallDisplay'>
+                            <div id="hist-subcont">
+                                <img id = "hist-img" src={`${imgDir}historia1.png`} alt="" />
+                                <div id="hist-texto" className='textoLaranja'>
+                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
+                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
+                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa a
+                                </div>
+                            </div>
+                            <div id="hist-subcont">
+                                <div id="hist-texto" className='textoLaranja'>
+                                    aaaaaaa aaa aaaaa aaa aaaa aa aaaaa aaaaaaa aa aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
+                                    a aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
+                                </div>
+                                <img id = "hist-img" src={`${imgDir}historia2.png`} alt="" />
+                            </div>
+                        </div>
+                        <div className='hideInBigDisplay'>
+                            <div id="hist-subcont">
+                                <img id = "hist-img" src={`${imgDir}historia1.png`} alt="" />
+                                <div id="hist-texto" className='textoLaranja'>
+                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
+                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
+                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa a
+                                aaaaaaa aaa aaaaa aaa aaaa aa aaaaa aaaaaaa aa aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
+                                    a aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <Footer/>
         </>
     )
