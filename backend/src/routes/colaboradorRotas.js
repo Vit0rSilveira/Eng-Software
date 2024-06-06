@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     try {
         const colaboradores = await Colaborador.find();
 
-        return res.status(200).json({produto: colaboradores});
+        return res.status(200).json({colaboradores: colaboradores});
     } catch (error) {
         console.log(error);
         return res.status(500).json({ error: error.message });

@@ -23,6 +23,19 @@ async function deletar_imagem(path) {
     }
 }
 
+function parseDate(dateString) {
+    const [day, month, year] = dateString.split('/');
+    return new Date(year, month - 1, day);
+}
+
+function combineDateAndTime(date, timeString) {
+    const [hours, minutes] = timeString.split(':');
+    const combinedDate = new Date(date);
+    combinedDate.setHours(hours);
+    combinedDate.setMinutes(minutes);
+    return combinedDate;
+}
+
 
 const utils = {
     salvar_imagem,
