@@ -33,7 +33,7 @@ router.post('/', upload.single('imagem'), async (req, res) => {
     const { nome, data, horario_inicio, horario_fim, endereco} = req.body;
     const imagem = req.file.path;
     try {
-        const buscaDB = await Evento.findOne({ nome });
+        const buscaDB = await Evento.findOne({ nome : nome });
 
         if (buscaDB) {
             return res.status(422).json({ message: 'Evento já cadastrado.' });
