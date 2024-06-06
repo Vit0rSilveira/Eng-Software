@@ -1,5 +1,6 @@
 import HeaderADM from '../components/header_adm.jsx';
 import Evento from '../components/evento.jsx';
+import Colaborador from '../components/colaborador.jsx';
 import '../styles/pages/editar_informacoes.css';
 import React, {useState} from 'react';
 
@@ -13,7 +14,10 @@ function Edit_Info(){
             endereco: "",
         };
 
-        let colaboradorValues ={}
+        let colaboradorValues ={
+            nome:"",
+            url:""
+        }
         
         function handleFileSelection(){
             let  nome_arquivo = document.getElementById('selecionar-arquivo').files[0].name;
@@ -24,7 +28,6 @@ function Edit_Info(){
         function handleBtnAdicionar(selection){
             if(selection == 'eventos'){
                 const {titulo,data,horario_inicio,horario_fim,endereco} = eventoValues;
-                console.log(titulo,data,horario_inicio,horario_fim,endereco);
                 if(!(titulo && data && horario_fim && horario_inicio && endereco)){
                     alert("Preencha todos os campos");
                     return;
@@ -32,8 +35,12 @@ function Edit_Info(){
                 setEventos([...eventos,{...eventoValues}]);
             }
             else if(selection == 'colaboradores'){
-                alert('todo!');
-                return;
+                const {nome,url} = colaboradorValues;
+                if(!(nome,url)){
+                    alert("Preencha todos os campos");
+                    return;
+                }
+                setColaboradores([...colaboradores,{...colaboradorValues}])
             }
             else{
                 console.log('unreachable');
@@ -57,6 +64,18 @@ function Edit_Info(){
 
         function handleEnderecoChange(event){
             eventoValues.endereco = event.target.value;
+        }
+
+        function colabHandleNomeChange(event){
+            colaboradorValues.nome=event.target.value;
+        }
+
+        function colabHandleURLChange(event){
+            colaboradorValues.url=event.target.value;
+        }
+
+        function colabHandleFileChange(event){
+
         }
 
         let selection = props.selection;
@@ -101,17 +120,17 @@ function Edit_Info(){
                     <h1 className="Titulo">Adicionar Colaborador</h1>
                     <div>
                         <h2>Nome:</h2>
-                        <input type='text'></input>
+                        <input onChange={colabHandleNomeChange} type='text'></input>
                     </div>
                     <div>
-                        <h2>Imagem:</h2>
+                        <h2>Imagem:</h2>    
                         <input type="file" id="selecionar-arquivo" style={{display:'none'}} onChange={handleFileSelection}/>
                         <button className='button-choose' onClick={()=> document.getElementById('selecionar-arquivo').click()}>Escolher Foto</button>
                         <p id='input-field-fileName'className='inline-text'></p>
                     </div>
                     <div>
                         <h2>URL:</h2>
-                        <input type='text'></input>
+                        <input onChange={colabHandleURLChange} type='text'></input>
                     </div>
                     <div className='content'></div>
                     <button className='button-adicionar' onClick={()=>handleBtnAdicionar('colaboradores')}>Adicionar</button>
@@ -142,19 +161,10 @@ function Edit_Info(){
 
     let [colaboradores,setColaboradores] = useState([
         {
-            titulo: "Brechó de roupas",
-            data: "11/05/2024",
-            horario_inicio: "12:00",
-            horario_fim: "15:00",
-            endereco: "Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070",
+            nome:'Universidade de São Paulo',
+            url: 'https://www.usp.br',
+            imagem: '../public/images/colaborador/USPLogo.png'
         },
-        {
-            titulo: "Venda de pizza",
-            data: "19/05/2024",
-            horario_inicio: "11:00",
-            horario_fim: "16:00",
-            endereco: "Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070",
-        }
     ]);
 
     let btnEventosClass = '';
@@ -171,6 +181,11 @@ function Edit_Info(){
         setEventos([...eventos]);
     }
 
+    function removeColaborador(index){
+        colaboradores.splice(index,1)
+        setColaboradores([...colaboradores]);
+    }
+
 
     return(
         <>
@@ -185,7 +200,7 @@ function Edit_Info(){
             </div>
             {selection == 'eventos' 
                 ? 
-                <div id="container-lista-eventos">
+                <div id="container-lista">
                 {eventos.map((evento,index)=> 
                     <Evento id={index} endereco={evento.endereco} titulo={evento.titulo} data={evento.data}
                     horario_fim={evento.horario_fim} horario_inicio={evento.horario_inicio} onClick={removeEvento}/>)}
@@ -193,8 +208,9 @@ function Edit_Info(){
 
                 : 
                 
-                <div id='container-lista-colaboradores'>
-                    
+                <div id='container-lista'>
+                    {colaboradores.map((c,index)=> 
+                    <Colaborador {...c} index={index} callback={removeColaborador}/>)}
                 </div>
             }
             

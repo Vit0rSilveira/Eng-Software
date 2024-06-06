@@ -1,3 +1,9 @@
+:root {
+    --editar-site-contrast-bg-color:#F9B145;
+    --editar-site-main-bg-color: #F9C745; 
+}
+
+
 #edit-info{
     display: flex;
     background-color: white;
@@ -13,7 +19,7 @@
     width: 260px;
     height: 140px;
     border-radius: 10px;
-    background-color: #f9e445;
+    background-color: var(--editar-site-main-bg-color);
 }
 
 .select-mode button{
@@ -22,17 +28,17 @@
     font-weight: 1000;
     width: 260px;
     height: 70px;
-    background-color: #f9e445;
+    background-color: var(--editar-site-main-bg-color);
     border: none;
     color: white;
     border-radius: 10px;
 }
 
 .selected-btn{
-    background-color: #F9C745 !important;
+    background-color: var(--editar-site-contrast-bg-color) !important;
 }
 
-#container-lista-eventos{
+#container-lista{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,7 +50,7 @@
     width: 700px;
     display: flex;
     flex-direction: column;
-    background-color: #f9e445;
+    background-color: var(--editar-site-main-bg-color);
     margin-left:-50px;
 }
 
@@ -54,7 +60,7 @@
     font-weight: 800;
     font-size: 2em;
     height:60px;
-    background-color:#F9C745 ;
+    background-color: var(--editar-site-contrast-bg-color) ;
     color: white;
     text-align: center;
     width: auto;
@@ -107,7 +113,7 @@
     font-family: "palanquin", Helvetica, sans-serif;
     font-size: 1.3em;
     font-weight: 1000;
-    background-color: #F9C745;
+    background-color: var(--editar-site-contrast-bg-color);
     border-radius: 50px;
     border:none;
     box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -141,7 +147,7 @@
     font-family: "palanquin", Helvetica, sans-serif;
     font-size: 1.3em;
     font-weight: 1000;
-    background-color: #F9C745;
+    background-color: var(--editar-site-contrast-bg-color);
     border-radius: 50px;
     border:none;
     box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -153,7 +159,7 @@
     color: white;
 }
 .container-edit button:hover {
-    background: rgb(241, 189, 56);
+    background: #f1a027;
     transition-duration: 0.1s;
 }
 .container-edit button:active {

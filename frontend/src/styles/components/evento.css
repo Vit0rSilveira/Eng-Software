@@ -9,7 +9,7 @@
 
 .evento-titulo{
     display:flex;
-    background-color: #F9C745;
+    background-color: #F9B145;
     border-top-left-radius: var(--border-r);
     border-top-right-radius: var(--border-r);
     justify-content: space-around;
@@ -19,7 +19,7 @@
 
 .evento-endereco{
     display:flex;
-    background-color: #f9e445;
+    background-color: #F9C745;
     border-bottom-left-radius: var(--border-r);
     border-bottom-right-radius: var(--border-r);
     padding-top: 5px;
