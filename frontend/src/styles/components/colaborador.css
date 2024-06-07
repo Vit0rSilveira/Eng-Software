@@ -39,7 +39,7 @@
     margin-bottom: 20px;
 }
 
-@media(max-width: 600px){
+@media(max-width: 550px){
     #colaborador-container{
         width: 400px;
     }
