@@ -1,8 +1,15 @@
+:root {
+    --editar-site-contrast-bg-color:#F9B145;
+    --editar-site-main-bg-color: #F9C745; 
+}
+
+
 #edit-info{
     display: flex;
     background-color: white;
     justify-content: space-evenly;
     margin-bottom:100px;
+    width: 80vw;
 }
 
 #edit-info .select-mode{
@@ -11,6 +18,8 @@
     align-items: center;
     width: 260px;
     height: 140px;
+    border-radius: 10px;
+    background-color: var(--editar-site-main-bg-color);
 }
 
 .select-mode button{
@@ -19,21 +28,29 @@
     font-weight: 1000;
     width: 260px;
     height: 70px;
-    background-color: #f9e445;
+    background-color: var(--editar-site-main-bg-color);
     border: none;
     color: white;
+    border-radius: 10px;
 }
 
 .selected-btn{
-    background-color: #F9C745 !important;
+    background-color: var(--editar-site-contrast-bg-color) !important;
+}
+
+#container-lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container-edit{
-    height: 600px;
-    width: 900px;
+    border-radius: var(--border-r);
+    height: 550px;
+    width: 700px;
     display: flex;
     flex-direction: column;
-    background-color: #f9e445;
+    background-color: var(--editar-site-main-bg-color);
     margin-left:-50px;
 }
 
@@ -41,17 +58,27 @@
     padding-left: 20px;
     font-family: "palanquin", Helvetica, sans-serif;
     font-weight: 800;
-    font-size: 2.3em;
+    font-size: 2em;
     height:60px;
-    background-color:#F9C745 ;
+    background-color: var(--editar-site-contrast-bg-color) ;
     color: white;
     text-align: center;
-    width: 100%;
+    width: auto;
+    border-top-left-radius: var(--border-r);
+    border-top-right-radius: var(--border-r);
 }
 
 .container-edit div{
     display:flex;
     margin-top: 45px;
+    border-bottom-left-radius: var(--border-r);
+    border-bottom-right-radius: var(--border-r);
+    align-items: flex-start;
+    vertical-align: middle;
+}
+
+.container-edit section{
+    display: flex;
 }
 
 .container-edit h2{
@@ -60,7 +87,7 @@
     font-weight: 700;
     padding-left: 30px;
     color: white;
-    margin-right: 10px;
+    margin-right: 0px;
     width: 200px;
 }
 
@@ -86,7 +113,7 @@
     font-family: "palanquin", Helvetica, sans-serif;
     font-size: 1.3em;
     font-weight: 1000;
-    background-color: #F9C745;
+    background-color: var(--editar-site-contrast-bg-color);
     border-radius: 50px;
     border:none;
     box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -120,7 +147,7 @@
     font-family: "palanquin", Helvetica, sans-serif;
     font-size: 1.3em;
     font-weight: 1000;
-    background-color: #F9C745;
+    background-color: var(--editar-site-contrast-bg-color);
     border-radius: 50px;
     border:none;
     box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -131,11 +158,22 @@
     margin-bottom: 25px;
     color: white;
 }
+.container-edit button:hover {
+    background: #f1a027;
+    transition-duration: 0.1s;
+}
+.container-edit button:active {
+    background-color: #d7a72e;
+}
+.container-edit button:disabled {
+    background-color: #F9C745;
+}
 
 @media(max-width: 1260px){
     #edit-info{
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     #edit-info .select-mode{
@@ -146,5 +184,48 @@
     .container-edit{
         margin-left: 0px;
         width: 700px;
+    }
+}
+
+@media(max-width: 800px){
+    .container-edit div{
+        flex-direction: column;
+        justify-content: space-around;
+        margin:0px;
+        margin-bottom: 10px;
+        align-items: flex-start;
+        padding-left: 10px;
+    }
+    .container-edit{
+        width: 90vw;
+        height: auto;
+    }
+
+    .container-edit h2{
+        padding-left: 0px;
+        font-size: 1.3em;
+        padding-bottom: 10px;
+        align-self: flex-start;
+    }
+    
+    .container-edit .Titulo{
+        font-weight: 800;
+        font-size: 1.5em;
+        height:60px;
+        text-justify: center;
+        margin-bottom: 10px;
+    }
+
+    .button-adicionar{
+        width: 100px;
+        height: 30px;
+        font-size: 1em;
+    }
+
+    .container-edit .button-choose{
+        width: 150px;
+        height: 30px;
+        font-family: "palanquin", Helvetica, sans-serif;
+        font-size: 1em;
     }
 }
