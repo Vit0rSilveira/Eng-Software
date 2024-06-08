@@ -264,3 +264,18 @@
 .text-donate-bottom p{
   color: #DE9E3E;
 }
+
+#hist-cinza-cont{
+  display: flex;
+  justify-content: center;
+  background-color: #eaeaea33;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 6em;
+  margin-top: 9em;
+  width: 100%;
+}
+
+#hist-cont{
+  width: 60em;
+}

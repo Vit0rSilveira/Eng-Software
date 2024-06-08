@@ -12,6 +12,7 @@ function Doacao() {
       <Header 
         headerText1 = {'Formas de Ajudar'}
         isHomePage = {false}
+        page = "doacao"
       />
       <div id = "conteinerMaster">
                 <div class = "titulo">Produtos de Doação</div>
@@ -76,19 +77,23 @@ function Doacao() {
               </div>
 
               <Container>
-                <div class = "text-donate">
-                <img
-                    className="img-fluid"
-                    src="../../public/images/preparo.png"
-                    alt="First slide"
-                />
-                  Preparo
+              <div id="hist-cinza-cont">
+                <div id="hist-cont">
+                  <div class = "text-donate">
+                  <img
+                      className="img-fluid"
+                      src="../../public/images/preparo.png"
+                      alt="First slide"
+                  />
+                    Preparo
+                  </div>
+                  <div class = "text-donate-bottom">
+                    <p>Etapa de preparaçao da sopa, o principal produto da doação.</p>
+                    <p>Horário: 11:00-16:00   toda sexta</p>
+                    <p>Escrever a quantidade feita, numero de pessoas etc</p>
+                  </div>
                 </div>
-                <div class = "text-donate-bottom">
-                  <p>Etapa de preparaçao da sopa, o principal produto da doação.</p>
-                  <p>Horário: 11:00-16:00   toda sexta</p>
-                  <p>Escrever a quantidade feita, numero de pessoas etc</p>
-                </div>
+              </div>
                 <div class = "text-donate">
                   Montagem
                 </div>
@@ -102,32 +107,41 @@ function Doacao() {
                     alt="First slide"
                 />
                 </div>
-                <div class = "text-donate">
-                <img
-                    className="img-fluid"
-                    src="../../public/images/entrega.png"
-                    alt="First slide"
-                />
-                  Entrega
+              <div id="hist-cinza-cont">
+                <div id="hist-cont">
+                  <div class = "text-donate">
+                  <img
+                      className="img-fluid"
+                      src="../../public/images/entrega.png"
+                      alt="First slide"
+                  />
+                    Entrega
+                  </div>
+                  <div class = "text-donate-bottom">
+                    <p>Etapa de entrega do kit de doação.</p>
+                    <p>Horário: 20:00-   toda sexta</p>
+                    <p>Escrever a quantidade feita, numero de pessoas etc</p>
+                  </div>   
                 </div>
-                <div class = "text-donate-bottom">
-                  <p>Etapa de entrega do kit de doação.</p>
-                  <p>Horário: 20:00-   toda sexta</p>
-                  <p>Escrever a quantidade feita, numero de pessoas etc</p>
-                </div>                
+              </div>             
               </Container>
 
               <button class = "defaultButton "
                 >Clique aqui para ser um de nossos integrantes
               </button>
 
-              <div class = "text-donate-above">
-                  Está interessado, mas ainda não sabe o que fazer?
-              </div>
 
-              <button class = "defaultButton "
-                >Aceitamos visitas na casa
-              </button>
+              <div id="hist-cinza-cont">
+                <div id="hist-cont">
+                  <div class = "text-donate-above">
+                      Está interessado, mas ainda não sabe o que fazer?
+                  </div>
+
+                  <button class = "defaultButton "
+                    >Aceitamos visitas na casa
+                  </button>
+                </div>
+              </div>
 
        
       </div>
