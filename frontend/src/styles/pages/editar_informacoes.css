@@ -1,6 +1,6 @@
 :root {
-    --editar-site-contrast-bg-color:#F9B145;
-    --editar-site-main-bg-color: #F9C745; 
+    --contrast-bg-color:#F9B145;
+    --main-bg-color: #F9C745; 
 }
 
 
@@ -19,7 +19,7 @@
     width: 260px;
     height: 140px;
     border-radius: 10px;
-    background-color: var(--editar-site-main-bg-color);
+    background-color: var(--main-bg-color);
 }
 
 .select-mode button{
@@ -28,14 +28,14 @@
     font-weight: 1000;
     width: 260px;
     height: 70px;
-    background-color: var(--editar-site-main-bg-color);
+    background-color: var(--main-bg-color);
     border: none;
     color: white;
     border-radius: 10px;
 }
 
 .selected-btn{
-    background-color: var(--editar-site-contrast-bg-color) !important;
+    background-color: var(--contrast-bg-color) !important;
 }
 
 #container-lista{
@@ -50,7 +50,7 @@
     width: 700px;
     display: flex;
     flex-direction: column;
-    background-color: var(--editar-site-main-bg-color);
+    background-color: var(--main-bg-color);
     margin-left:-50px;
 }
 
@@ -60,7 +60,7 @@
     font-weight: 800;
     font-size: 2em;
     height:60px;
-    background-color: var(--editar-site-contrast-bg-color) ;
+    background-color: var(--contrast-bg-color) ;
     color: white;
     text-align: center;
     width: auto;
@@ -113,7 +113,7 @@
     font-family: "palanquin", Helvetica, sans-serif;
     font-size: 1.3em;
     font-weight: 1000;
-    background-color: var(--editar-site-contrast-bg-color);
+    background-color: var(--contrast-bg-color);
     border-radius: 50px;
     border:none;
     box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -147,7 +147,7 @@
     font-family: "palanquin", Helvetica, sans-serif;
     font-size: 1.3em;
     font-weight: 1000;
-    background-color: var(--editar-site-contrast-bg-color);
+    background-color: var(--contrast-bg-color);
     border-radius: 50px;
     border:none;
     box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);

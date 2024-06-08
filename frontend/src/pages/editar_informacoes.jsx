@@ -134,8 +134,6 @@ function Edit_Info(){
                     </div>
                     <div className='content'></div>
                     <button className='button-adicionar' onClick={()=>handleBtnAdicionar('colaboradores')}>Adicionar</button>
-                    
-
                 </div>
             )
         }

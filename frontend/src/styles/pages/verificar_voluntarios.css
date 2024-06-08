@@ -1,0 +1,113 @@
+#verificar-voluntarios-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#verificar-voluntarios-container #formulario{
+    background-color: var(--main-bg-color);
+    width: 750px;
+    height: 480px;
+    border-radius: var(--border-r) ;
+    margin-top: 100px;
+}
+
+#formulario h1{
+    padding-left: 30px;
+    font-family: "palanquin", Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 2em;
+    height:60px;
+    background-color: var(--contrast-bg-color) ;
+    color: white;
+    width: auto;
+    border-top-left-radius: var(--border-r);
+    border-top-right-radius: var(--border-r);
+}
+
+#formulario h2{
+    font-family: "palanquin", Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-left: 30px;
+    color: white;
+    margin-right: 0px;
+    width: 200px;
+}
+
+#formulario div{
+    display:flex;
+    margin-top: 45px;
+}
+
+#formulario input{
+    height: 2em;
+    width: 300px;
+}
+
+.container-opcoes-filtro{
+    flex-wrap: wrap;
+    margin-top: 0px !important;
+}
+
+#formulario .input-data{
+    width: 150px;
+    margin-left: -50px;
+}
+
+#formulario section{
+    display: flex;
+    margin-left: -50px
+}
+
+#formulario .input-horario{
+    width: 100px;
+}
+
+#formulario .inline-text{
+    font-family: "palanquin", Helvetica, sans-serif;
+    font-size: 1.3em;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#formulario button{
+    font-family: "palanquin", Helvetica, sans-serif;
+    background-color: var(--contrast-bg-color);
+    border-radius: 50px;
+    border:none;
+    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
+    margin-right: 40px;
+    margin-bottom: 25px;
+    color: white;
+}
+#formulario .btn-adicionar{
+    width: 100px;
+    height: 40px;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+#formulario .container-btn{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+#formulario .btn-filtro{
+    width: 100px;
+    height: 25px;
+    font-size: 1em;
+}
+#formulario button:hover {
+    background: #f1a027;
+    transition-duration: 0.1s;
+}
+#formulario button:active {
+    background-color: #d7a72e;
+}
+#formulario button:disabled {
+    background-color: #F9C745;
+}
