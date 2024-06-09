@@ -1,0 +1,86 @@
+import '../styles/components/listaVoluntario.css'
+import { FaRegTrashCan } from "react-icons/fa6";
+import { FaCircleCheck } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+
+
+export function ItemVoluntario(props){
+
+    function TextoVoluntario({tipo,texto}){
+        console.log(tipo)
+        if(tipo == 'doação'){
+            let txt = '';
+            for(let t of texto){
+                txt += t + ', '
+            }
+            txt = txt.slice(0,txt.length - 2);
+            
+            return <p>Produtos: {txt}</p>
+        }
+        else if(tipo == 'visita')
+            return <p>Motivo: {texto}</p>
+        else if(tipo == 'retirada'){
+            return <p>Endereço: {texto}</p>
+        }
+            
+    }
+
+    let nome = props.nome
+    let horario_inicio = props.horario_inicio;
+    let horario_fim = props.horario_fim;
+    let tipo = props.tipo;
+    let data = props.data;
+    let descricao = props.descricao;
+    let email = props.email;
+    let telefone = props.telefone;
+
+    let horario = horario_fim ? horario_inicio + '-' + horario_fim : horario_inicio;
+    
+    return(
+        <>
+            <div id='voluntario-container'>
+                <div className="voluntario-info">
+                    <h2 className="">{nome}</h2>
+                    <h2 className="">Tipo: {tipo}</h2>
+                    <h2 className="">Data: {data}</h2>
+                    <h2 className="">{horario}</h2>
+                </div>
+                <div className="voluntario-corpo">
+                    <TextoVoluntario tipo={tipo} texto={descricao}/>
+                    <p>Email: {email}</p>
+                    <p>Telefone: {telefone}</p>
+                </div>
+                <div id='voluntario-botoes'>
+                    <button className='btn-confirmar'>
+                        <FaCircleCheck size={30} color='#12970d'/>
+                    </button>
+                    <button className='btn-excluir'>
+                        <FaRegTrashCan size={20} color="white"/>
+                    </button>
+                    <button className='btn-email'>
+                        <FaEnvelope size={20} color="white"/>
+                    </button >
+                    <button className='btn-whatsapp'>
+                        <FaWhatsapp size={25} color="white"/>
+                    </button>
+                </div>
+                
+            </div>
+        </>
+    )
+}
+export function ListaVoluntarios(props){
+    let voluntarios = props.voluntarios
+    return(
+        <>
+            <div id='lista-voluntarios'>
+                {voluntarios.map(
+                    (v,index) => <ItemVoluntario {...v} key={index}/>
+                    )}
+            </div>
+        </>
+    )
+}
+
+export default ListaVoluntarios

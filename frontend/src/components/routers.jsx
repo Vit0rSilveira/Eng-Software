@@ -14,7 +14,7 @@ import Patrocinadores from "../pages/patrocinadores";
 import Acoes from "../pages/acoes";
 import Doacao from "../pages/doacao"
 import Edit_Info from "../pages/editar_informacoes.jsx"
-import VerificarVoluntarios from '../pages/verificar_voluntarios.jsx'
+import VerificarCadastros from '../pages/verificar_cadastros.jsx'
 
 
 
@@ -35,7 +35,7 @@ function Destiny () {
             <Route path="/acoes" element={<Acoes />} />
             <Route path="/doacao" element={<Doacao />} />
             <Route path="/edit-info" element={<Edit_Info/>} />
-            <Route path="/verificar-voluntarios" element={<VerificarVoluntarios/>} />
+            <Route path="/verificar-cadastros" element={<VerificarCadastros/>} />
         </Routes>
     )
 }

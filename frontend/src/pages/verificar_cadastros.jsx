@@ -1,8 +1,10 @@
-import '../styles/pages/verificar_voluntarios.css'
+import '../styles/pages/verificar_cadastros.css'
 import HeaderADM from '../components/header_adm'
 import React, {useState} from 'react';
+import ListaVoluntario from '../components/listaVoluntario.jsx';
 
-function VerificarVoluntarios(props){
+
+function VerificarCadastros(props){
 
     const [filtro,setFiltro] = useState('Todas')
     const botoes = [
@@ -29,6 +31,30 @@ function VerificarVoluntarios(props){
         inicio ? formularioValues.horario_inicio = event.target.value
                : formularioValues.horario_fim = event.target.value 
     }
+
+
+    let voluntarios=[
+        {
+            nome:'Kaito Hayashi',
+            tipo:'doação',
+            data:'11/05/2024',
+            horario_inicio:'11:00',
+            horario_fim:'',
+            descricao:['5kg arroz','2kg cereja'],
+            email:'kaito.hayashi@gmail.com',
+            telefone:'1192382941',
+        },
+        {
+            nome:'Gabriel Faccini',
+            tipo:'visita',
+            data:'19/05/2024',
+            horario_inicio:'12:00',
+            horario_fim:'15:00',
+            descricao:['Quero conhecer a orgaqnizacao'],
+            email:'gabriel_faccini@gmail.com',
+            telefone:'1192382941',
+        }
+    ]
 
     return(
         <>
@@ -60,10 +86,11 @@ function VerificarVoluntarios(props){
                     <button className='btn-adicionar' onClick={()=>None}>Buscar</button>
                 </div>
             </div>
+            <ListaVoluntario voluntarios={voluntarios}/>
         </div>
         </>
     )
 }
 
 
-export default VerificarVoluntarios;
+export default VerificarCadastros;
