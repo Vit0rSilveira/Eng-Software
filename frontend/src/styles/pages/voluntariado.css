@@ -35,8 +35,8 @@
     margin-top: 2em;
     padding: 0 0 2em 0;
 }
-#cadastroTitleBox{
-    width: 100%;
+#cadastroTitleBox2{
+    width: 96%;
     font-size: 1.3em;
     background-color: #F9A645;
     padding: 0em 0.5em 0em 0.5em;
@@ -44,7 +44,7 @@
 }
 
 /* inputs e textos*/
-#cadastroTextBox>.TextoEInput{
+#cadastroTextBox2>.TextoEInput{
     display: flex;
     flex-direction: row;
     margin: 1em 0 2em 3%;

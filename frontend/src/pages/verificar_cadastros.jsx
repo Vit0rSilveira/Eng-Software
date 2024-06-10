@@ -58,7 +58,7 @@ function VerificarCadastros(props){
 
     return(
         <>
-        <HeaderADM page='verificar-voluntarios'/>
+        <HeaderADM page='verificar-cadastros'/>
         <div id='verificar-voluntarios-container'>
             <div id='formulario'>
                 <h1 className=''>Filtros</h1>

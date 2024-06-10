@@ -64,7 +64,7 @@ function Doacao() {
                     />
               </div>
 
-              <button class = "defaultButton "
+              <button  id = "doacaoButton" class = "defaultButton"
                 >Clique aqui para começar a sua doação
               </button>
 

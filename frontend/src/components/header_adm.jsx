@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 export function HeaderADM(props){
 
     const header_items = [
-        {nome:'verificar-voluntarios',ref:'/verificar-voluntarios',texto:'Verificar Voluntários'},
+        {nome:'verificar-cadastros',ref:'/verificar-cadastros',texto:'Verificar Voluntários'},
         {nome:'editar-conta',ref:'/crud-conta',texto:'Editar Conta'},
         {nome:'editar-site',ref:'/edit-info',texto:'Editar Site'},
     ];
