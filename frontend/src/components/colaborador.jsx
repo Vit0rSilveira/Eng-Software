@@ -23,7 +23,7 @@ function Colaborador(props){
                         <FaRegTrashCan size={15} color="white"/>
                     </button>
                 </div>
-        </div>
+            </div>
         </>
     )
 

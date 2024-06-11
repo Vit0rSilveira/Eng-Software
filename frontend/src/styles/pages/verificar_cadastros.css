@@ -18,7 +18,7 @@
     font-family: "palanquin", Helvetica, sans-serif;
     font-weight: 800;
     font-size: 2em;
-    height:60px;
+    height:50px;
     background-color: var(--contrast-bg-color) ;
     color: white;
     width: auto;
@@ -74,20 +74,13 @@
 }
 
 #formulario button{
-    font-family: "palanquin", Helvetica, sans-serif;
     background-color: var(--contrast-bg-color);
-    border-radius: 50px;
-    border:none;
-    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
     margin-right: 40px;
     margin-bottom: 25px;
     color: white;
 }
 #formulario .btn-adicionar{
-    width: 100px;
-    height: 40px;
     font-size: 1.3em;
-    font-weight: 700;
 }
 
 #formulario .container-btn{
@@ -97,8 +90,6 @@
 }
 
 #formulario .btn-filtro{
-    width: 100px;
-    height: 25px;
     font-size: 1em;
 }
 #formulario button:hover {

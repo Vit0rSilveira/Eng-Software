@@ -1,0 +1,25 @@
+#noticia-container{
+    width: 500px;
+    margin: 15px;
+}
+
+#noticia-container p{
+    padding-right: 10px;
+    font-size: 1.05em;
+}
+
+
+#noticia-container .noticia-corpo{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    padding: 15px 20px 10px 20px;
+    background-color: var(--main-bg-color);
+    border-radius: 0.5em;
+}
+
+@media(max-width: 550px){
+    #noticia-container{
+        width: 400px;
+    }
+}

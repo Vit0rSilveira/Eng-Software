@@ -66,7 +66,7 @@ function VerificarCadastros(props){
                     <h2 className='textoBranco'>Tipo:</h2>
                     <div className='container-opcoes-filtro'>
                         {botoes.map((b,index) =>
-                            <button className='btn-filtro'>{b.texto}</button>
+                            <button className='defaultButton btn-filtro'>{b.texto}</button>
                         )}
                     </div>
                 </div>
@@ -83,7 +83,7 @@ function VerificarCadastros(props){
                     </section>
                 </div>
                 <div className='container-btn'>
-                    <button className='btn-adicionar' onClick={()=>None}>Buscar</button>
+                    <button className='defaultButton btn-adicionar' onClick={()=>None}>Buscar</button>
                 </div>
             </div>
             <ListaVoluntario voluntarios={voluntarios}/>
