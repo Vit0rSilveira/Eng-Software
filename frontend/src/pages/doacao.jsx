@@ -80,24 +80,25 @@ function Doacao() {
               <div id="hist-cinza-cont">
                 <div id="hist-cont">
                   <div class = "text-donate">
-                  <img
+                    Preparo
+                  </div>
+                  <div class = "text-donate-bottom-images">
+                    <p>Etapa de preparaçao da sopa, o principal produto da doação.</p>
+                    <p>Horário: 11:00-16:00   toda sexta</p>
+                    <p>Escrever a quantidade feita, numero de pessoas etc</p>
+                    <img
                       className="img-fluid"
                       src="../../public/images/preparo.png"
                       alt="First slide"
                   />
-                    Preparo
-                  </div>
-                  <div class = "text-donate-bottom">
-                    <p>Etapa de preparaçao da sopa, o principal produto da doação.</p>
-                    <p>Horário: 11:00-16:00   toda sexta</p>
-                    <p>Escrever a quantidade feita, numero de pessoas etc</p>
                   </div>
                 </div>
               </div>
+              <div class="montagem-meio">
                 <div class = "text-donate">
                   Montagem
                 </div>
-                <div class = "text-donate-bottom">
+                <div class = "text-donate-bottom-images">
                   <p>Etapa de motagem do kit de doação.</p>
                   <p>Horário: 18:00-20:00   toda sexta</p>
                   <p>Escrever a quantidade feita, numero de pessoas etc</p>
@@ -107,20 +108,21 @@ function Doacao() {
                     alt="First slide"
                 />
                 </div>
+              </div>
               <div id="hist-cinza-cont">
                 <div id="hist-cont">
                   <div class = "text-donate">
-                  <img
+                    Entrega
+                  </div>
+                  <div class = "text-donate-bottom-images">
+                    <p>Etapa de entrega do kit de doação.</p>
+                    <p>Horário: 20:00-   toda sexta</p>
+                    <p>Escrever a quantidade feita, numero de pessoas etc</p>
+                    <img
                       className="img-fluid"
                       src="../../public/images/entrega.png"
                       alt="First slide"
                   />
-                    Entrega
-                  </div>
-                  <div class = "text-donate-bottom">
-                    <p>Etapa de entrega do kit de doação.</p>
-                    <p>Horário: 20:00-   toda sexta</p>
-                    <p>Escrever a quantidade feita, numero de pessoas etc</p>
                   </div>   
                 </div>
               </div>             

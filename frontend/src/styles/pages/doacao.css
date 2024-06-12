@@ -261,6 +261,38 @@
   border-radius: 10em;
 }
 
+.text-donate-bottom-images {
+  /* text settings */
+  font: 1.6em "palanquin", sans-serif;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  overflow: none;
+  color: #DE9E3E;
+ 
+  width: 3000px;
+  height: auto;
+  padding: 0em 1.5em 3em 1.5em;
+  margin-bottom: 1.0em;
+  border-radius: 10em;
+}
+
+.montagem-meio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 6em;
+  margin-top: 9em;
+  padding-left: 110em;
+  width: fit-content;
+}
+
+.text-donate-bottom-images p{
+  color: #DE9E3E;
+}
+
 .text-donate-bottom p{
   color: #DE9E3E;
 }
