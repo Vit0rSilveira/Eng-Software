@@ -11,7 +11,7 @@ function ColaboradorCard(props) {
         <div id = "conteinerColabCardDir" >
           <div id = "conteinerColabTitle" class="titulo" >{props.nome}</div>
           <div id = "conteinerColabDescricao" class="titulo">{props.descricao}</div>
-          <a href={props.link} target="_blank" id = "conteinerColabLink" class="textoLink">Acese a instituição</a>
+          <a href={props.link} target="_blank" id = "conteinerColabLink" class="textoLink">Acesse a instituição</a>
         </div>
     </div>
 

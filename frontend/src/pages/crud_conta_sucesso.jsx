@@ -14,7 +14,7 @@ function CrudContaSucesso(){
                     <br />
                     modificadas com sucesso
                 </div>
-                <button onClick={() => (window.location.href = "/cadastro")} className="defaultButton" id="botaoLoginConf">
+                <button onClick={() => (window.location.href = "/verificar-cadastros")} className="defaultButton" id="botaoLoginConf">
                     Voltar para o site
                 </button>
             </div>

@@ -4,6 +4,7 @@ import Colaborador from '../components/colaborador.jsx';
 import Noticia from '../components/noticia.jsx';
 import '../styles/pages/editar_informacoes.css';
 import React, {useState} from 'react';
+// import {getColaborador, postColaborador} from "../services/colaboradorService";
 
 function Edit_Info(){
     function Form(props){
@@ -53,6 +54,11 @@ function Edit_Info(){
                     return;
                 }
                 setColaboradores([...colaboradores,{...colaboradorValues}])
+                
+                //coloca o colaborador no banco de dados
+                //pode apagar que usei so para colocar uns para testar na pagina de colaborador
+                //Kaito Hayashi
+                // postColaborador(nome, "descricao", "www", document.getElementById('selecionar-arquivo').files[0])
             }
             else if(selection == 'noticias'){
                 const {titulo,descricao,url,data} = noticiaValues;

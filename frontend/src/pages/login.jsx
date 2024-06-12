@@ -65,7 +65,7 @@ function Login(){
         if(primeiro) setPrimeiro(false)
         else if(!invalido && !senhaVazia && !emailVazio)
         {
-            window.location.href = "/cadastro"
+            window.location.href = "/verificar-cadastros"
         }
     }, [verificar])
 
