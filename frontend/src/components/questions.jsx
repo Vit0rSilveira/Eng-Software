@@ -4,8 +4,8 @@ import '../styles/components/questions.css'
 function Question(props) {
     return (
         <p id="question">
-            <h2 className="question-class">{props.question}</h2>
-            <p className="question-class">{props.answer}</p>
+            <h2 className="question-question">{props.question}</h2>
+            <p className="question-answer">{props.answer}</p>
         </p>
     )
 }

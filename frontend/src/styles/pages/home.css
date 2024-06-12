@@ -1,31 +1,48 @@
-#carrosel {
-    margin-top: 5vh;
-    height: 20vh;
-    border-style: solid;
-}
-
-
 main h1 {
-    margin-bottom: 2%;
     font-weight: 800;
 }
 
 main {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin: auto; /* Isso centraliza o elemento main na tela */
 }
 
-#questions {
-    margin: 2%;
-    width: 70%;
+.box-text {
+    width: 50em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#F9C745;
+    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.326);
+    border-radius: 20px;
+    padding: 3%;
+}
+        
+.orange{
+    background-color: #F9B145;
+    }
+    
+.box-text h1, .questions h1 {
+    color: #392600 !important;
+    margin-bottom: 1.5em;
+    font-size: 2.2em;
+    text-align: center;
+}
+    
+.box-text p {
+    color: white;
+    font-size: 1.2em;
+}
+        
+.box-text img {
+    margin: 2em;
 }
 
-#questions h1 {
-    margin-bottom: 5vh; /* Espaçamento abaixo do título "Perguntas Frequentes" */
+#questions {
+    width: 50em;
 }
 
 #questions p {
@@ -41,77 +58,20 @@ main {
     margin: auto;
 }
 
-.box-text {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    background-color:#F9C745;
-    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.616);
-    border-radius: 20px;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%;
-}
-
-.box-text-alter {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    background-color:#F9B145;
-    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.616);
-    border-radius: 20px;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%;
-}
-
-.box-text h1 {
-    color: black;
-    margin-bottom: 1em;
-}
-
-.box-text p {
-    color: white;
-    font-size: 30px;
-    padding-bottom: 0px;
-}
-
-.box-text-alter h1 {
-    color: black;
-    margin-bottom: 1em;
-}
-
-.box-text-alter p {
-    color: white;
-    font-size: 30px;
-    padding-bottom: 0px;
-}
-
+        
 .eventos {
-    width: 100%;
+    width: 50em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
-    /*margin-bottom: 5%; */
-    background-color:white;
-    /* padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%; */
+    margin-top: 2em;
 }
 
 .eventos h1 {
     color: #594614;
-    margin-bottom: 0em;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
     font-size: 70px;
 }
 
@@ -119,31 +79,58 @@ main {
     color: #DE9E3E;
     font-size: 50px;
     padding-bottom: 0px;
+    font-size: 2em;
+    margin-bottom: 2.5em;
 }
 
 .eventos-text {
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 5%;
     background-color:#F9B145;
-    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.616);
+    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.283);
     border-radius: 20px;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%;
+    padding: 1em 3em 0 3em;
 }
 
-.eventos-text h2 {
-    color: black;
+.eventos-text .eventos-titulo{
+    margin-top: 0.3em;
+    font-size: 1.7em;
+    text-align: start;
+    color: #392600;
     margin-bottom: 1em;
 }
 
 .eventos-text p2 {
     color: white;
-    font-size: 30px;
+    font-size: 1.1em;
     padding-bottom: 5px;
     margin-bottom: 50px;
+}
+
+.homePageButton2{
+    margin-top: 4em;
+    margin-bottom: 4em;
+    font-size: 2em;
+}
+
+/*tamanho para telas mais pequenas*/
+@media (max-width:900px){
+    main{font-size: 0.8em;}
+    #eventos h1{font-size: 4em;}
+    #eventos p{font-size: 2.4em;}
+}
+@media (max-width:900px){
+    main{font-size: 0.8em;}
+    #eventos h1{font-size: 4em;}
+    #eventos p{font-size: 2.4em;}
+}
+@media (max-width:750px){
+    main img{
+        width: 60%;
+    }
+    .box-text{width: 90%;}
+    #questions{width: 90%;}
+    .eventos{width: 90%;}
 }

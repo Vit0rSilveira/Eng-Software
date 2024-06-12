@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import Images_carousel from '../components/carrousel'
 import Header from '../components/header';
 import Question from "../components/questions";
 import Footer from '../components/footer';
@@ -30,9 +29,8 @@ function Home() {
                 headerText1 = {'Conheça a Organização Pão Fraterno André Luiz'}
                 isHomePage = {true}
             />
-            {/* <Images_carousel/> */}
             <main>
-                <div id="about-us" className="box-text">
+                <div className="textoBranco box-text">
                     <h1>Um pouco sobre nós</h1>
                     <p>Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos próprios alunos da USP de São Carlos.
                     Começamos como um grupo que aceitava apenas alimentos basicos, roupas e cobertores. 
@@ -50,7 +48,7 @@ function Home() {
                     </p>
                 </div>
 
-                <div id="last-updates" className="box-text-alter">
+                <div className="textoBranco box-text orange">
                     <h1>Ações Realizadas</h1>
                     <p>As ações voluntarias que realizamos podem ser divididas em 4 grupos distintos de atuação. Um deles é a doação, 
                     que é a fonte de todas as nossas ações. As demais se baseiam em atividades que realizamos cotidianamente para 
@@ -69,7 +67,7 @@ function Home() {
                     
                 </div>
 
-                <div id="questions" className="box-text">
+                <div id="questions" className="textoBranco box-text">
                     <h1>Perguntas Frequentes</h1>
                     <div id="box-questions">
                         {questions.slice(0, 4).map((q, index) => (
@@ -77,7 +75,6 @@ function Home() {
                                 key={index}
                                 question={q.question}
                                 answer={q.answer}
-                                className="one-question"
                             />
                         ))}
                     </div>
@@ -88,22 +85,22 @@ function Home() {
                     />
                 </div>
 
-                <div id="eventos" className="eventos">
+                <div id="eventos" className="textoBranco eventos">
                     <h1>Eventos</h1>
                     <p>Venha participar!</p>
-                    <div id="about-us" className="eventos-text">
-                        <h2> Brechó de roupas    Dia: 15/4     11:00-15:00   </h2>
+                    <div className="eventos-text">
+                        <h2 className="titulo eventos-titulo"> Brechó de roupas    Dia: 15/4     11:00-15:00   </h2>
                         <p2>  Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070
                         </p2>
                     </div>
-                    <div id="about-us" className="eventos-text">
-                        <h2> Venda de pizzas    Dia: 5/5      16:00-19:00    </h2>
+                    <div className="eventos-text">
+                        <h2 className="titulo eventos-titulo"> Venda de pizzas    Dia: 5/5      16:00-19:00    </h2>
                         <p2>  Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070
                         </p2>
                     </div>
                 </div>
 
-                <button class = "defaultButton homePageButton"
+                <button class = "defaultButton homePageButton2"
                 >Venha nos conhecer!</button>
             </main>
             <Footer />

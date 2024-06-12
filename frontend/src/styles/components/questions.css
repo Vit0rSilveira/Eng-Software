@@ -1,8 +1,8 @@
-#question {
-    width: 50%;
-    height: 50%;
+.question-question {
+    font-size: 1.5em;
+    margin-bottom: 1em;
 }
 
-.question-class {
-    margin: 2%;
+.question-answer {
+    font-weight: 700;
 }
