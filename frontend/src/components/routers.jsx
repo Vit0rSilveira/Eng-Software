@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route} from 'react-router-dom';
+import PrivateRoute from "../routes/privateRoute.jsx";
 import Home from '../pages/home.jsx'
 import Cadastro from '../pages/cadastro';
 import Voluntariado from '../pages/voluntariado';
@@ -34,8 +35,8 @@ function Destiny () {
             <Route path="/patrocinadores" element={<Patrocinadores />} />
             <Route path="/acoes" element={<Acoes />} />
             <Route path="/doacao" element={<Doacao />} />
-            <Route path="/edit-info" element={<Edit_Info/>} />
-            <Route path="/verificar-cadastros" element={<VerificarCadastros/>} />
+            <Route path="/edit-info" element={<PrivateRoute Component={Edit_Info} />} />
+            <Route path="/verificar-cadastros" element={<PrivateRoute Component={VerificarCadastros} />}/>
         </Routes>
     )
 }
