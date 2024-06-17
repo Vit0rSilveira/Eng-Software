@@ -2,10 +2,13 @@ import '../styles/pages/verificar_cadastros.css'
 import HeaderADM from '../components/header_adm'
 import React, {useState} from 'react';
 import ListaVoluntario from '../components/listaVoluntario.jsx';
+import { useStore } from '../zustand/store';
 
 
 function VerificarCadastros(props){
 
+    const teste = useStore((state) => state.usuario)
+    console.log("teste cadastro", teste)
     const [filtro,setFiltro] = useState('Todas')
     const botoes = [
         {texto:'Todas',onClick:()=>setFiltro('Todas')},

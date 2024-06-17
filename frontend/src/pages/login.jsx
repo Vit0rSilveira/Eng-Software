@@ -69,26 +69,33 @@ function Login(){
         else if((email != usuario.login || !senhaCorreta) && email != "" && senha != "")
             setInvalido(false)
         
-        updateUser(usuario)
-        console.log("Teste", teste)
         console.log("Usuario Update User", usuario)
 
         //atualiza verificar para entrar no useEffect 
         setVerificar(true)
-
-        
-        
+   
     }
 
     //se nao tiver erro, vai para aba de administrador
     //foi colocado no useEffect, porque nao da para atualizar um state e ver o state atualizado na mesma funcao
     useEffect(()=>{
+        console.log("Verificar", verificar)
         if(primeiro) setPrimeiro(false)
-        else if(!invalido && !senhaVazia && !emailVazio)
+
+        else if(!invalido && !senhaVazia && !emailVazio )
         {
-            window.location.href = "/verificar-cadastros"
+            updateUser(email)
+            console.log("email!!", email)
         }
     }, [verificar])
+
+    useEffect(()=>{
+        if(teste){
+            
+            window.location.href = "/verificar-cadastros"
+            console.log("Teste", teste)
+        }
+    }, [teste])
 
 
     return(
