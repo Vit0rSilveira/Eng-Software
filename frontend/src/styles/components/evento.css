@@ -12,9 +12,13 @@
     background-color: #F9B145;
     border-top-left-radius: var(--border-r);
     border-top-right-radius: var(--border-r);
-    justify-content: space-around;
-    padding-right: 400px;
+    justify-content: space-between;
+    padding-left:30px;
     align-items:center;
+}
+
+.evento-titulo p{
+    width: 250px;
 }
 
 .evento-endereco{
@@ -23,7 +27,7 @@
     border-bottom-left-radius: var(--border-r);
     border-bottom-right-radius: var(--border-r);
     padding-top: 5px;
-    padding-left: 15px;
+    padding-left: 25px;
     padding-right: 30px;
     justify-content: space-between;
     align-items: center;

@@ -3,7 +3,7 @@ import HeaderADM from '../components/header_adm'
 import React, {useEffect, useState} from 'react';
 import ListaVoluntario from '../components/listaVoluntario.jsx';
 import { useStore } from '../zustand/store';
-import { getVoluntario } from '../services/voluntarioServise.jsx';
+import { getVoluntario } from '../services/voluntarioService.jsx';
 
 
 function VerificarCadastros(props){

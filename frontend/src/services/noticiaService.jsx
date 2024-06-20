@@ -1,18 +1,18 @@
 import axios from "axios";
 
-const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL:"http://localhost:3000") + "/colaborador"
+const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL:"http://localhost:3000") + "/noticia"
 
-export async function getColaborador(){
+export async function getNoticia(){
     try {
         const response = await axios.get(API_URL)
-        return response.data.colaboradores
+        return response.data.Noticias
     } catch (error) {
-        console.error('Erro ao obter os colaboradores:', error)
+        console.error('Erro ao obter as noticias:', error)
         return []
     }
 }
 
-export async function postColaborador(nome, descricao, link, imagem){
+export async function postNoticia(nome, descricao, link, imagem){
     try{
         const formData = new FormData();
         formData.append('nome', nome);
@@ -26,7 +26,7 @@ export async function postColaborador(nome, descricao, link, imagem){
         if(response.status == 201) return true
     }catch(error){
         console.error('Erro ao colocar o colaborador:', error)
-        throw new Error(error)
+        return false
     }
 }
 

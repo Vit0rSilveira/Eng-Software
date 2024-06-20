@@ -4,12 +4,12 @@ import { FaRegTrashCan } from "react-icons/fa6";
 
 function Colaborador(props){
     const nome = props.nome;
-    const url = props.url;
+    const url = props.link;
     const imagem = props.imagem;
     const callback = props.callback
     const id = props.id;
 
-
+    console.log('carregando imagem', imagem)
     return(
         <>
             <div id='colaborador-container'>
