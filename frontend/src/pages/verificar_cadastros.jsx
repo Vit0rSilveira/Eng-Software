@@ -1,8 +1,9 @@
 import '../styles/pages/verificar_cadastros.css'
 import HeaderADM from '../components/header_adm'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ListaVoluntario from '../components/listaVoluntario.jsx';
 import { useStore } from '../zustand/store';
+import { getVoluntario } from '../services/voluntarioServise.jsx';
 
 
 function VerificarCadastros(props){
@@ -36,28 +37,14 @@ function VerificarCadastros(props){
     }
 
 
-    let voluntarios=[
-        {
-            nome:'Kaito Hayashi',
-            tipo:'doação',
-            data:'11/05/2024',
-            horario_inicio:'11:00',
-            horario_fim:'',
-            descricao:['5kg arroz','2kg cereja'],
-            email:'kaito.hayashi@gmail.com',
-            telefone:'1192382941',
-        },
-        {
-            nome:'Gabriel Faccini',
-            tipo:'visita',
-            data:'19/05/2024',
-            horario_inicio:'12:00',
-            horario_fim:'15:00',
-            descricao:['Quero conhecer a orgaqnizacao'],
-            email:'gabriel_faccini@gmail.com',
-            telefone:'1192382941',
-        }
-    ]
+
+    let [voluntarios,setVoluntarios] = useState([])
+    async function loadVoluntarios(){
+        let voluntariosTemp = await getVoluntario()
+        console.log('resultados',voluntariosTemp)
+        setVoluntarios(voluntariosTemp)
+    }
+    useEffect( ()=>{ loadVoluntarios()},[]) //Carregar voluntarios quando iniciar pagina
 
     return(
         <>

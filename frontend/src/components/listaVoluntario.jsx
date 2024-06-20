@@ -7,22 +7,18 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export function ItemVoluntario(props){
 
-    function TextoVoluntario({tipo,texto}){
+    function TextoVoluntario({tipo,endereco,produto,motivo}){
         console.log(tipo)
         if(tipo == 'doação'){
-            let txt = '';
-            for(let t of texto){
-                txt += t + ', '
-            }
-            txt = txt.slice(0,txt.length - 2);
             
-            return <p>Produtos: {txt}</p>
+            return <p>Produtos: {produto}</p>
         }
         else if(tipo == 'visita')
-            return <p>Motivo: {texto}</p>
+            return <p>Motivo: {motivo}</p>
         else if(tipo == 'retirada'){
-            return <p>Endereço: {texto}</p>
+            return <p>Endereço: {endereco}</p>
         }
+        return <></>
             
     }
 
@@ -31,9 +27,13 @@ export function ItemVoluntario(props){
     let horario_fim = props.horario_fim;
     let tipo = props.tipo;
     let data = props.data;
-    let descricao = props.descricao;
     let email = props.email;
     let telefone = props.telefone;
+
+    // somente um desses vai ter valor, os outros serao undefined
+    let endereco = props.descricao;
+    let motivo = props.motivo;
+    let produto = props.produto
 
     let horario = horario_fim ? horario_inicio + '-' + horario_fim : horario_inicio;
     
@@ -47,7 +47,7 @@ export function ItemVoluntario(props){
                     <h2 className="">{horario}</h2>
                 </div>
                 <div className="voluntario-corpo">
-                    <TextoVoluntario tipo={tipo} texto={descricao}/>
+                    <TextoVoluntario tipo ={tipo} endereco = {endereco} motivo={motivo} produto={produto}/>
                     <p>Email: {email}</p>
                     <p>Telefone: {telefone}</p>
                 </div>
