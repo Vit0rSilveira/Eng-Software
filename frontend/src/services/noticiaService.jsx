@@ -34,3 +34,12 @@ export async function postNoticia(titulo,data,descricao,link,imagem){
     }
 }
 
+export async function deleteNoticia(titulo){
+    try{
+        const response = await axios.delete(API_URL + "/" + titulo)
+        if(response.status == 200) return true
+    }catch(error){
+        throw new Error(error)
+    }
+}
+

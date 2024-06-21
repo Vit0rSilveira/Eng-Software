@@ -16,8 +16,8 @@ export function formatarData(data) {
     const dia = data.getDate().toString().padStart(2, '0');
     const mes = (data.getMonth() + 1).toString().padStart(2, '0'); // Ajustando o mês para começar em 1
     const ano = data.getFullYear();
-    const hora = data.getHours();
-    const minuto = data.getMinutes();
+    const hora = data.getHours().toString().padStart(2,'0');
+    const minuto = data.getMinutes().toString().padStart(2,'0');
     const dataFormatada = `${dia}/${mes}/${ano}`;
     const horarioFormatado = `${hora}:${minuto}`;
     return [dataFormatada,horarioFormatado];

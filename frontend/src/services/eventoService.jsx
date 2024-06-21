@@ -39,3 +39,12 @@ export async function postEvento(nome,data,horario_inicio,horario_fim,endereco,i
     }
 }
 
+export async function deleteEvento(nome){
+    try{
+        const response = await axios.delete(API_URL + "/" + nome)
+        if(response.status == 200) return true
+    }catch(error){
+        throw new Error(error)
+    }
+}
+

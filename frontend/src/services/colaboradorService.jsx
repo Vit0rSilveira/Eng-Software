@@ -30,3 +30,13 @@ export async function postColaborador(nome, descricao, link, imagem){
     }
 }
 
+export async function deleteColaborador(nome){
+    try{
+        const response = await axios.delete(API_URL + "/" + nome)
+        if(response.status == 200) return true
+    }catch(error){
+        throw new Error(error)
+    }
+}
+
+

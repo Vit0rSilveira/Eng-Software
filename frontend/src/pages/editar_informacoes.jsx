@@ -4,9 +4,9 @@ import Colaborador from '../components/colaborador.jsx';
 import Noticia from '../components/noticia.jsx';
 import '../styles/pages/editar_informacoes.css';
 import React, {useState,useEffect} from 'react';
-import {getColaborador, postColaborador} from "../services/colaboradorService";
-import { getNoticia, postNoticia } from '../services/noticiaService.jsx';
-import { getEvento, postEvento } from '../services/eventoService.jsx';
+import {deleteColaborador, getColaborador, postColaborador} from "../services/colaboradorService";
+import { deleteNoticia, getNoticia, postNoticia } from '../services/noticiaService.jsx';
+import { deleteEvento, getEvento, postEvento } from '../services/eventoService.jsx';
 import { formatarData } from '../utils/datautils.js';
 
 function Edit_Info(){
@@ -258,6 +258,55 @@ function Edit_Info(){
         }
     }
 
+    
+    function removeEvento(nome){
+        if(!confirm('Deseja mesmo excluir o evento: ' + nome)){
+            return;
+        }
+
+        try{
+            deleteEvento(nome)
+            alert("Evento removido com sucesso!")
+        }
+        catch(error){
+            alert('Não foi possível remover este evento')
+            return;
+        }
+        loadEvento()
+    }
+
+    function removeColaborador(nome){
+        if(!confirm('Deseja mesmo excluir o colaborador: ' + nome)){
+            return;
+        }
+
+        try{
+            deleteColaborador(nome)
+            alert("Colaborador removido com sucesso!")
+        }
+        catch(error){
+            alert('Não foi possível remover este colaborador')
+            return;
+        }
+        loadColaborador()
+    }
+
+    function removeNoticia(titulo){
+        if(!confirm('Deseja mesmo excluir a notícia: ' + titulo)){
+            return;
+        }
+
+        try{
+            deleteNoticia(titulo)
+            alert("Notícia removida com sucesso!")
+        }
+        catch(error){
+            alert('Não foi possível remover esta notícia')
+            return;
+        }
+        loadNoticia()
+    }
+
     async function loadColaborador(){
         try{
             let colaboradoresBD = await getColaborador()
@@ -317,28 +366,12 @@ function Edit_Info(){
     let btnColaboradoresClass='';
     let btnNoticiasClass='';
 
-
     if(selection == 'eventos')
         btnEventosClass = 'selected-btn';
     else if(selection == 'colaboradores')
         btnColaboradoresClass = 'selected-btn';
     else if(selection == 'noticias')
         btnNoticiasClass = 'selected-btn';
-
-    function removeEvento(index){
-        eventos.splice(index,1)
-        setEventos([...eventos]);
-    }
-
-    function removeColaborador(index){
-        colaboradores.splice(index,1)
-        setColaboradores([...colaboradores]);
-    }
-
-    function removeNoticia(index){
-        noticias.splice(index,1)
-        setNoticias([...noticias]);
-    }
 
     return(
         <>

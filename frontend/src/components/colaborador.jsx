@@ -19,7 +19,7 @@ function Colaborador(props){
                 <div className="colaborador-corpo">
                     <p className='textoBranco '>{url}</p>
                     <img className='colaborador-imagem' src={imagem}></img>
-                    <button className="btn-excluir-evento" onClick = {() => callback(id)}>
+                    <button className="btn-excluir-evento" onClick = {() => callback(nome)}>
                         <FaRegTrashCan size={15} color="white"/>
                     </button>
                 </div>
