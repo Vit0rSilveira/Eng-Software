@@ -14,7 +14,6 @@ export async function getEvento(){
 }
 
 export async function postEvento(nome,data,horario_inicio,horario_fim,endereco,imagem){
-    console.log('mandando request1',data,horario_inicio,horario_fim)
     data = parseDate(data)
     horario_inicio = combineDateAndTime(data,horario_inicio)
     horario_fim = combineDateAndTime(data,horario_fim)
@@ -26,8 +25,6 @@ export async function postEvento(nome,data,horario_inicio,horario_fim,endereco,i
         formData.append('horario_fim', horario_fim);
         formData.append('endereco', endereco);
         formData.append('imagem', imagem);
-
-        console.log('mandando request2',data,horario_inicio,horario_fim)
 
         const response = await axios.post(API_URL + "/", formData);
 

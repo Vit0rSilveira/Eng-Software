@@ -3,7 +3,8 @@ import HeaderADM from '../components/header_adm'
 import React, {useEffect, useState} from 'react';
 import ListaVoluntario from '../components/listaVoluntario.jsx';
 import { useStore } from '../zustand/store';
-import { getVoluntario } from '../services/voluntarioService.jsx';
+import { deleteVoluntario, getVoluntario } from '../services/voluntarioService.jsx';
+import { formatarData } from '../utils/datautils.js';
 
 
 function VerificarCadastros(props){
@@ -36,13 +37,38 @@ function VerificarCadastros(props){
                : formularioValues.horario_fim = event.target.value 
     }
 
-
-
     let [voluntarios,setVoluntarios] = useState([])
+
+    async function removeVoluntario(nome){
+        if(!confirm('Deseja mesmo excluir o voluntário: ' + nome)){
+            return;
+        }
+
+        try{
+            deleteVoluntario(nome)
+            alert("Voluntário removido com sucesso!")
+        }
+        catch(error){
+            alert('Não foi possível remover este voluntário')
+            return;
+        }
+        loadVoluntarios()
+    }
     async function loadVoluntarios(){
-        let voluntariosTemp = await getVoluntario()
-        console.log('resultados',voluntariosTemp)
-        setVoluntarios(voluntariosTemp)
+        try{
+            let voluntarioTemp = await getVoluntario()
+            voluntarioTemp.map((v) =>{
+                let [datai,horai] = formatarData(v.horario_inicio)
+                let [dataf,horaf] = formatarData(v.horario_fim)
+                let [data,hora] = formatarData(v.data)
+
+                v.horario_inicio = horai
+                v.horario_fim = horaf
+                v.data = data
+            })
+            setVoluntarios(voluntarioTemp)
+        }
+        catch(e){}
     }
     useEffect( ()=>{ loadVoluntarios()},[]) //Carregar voluntarios quando iniciar pagina
 
@@ -76,7 +102,7 @@ function VerificarCadastros(props){
                     <button className='defaultButton btn-adicionar' onClick={()=>None}>Buscar</button>
                 </div>
             </div>
-            <ListaVoluntario voluntarios={voluntarios}/>
+            <ListaVoluntario voluntarios={voluntarios} callback_excluir={removeVoluntario}/>
         </div>
         </>
     )

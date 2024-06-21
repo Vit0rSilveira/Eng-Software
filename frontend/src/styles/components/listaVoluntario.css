@@ -1,15 +1,16 @@
 #lista-voluntarios{
     display: flex;
     flex-direction: column;
+    margin-top:100px;
 }
 
 #voluntario-container{
     display: flex;
     flex-direction: column;
     width: 750px;
-    margin-top: 100px;
     background-color: var(--main-bg-color);
     border-radius: var(--border-r);
+    margin-bottom: 50px;
 }
 
 #voluntario-container .voluntario-info{

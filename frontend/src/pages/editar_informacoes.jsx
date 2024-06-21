@@ -334,8 +334,8 @@ function Edit_Info(){
         }
         catch(e){}
         
-        
     }
+    
     async function loadNoticia(){
         let noticiaTemp = await getNoticia()
         noticiaTemp.map((n)=>{

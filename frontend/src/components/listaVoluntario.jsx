@@ -8,7 +8,6 @@ import { FaWhatsapp } from "react-icons/fa";
 export function ItemVoluntario(props){
 
     function TextoVoluntario({tipo,endereco,produto,motivo}){
-        console.log(tipo)
         if(tipo == 'doação'){
             
             return <p>Produtos: {produto}</p>
@@ -29,9 +28,10 @@ export function ItemVoluntario(props){
     let data = props.data;
     let email = props.email;
     let telefone = props.telefone;
+    let callback_excluir = props.callback_excluir
 
     // somente um desses vai ter valor, os outros serao undefined
-    let endereco = props.descricao;
+    let endereco = props.endereco;
     let motivo = props.motivo;
     let produto = props.produto
 
@@ -55,7 +55,7 @@ export function ItemVoluntario(props){
                     <button className='btn-confirmar'>
                         <FaCircleCheck size={30} color='#12970d'/>
                     </button>
-                    <button className='btn-excluir'>
+                    <button className='btn-excluir' onClick={()=>callback_excluir(nome)}>
                         <FaRegTrashCan size={20} color="white"/>
                     </button>
                     <button className='btn-email'>
@@ -76,7 +76,7 @@ export function ListaVoluntarios(props){
         <>
             <div id='lista-voluntarios'>
                 {voluntarios.map(
-                    (v,index) => <ItemVoluntario {...v} key={index}/>
+                    (v,index) => <ItemVoluntario {...v} key={index} callback_excluir={props.callback_excluir}/>
                     )}
             </div>
         </>
