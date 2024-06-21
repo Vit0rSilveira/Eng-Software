@@ -7,7 +7,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto; /* Isso centraliza o elemento main na tela */
+    margin: auto; 
 }
 
 .box-text {
@@ -19,6 +19,7 @@ main {
     box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.326);
     border-radius: 20px;
     padding: 3%;
+    padding-top: 2em;
 }
         
 .orange{
@@ -72,7 +73,7 @@ main {
     color: #594614;
     margin-top: 1em;
     margin-bottom: 0.6em;
-    font-size: 70px;
+    font-size: 4em;
 }
 
 .eventos p {
@@ -83,31 +84,6 @@ main {
     margin-bottom: 2.5em;
 }
 
-.eventos-text {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5%;
-    background-color:#F9B145;
-    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.283);
-    border-radius: 20px;
-    padding: 1em 3em 0 3em;
-}
-
-.eventos-text .eventos-titulo{
-    margin-top: 0.3em;
-    font-size: 1.7em;
-    text-align: start;
-    color: #392600;
-    margin-bottom: 1em;
-}
-
-.eventos-text p2 {
-    color: white;
-    font-size: 1.1em;
-    padding-bottom: 5px;
-    margin-bottom: 50px;
-}
 
 .homePageButton2{
     margin-top: 4em;
@@ -116,12 +92,7 @@ main {
 }
 
 /*tamanho para telas mais pequenas*/
-@media (max-width:900px){
-    main{font-size: 0.8em;}
-    #eventos h1{font-size: 4em;}
-    #eventos p{font-size: 2.4em;}
-}
-@media (max-width:900px){
+@media (max-width:1100px){
     main{font-size: 0.8em;}
     #eventos h1{font-size: 4em;}
     #eventos p{font-size: 2.4em;}
@@ -130,7 +101,9 @@ main {
     main img{
         width: 60%;
     }
-    .box-text{width: 90%;}
-    #questions{width: 90%;}
-    .eventos{width: 90%;}
+    .box-text{width: 80%;}
+    #questions{width: 80%;}
+    .eventos{width: 80%;}
+    #eventos h1{font-size: 3em;}
+    #eventos p{font-size: 2em;}
 }
