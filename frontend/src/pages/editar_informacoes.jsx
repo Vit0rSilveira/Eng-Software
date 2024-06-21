@@ -5,7 +5,7 @@ import Noticia from '../components/noticia.jsx';
 import '../styles/pages/editar_informacoes.css';
 import React, {useState,useEffect} from 'react';
 import {getColaborador, postColaborador} from "../services/colaboradorService";
-import { getNoticia } from '../services/noticiaService.jsx';
+import { getNoticia, postNoticia } from '../services/noticiaService.jsx';
 import { getEvento, postEvento } from '../services/eventoService.jsx';
 import { formatarData } from '../utils/datautils.js';
 
@@ -59,9 +59,10 @@ function Edit_Info(){
                     console.error(error)
                     return;
                 }
-                const [ano,mes,dia] = eventoValues.data.split('-')
-                eventoValues.data = `${dia}/${mes}/${ano}`
-                setEventos([...eventos,{...eventoValues}]);
+                // const [ano,mes,dia] = eventoValues.data.split('-')
+                // eventoValues.data = `${dia}/${mes}/${ano}`
+                //setEventos([...eventos,{...eventoValues}]);
+                loadEvento()
             }
             else if(selection == 'colaboradores'){
                 const {nome,url,descricao} = colaboradorValues;
@@ -77,15 +78,27 @@ function Edit_Info(){
                     console.error(error)
                     return
                 }
-                setColaboradores([...colaboradores,{...colaboradorValues}])
+                loadColaborador()
+                //setColaboradores([...colaboradores,{...colaboradorValues}])
             }
             else if(selection == 'noticias'){
                 const {titulo,descricao,url,data} = noticiaValues;
-                if(!(titulo,data)){
+                let imagem = selected_file
+                if(!(titulo && data && descricao && url && imagem)){
                     alert("Preencha os campos necessários");
                     return;
                 }
-                setNoticias([...noticias,{...noticiaValues}])
+                try{
+                    await postNoticia(titulo,data,descricao,url,imagem)
+                }
+                catch(error){
+                    console.error(error)
+                    return
+                }
+                // const [ano,mes,dia] = noticiaValues.data.split('-')
+                // noticiaValues.data = `${dia}/${mes}/${ano}`
+                //setNoticias([...noticias,{...noticiaValues}])
+                loadNoticia()
             }
             else{
                 console.log('unreachable');
@@ -221,8 +234,8 @@ function Edit_Info(){
                         <input onChange={notHandleTituloChange} type='text' className='defaultInput'></input>
                     </div>
                     <div>
-                        <h2>Data:</h2>    
-                        <input onChange={notHandleDataChange} type='text' className='defaultInput'></input>
+                        <h2>Data:</h2>
+                        <input onChange={notHandleDataChange}type="date"  className='defaultInput input-data'></input>
                     </div>
                     <div>
                         <h2>Imagem:</h2>    
@@ -231,8 +244,8 @@ function Edit_Info(){
                         <p id='input-field-fileName'className='inline-text'></p>
                     </div>
                     <div>
-                        <h2>Descricao:</h2>
-                        <input onChange={notHandleDescricaoChange} type='text' className='defaultInput'></input>
+                        <h2>Descrição:</h2>
+                        <textarea onChange={notHandleDescricaoChange} id = "outrasInput" class = "TextoEInput defaultInput"  type="text" />
                     </div>
                     <div>
                         <h2>Link:</h2>
@@ -276,6 +289,10 @@ function Edit_Info(){
     }
     async function loadNoticia(){
         let noticiaTemp = await getNoticia()
+        noticiaTemp.map((n)=>{
+            let [data,hora] = formatarData(n.data)
+            n.data = data
+        })
         setNoticias(noticiaTemp)
     }
 
@@ -359,7 +376,6 @@ function Edit_Info(){
                 </div>
             }
             
-           
         </>
     )
 }

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { parseDate } from "../utils/datautils";
 
 const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL:"http://localhost:3000") + "/noticia"
 
@@ -12,10 +13,13 @@ export async function getNoticia(){
     }
 }
 
-export async function postNoticia(nome, descricao, link, imagem){
+export async function postNoticia(titulo,data,descricao,link,imagem){
+
+    data = parseDate(data)
     try{
         const formData = new FormData();
-        formData.append('nome', nome);
+        formData.append('titulo', titulo);
+        formData.append('data',data)
         formData.append('descricao', descricao);
         formData.append('link', link);
         formData.append('imagem', imagem);
@@ -25,8 +29,8 @@ export async function postNoticia(nome, descricao, link, imagem){
 
         if(response.status == 201) return true
     }catch(error){
-        console.error('Erro ao colocar o colaborador:', error)
-        return false
+        console.error('Erro ao colocar a noticia:', error)
+        throw new Error(error)
     }
 }
 
