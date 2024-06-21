@@ -11,15 +11,15 @@ function VerificarCadastros(props){
 
     const teste = useStore((state) => state.usuario)
     console.log("teste cadastro", teste)
-    const [filtro,setFiltro] = useState('Todas')
+    const [filtro,setFiltro] = useState('todas')
     const botoes = [
-        {texto:'Todas',onClick:()=>setFiltro('Todas')},
-        {texto:'Visita',onClick:()=>setFiltro('Visita')},
-        {texto:'Doação',onClick:()=>setFiltro('Doação')},
-        {texto:'Preparo',onClick:()=>setFiltro('Preparo')},
-        {texto:'Montagem',onClick:()=>setFiltro('Monstagem')},
-        {texto:'Distribuição',onClick:()=>setFiltro('Distribuição')},
-        {texto:'Retirada',onClick:()=>setFiltro('Retirada')},
+        {texto:'Todas',onClick:()=>{setFiltro('todas')}},
+        {texto:'Visita',onClick:()=>setFiltro('visita')},
+        {texto:'Doação',onClick:()=>setFiltro('doação')},
+        {texto:'Preparo',onClick:()=>setFiltro('preparo')},
+        {texto:'Montagem',onClick:()=>setFiltro('montagem')},
+        {texto:'Distribuição',onClick:()=>setFiltro('distribuição')},
+        {texto:'Retirada',onClick:()=>setFiltro('retirada')},
     ]
 
     let formularioValues = {
@@ -36,6 +36,16 @@ function VerificarCadastros(props){
         inicio ? formularioValues.horario_inicio = event.target.value
                : formularioValues.horario_fim = event.target.value 
     }
+
+    function aplicarFiltros(voluntarios){
+        if(filtro == 'todas'){
+            return voluntarios;
+        }
+        else{
+            return voluntarios.filter((v)=>v.tipo == filtro)
+        }
+    }
+
 
     let [voluntarios,setVoluntarios] = useState([])
 
@@ -70,7 +80,12 @@ function VerificarCadastros(props){
         }
         catch(e){}
     }
-    useEffect( ()=>{ loadVoluntarios()},[]) //Carregar voluntarios quando iniciar pagina
+    useEffect( ()=>{
+        console.log(filtro)
+        loadVoluntarios()
+    },[]) //Carregar voluntarios quando iniciar pagina
+
+    let voluntariosFiltrados = aplicarFiltros(voluntarios)
 
     return(
         <>
@@ -82,7 +97,7 @@ function VerificarCadastros(props){
                     <h2 className='textoBranco'>Tipo:</h2>
                     <div className='container-opcoes-filtro'>
                         {botoes.map((b,index) =>
-                            <button className='defaultButton btn-filtro'>{b.texto}</button>
+                            <button className='defaultButton btn-filtro' onClick={b.onClick}>{b.texto}</button>
                         )}
                     </div>
                 </div>
@@ -102,7 +117,7 @@ function VerificarCadastros(props){
                     <button className='defaultButton btn-adicionar' onClick={()=>None}>Buscar</button>
                 </div>
             </div>
-            <ListaVoluntario voluntarios={voluntarios} callback_excluir={removeVoluntario}/>
+            <ListaVoluntario voluntarios={voluntariosFiltrados} callback_excluir={removeVoluntario}/>
         </div>
         </>
     )
