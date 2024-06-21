@@ -3,7 +3,7 @@ import Header from '../components/header';
 import ColaboradorCard from '../components/colaboradorCard';
 import Footer from '../components/footer';
 import '../styles/pages/patrocinadores.css'
-import {getColaborador, postColaborador} from "../services/colaboradorService";
+import {getColaborador} from "../services/colaboradorService";
 
 function Patrocinadores() {
 
@@ -14,8 +14,6 @@ function Patrocinadores() {
         //pega colaboradores do banco
         let colaboradoresBD = await getColaborador()
         setColaboradores(colaboradoresBD)
-        console.log(colaboradores[0].imagem.replace("publico\\imagens\\colaboradores", "publico"))
-        console.log(colaboradores[0].imagem.replace("publico/imagens/colaboradores", "../../public/images/colaborador"))
     }
 
     useEffect(()=>{
@@ -28,7 +26,6 @@ function Patrocinadores() {
             page = "colaboradores"/>
                 {colaboradores.map((colaborador,index)=> 
                     <>
-                    {console.log("entrou")}
                     <div className="conteinerColaborador">
                         <ColaboradorCard
                             nome = {colaborador.nome}

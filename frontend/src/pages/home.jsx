@@ -3,8 +3,12 @@ import Header from '../components/header';
 import Question from "../components/questions";
 import Footer from '../components/footer';
 import '../styles/pages/home.css'
+import EventoCard from '../components/eventoCard';
+import {getEvento} from "../services/eventoService";
 
 function Home() {
+
+    //questions
     const [questions, setQuestions] = useState([]);
 
     useEffect(() => {
@@ -23,6 +27,22 @@ function Home() {
             })
     }, []);
 
+
+    //eventos
+    let [eventos, setEventos] = useState([])
+
+    async function LoadEvento(){
+        //pega eventos do banco
+        let eventosBD = await getEvento()
+        setEventos(eventosBD)
+    }
+
+    useEffect(()=>{
+        LoadEvento()
+    }, []) 
+
+
+    
     return (
         <>
             <Header 
@@ -84,23 +104,27 @@ function Home() {
                     alt="First slide"
                     />
                 </div>
-
+                
+                {/* Lista de eventos */}
                 <div id="eventos" className="textoBranco eventos">
+
                     <h1>Eventos</h1>
                     <p>Venha participar!</p>
-                    <div className="eventos-text">
-                        <h2 className="titulo eventos-titulo"> Brechó de roupas    Dia: 15/4     11:00-15:00   </h2>
-                        <p2>  Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070
-                        </p2>
-                    </div>
-                    <div className="eventos-text">
-                        <h2 className="titulo eventos-titulo"> Venda de pizzas    Dia: 5/5      16:00-19:00    </h2>
-                        <p2>  Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070
-                        </p2>
-                    </div>
+
+                    {eventos.map((evento,index)=> 
+                        <>
+                            <EventoCard
+                                nome = {evento.nome}
+                                // imagem={evento.imagem.replace("publico\\imagens\\eventos", "../../public/images/evento")}
+                                data = {evento.data}
+                                horarioInicio = {evento.horario_inicio}
+                                horarioFim = {evento.horario_fim}
+                                endereco = {evento.endereco}
+                        />
+                    </>)}
                 </div>
 
-                <button class = "defaultButton homePageButton2"
+                <button onClick={() => (window.location.href = "/voluntariado")} class = "defaultButton homePageButton2"
                 >Venha nos conhecer!</button>
             </main>
             <Footer />
