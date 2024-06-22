@@ -1,23 +1,25 @@
 import '../styles/pages/verificar_cadastros.css'
 import HeaderADM from '../components/header_adm'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ListaVoluntario from '../components/listaVoluntario.jsx';
 import { useStore } from '../zustand/store';
+import { deleteVoluntario, getVoluntario } from '../services/voluntarioService.jsx';
+import { formatarData } from '../utils/datautils.js';
 
 
 function VerificarCadastros(props){
 
     const teste = useStore((state) => state.usuario)
     console.log("teste cadastro", teste)
-    const [filtro,setFiltro] = useState('Todas')
+    const [filtro,setFiltro] = useState('todas')
     const botoes = [
-        {texto:'Todas',onClick:()=>setFiltro('Todas')},
-        {texto:'Visita',onClick:()=>setFiltro('Visita')},
-        {texto:'Doação',onClick:()=>setFiltro('Doação')},
-        {texto:'Preparo',onClick:()=>setFiltro('Preparo')},
-        {texto:'Montagem',onClick:()=>setFiltro('Monstagem')},
-        {texto:'Distribuição',onClick:()=>setFiltro('Distribuição')},
-        {texto:'Retirada',onClick:()=>setFiltro('Retirada')},
+        {texto:'Todas',onClick:()=>{setFiltro('todas')}},
+        {texto:'Visita',onClick:()=>setFiltro('visita')},
+        {texto:'Doação',onClick:()=>setFiltro('doação')},
+        {texto:'Preparo',onClick:()=>setFiltro('preparo')},
+        {texto:'Montagem',onClick:()=>setFiltro('montagem')},
+        {texto:'Distribuição',onClick:()=>setFiltro('distribuição')},
+        {texto:'Retirada',onClick:()=>setFiltro('retirada')},
     ]
 
     let formularioValues = {
@@ -35,29 +37,55 @@ function VerificarCadastros(props){
                : formularioValues.horario_fim = event.target.value 
     }
 
-
-    let voluntarios=[
-        {
-            nome:'Kaito Hayashi',
-            tipo:'doação',
-            data:'11/05/2024',
-            horario_inicio:'11:00',
-            horario_fim:'',
-            descricao:['5kg arroz','2kg cereja'],
-            email:'kaito.hayashi@gmail.com',
-            telefone:'1192382941',
-        },
-        {
-            nome:'Gabriel Faccini',
-            tipo:'visita',
-            data:'19/05/2024',
-            horario_inicio:'12:00',
-            horario_fim:'15:00',
-            descricao:['Quero conhecer a orgaqnizacao'],
-            email:'gabriel_faccini@gmail.com',
-            telefone:'1192382941',
+    function aplicarFiltros(voluntarios){
+        if(filtro == 'todas'){
+            return voluntarios;
         }
-    ]
+        else{
+            return voluntarios.filter((v)=>v.tipo == filtro)
+        }
+    }
+
+
+    let [voluntarios,setVoluntarios] = useState([])
+
+    async function removeVoluntario(nome){
+        if(!confirm('Deseja mesmo excluir o voluntário: ' + nome)){
+            return;
+        }
+
+        try{
+            deleteVoluntario(nome)
+            alert("Voluntário removido com sucesso!")
+        }
+        catch(error){
+            alert('Não foi possível remover este voluntário')
+            return;
+        }
+        loadVoluntarios()
+    }
+    async function loadVoluntarios(){
+        try{
+            let voluntarioTemp = await getVoluntario()
+            voluntarioTemp.map((v) =>{
+                let [datai,horai] = formatarData(v.horario_inicio)
+                let [dataf,horaf] = formatarData(v.horario_fim)
+                let [data,hora] = formatarData(v.data)
+
+                v.horario_inicio = horai
+                v.horario_fim = horaf
+                v.data = data
+            })
+            setVoluntarios(voluntarioTemp)
+        }
+        catch(e){}
+    }
+    useEffect( ()=>{
+        console.log(filtro)
+        loadVoluntarios()
+    },[]) //Carregar voluntarios quando iniciar pagina
+
+    let voluntariosFiltrados = aplicarFiltros(voluntarios)
 
     return(
         <>
@@ -69,7 +97,7 @@ function VerificarCadastros(props){
                     <h2 className='textoBranco'>Tipo:</h2>
                     <div className='container-opcoes-filtro'>
                         {botoes.map((b,index) =>
-                            <button className='defaultButton btn-filtro'>{b.texto}</button>
+                            <button className='defaultButton btn-filtro' onClick={b.onClick}>{b.texto}</button>
                         )}
                     </div>
                 </div>
@@ -89,7 +117,7 @@ function VerificarCadastros(props){
                     <button className='defaultButton btn-adicionar' onClick={()=>None}>Buscar</button>
                 </div>
             </div>
-            <ListaVoluntario voluntarios={voluntarios}/>
+            <ListaVoluntario voluntarios={voluntariosFiltrados} callback_excluir={removeVoluntario}/>
         </div>
         </>
     )

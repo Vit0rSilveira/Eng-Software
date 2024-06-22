@@ -26,7 +26,17 @@ export async function postColaborador(nome, descricao, link, imagem){
         if(response.status == 201) return true
     }catch(error){
         console.error('Erro ao colocar o colaborador:', error)
-        return false
+        throw new Error(error)
     }
 }
+
+export async function deleteColaborador(nome){
+    try{
+        const response = await axios.delete(API_URL + "/" + nome)
+        if(response.status == 200) return true
+    }catch(error){
+        throw new Error(error)
+    }
+}
+
 

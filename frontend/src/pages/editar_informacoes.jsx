@@ -3,15 +3,18 @@ import Evento from '../components/evento.jsx';
 import Colaborador from '../components/colaborador.jsx';
 import Noticia from '../components/noticia.jsx';
 import '../styles/pages/editar_informacoes.css';
-import React, {useState} from 'react';
-// import {getColaborador, postColaborador} from "../services/colaboradorService";
+import React, {useState,useEffect} from 'react';
+import {deleteColaborador, getColaborador, postColaborador} from "../services/colaboradorService";
+import { deleteNoticia, getNoticia, postNoticia } from '../services/noticiaService.jsx';
+import { deleteEvento, getEvento, postEvento } from '../services/eventoService.jsx';
+import { formatarData } from '../utils/datautils.js';
 
 function Edit_Info(){
     function Form(props){
         let eventoValues = {
-            titulo: "",
+            nome: "",
+            imagem:"",
             data: "",
-            // imagem: "",
             horario_inicio: "",
             horario_fim: "",
             endereco: "",
@@ -19,66 +22,94 @@ function Edit_Info(){
 
         let colaboradorValues ={
             nome:"",
-            // imagem: "",
-            url:""
+            url:"",
+            imagem: "",
+            descricao: ""
         }
 
         let noticiaValues ={
             titulo:"",
             descricao:"",
-            // imagem:"",
             url:"",
             data:""
         }
+
+        let selected_file = ''
         
         function handleFileSelection(){
-            let  nome_arquivo = document.getElementById('selecionar-arquivo').files[0].name;
+            selected_file = document.getElementById('selecionar-arquivo').files[0]
+            let  nome_arquivo = selected_file.name;
             let p = document.getElementById('input-field-fileName')
             p.innerText = nome_arquivo
         }
 
         //verifica os campos e adicona um elemento
-        function handleBtnAdicionar(selection){
+        async function handleBtnAdicionar(selection){
             if(selection == 'eventos'){
-                const {titulo,data,horario_inicio,horario_fim,endereco} = eventoValues;
-                if(!(titulo && data && horario_fim && horario_inicio && endereco)){
+                const {nome,data,horario_inicio,horario_fim,endereco} = eventoValues;
+                let imagem = selected_file;
+                if(!(nome && data && horario_fim && horario_inicio && endereco)){
                     alert("Preencha todos os campos");
                     return;
                 }
-                setEventos([...eventos,{...eventoValues}]);
+                try{
+                    await postEvento(nome,data,horario_inicio,horario_fim,endereco,imagem)
+                }
+                catch(error){
+                    console.error(error)
+                    return;
+                }
+                // const [ano,mes,dia] = eventoValues.data.split('-')
+                // eventoValues.data = `${dia}/${mes}/${ano}`
+                //setEventos([...eventos,{...eventoValues}]);
+                loadEvento()
             }
             else if(selection == 'colaboradores'){
-                const {nome,url} = colaboradorValues;
-                if(!(nome,url)){
+                const {nome,url,descricao} = colaboradorValues;
+                let imagem = selected_file;
+                if(!(nome && url && imagem && descricao)){
                     alert("Preencha todos os campos");
                     return;
                 }
-                setColaboradores([...colaboradores,{...colaboradorValues}])
-                
-                //coloca o colaborador no banco de dados
-                //pode apagar que usei so para colocar uns para testar na pagina de colaborador
-                //Kaito Hayashi
-                // postColaborador(nome, "descricao", "www", document.getElementById('selecionar-arquivo').files[0])
+                try{
+                    await postColaborador(nome,descricao,url,imagem)
+                }
+                catch(error){
+                    console.error(error)
+                    return
+                }
+                loadColaborador()
+                //setColaboradores([...colaboradores,{...colaboradorValues}])
             }
             else if(selection == 'noticias'){
                 const {titulo,descricao,url,data} = noticiaValues;
-                if(!(titulo,data)){
+                let imagem = selected_file
+                if(!(titulo && data && descricao && url && imagem)){
                     alert("Preencha os campos necessários");
                     return;
                 }
-                setNoticias([...noticias,{...noticiaValues}])
+                try{
+                    await postNoticia(titulo,data,descricao,url,imagem)
+                }
+                catch(error){
+                    console.error(error)
+                    return
+                }
+                // const [ano,mes,dia] = noticiaValues.data.split('-')
+                // noticiaValues.data = `${dia}/${mes}/${ano}`
+                //setNoticias([...noticias,{...noticiaValues}])
+                loadNoticia()
             }
             else{
                 console.log('unreachable');
             }
-            eventoValues = {};
             alert("Adicionado com sucesso!");
         }
         
         // funcoes que sao emitidas quando escreve no input
         //eventos
         function handleNomeChange(event){
-            eventoValues.titulo=event.target.value;
+            eventoValues.nome=event.target.value;
         }
 
         function handleDataChange(event){
@@ -99,14 +130,13 @@ function Edit_Info(){
             colaboradorValues.nome=event.target.value;
         }
 
+        function colabHandleDescricaoChange(event){
+            colaboradorValues.descricao = event.target.value;
+        }
+
         function colabHandleURLChange(event){
             colaboradorValues.url=event.target.value;
         }
-
-        function colabHandleFileChange(event){
-
-        }
-
         //noticias
         function notHandleTituloChange(event){
             noticiaValues.titulo=event.target.value;
@@ -138,7 +168,7 @@ function Edit_Info(){
                     </div>
                     <div>
                         <h2>Imagem:</h2>
-                        <input type="file" id="selecionar-arquivo" style={{display:'none'}} onChange={handleFileSelection}/>
+                        <input type="file" id="selecionar-arquivo" style={{display:'none'}} onChange={handleFileSelection} accept='.png, .jpg, .jpeg'/>
                         <button className='button-choose' onClick={()=> document.getElementById('selecionar-arquivo').click()}>Escolher Foto</button>
                         <p id='input-field-fileName'className='inline-text'></p>
                     </div>
@@ -174,8 +204,12 @@ function Edit_Info(){
                         <input onChange={colabHandleNomeChange} type='text' className='defaultInput'></input>
                     </div>
                     <div>
+                        <h2>Descrição:</h2>
+                        <textarea onChange={colabHandleDescricaoChange} id = "outrasInput" class = "TextoEInput defaultInput"  type="text" />
+                    </div>
+                    <div>
                         <h2>Imagem:</h2>    
-                        <input type="file" id="selecionar-arquivo" style={{display:'none'}} onChange={handleFileSelection}/>
+                        <input type="file" id="selecionar-arquivo" style={{display:'none'}} onChange={handleFileSelection} accept='.png, .jpg, .jpeg'/>
                         <button className='button-choose' onClick={()=> document.getElementById('selecionar-arquivo').click()}>Escolher Foto</button>
                         <p id='input-field-fileName'className='inline-text'></p>
                     </div>
@@ -200,18 +234,18 @@ function Edit_Info(){
                         <input onChange={notHandleTituloChange} type='text' className='defaultInput'></input>
                     </div>
                     <div>
-                        <h2>Data:</h2>    
-                        <input onChange={notHandleDataChange} type='text' className='defaultInput'></input>
+                        <h2>Data:</h2>
+                        <input onChange={notHandleDataChange}type="date"  className='defaultInput input-data'></input>
                     </div>
                     <div>
                         <h2>Imagem:</h2>    
-                        <input type="file" id="selecionar-arquivo" style={{display:'none'}} onChange={handleFileSelection}/>
+                        <input type="file" id="selecionar-arquivo" style={{display:'none'}} onChange={handleFileSelection} accept='.png, .jpg, .jpeg'/>
                         <button className='button-choose' onClick={()=> document.getElementById('selecionar-arquivo').click()}>Escolher Foto</button>
                         <p id='input-field-fileName'className='inline-text'></p>
                     </div>
                     <div>
-                        <h2>Descricao:</h2>
-                        <input onChange={notHandleDescricaoChange} type='text' className='defaultInput'></input>
+                        <h2>Descrição:</h2>
+                        <textarea onChange={notHandleDescricaoChange} id = "outrasInput" class = "TextoEInput defaultInput"  type="text" />
                     </div>
                     <div>
                         <h2>Link:</h2>
@@ -224,47 +258,107 @@ function Edit_Info(){
         }
     }
 
+    
+    function removeEvento(nome){
+        if(!confirm('Deseja mesmo excluir o evento: ' + nome)){
+            return;
+        }
+
+        try{
+            deleteEvento(nome)
+            alert("Evento removido com sucesso!")
+        }
+        catch(error){
+            alert('Não foi possível remover este evento')
+            return;
+        }
+        loadEvento()
+    }
+
+    function removeColaborador(nome){
+        if(!confirm('Deseja mesmo excluir o colaborador: ' + nome)){
+            return;
+        }
+
+        try{
+            deleteColaborador(nome)
+            alert("Colaborador removido com sucesso!")
+        }
+        catch(error){
+            alert('Não foi possível remover este colaborador')
+            return;
+        }
+        loadColaborador()
+    }
+
+    function removeNoticia(titulo){
+        if(!confirm('Deseja mesmo excluir a notícia: ' + titulo)){
+            return;
+        }
+
+        try{
+            deleteNoticia(titulo)
+            alert("Notícia removida com sucesso!")
+        }
+        catch(error){
+            alert('Não foi possível remover esta notícia')
+            return;
+        }
+        loadNoticia()
+    }
+
+    async function loadColaborador(){
+        try{
+            let colaboradoresBD = await getColaborador()
+            for(let i = 0; i < colaboradoresBD.length; i++){
+                colaboradoresBD[i].imagem = colaboradoresBD[i].imagem.replace("publico\\imagens\\colaboradores\\", "../../../backend/publico/imagens/colaboradores/")
+            }
+            setColaboradores(colaboradoresBD)
+        }
+        catch(e){}
+    }
+    async function loadEvento(){
+
+        try{
+            let eventoTemp = await getEvento()
+            eventoTemp.map((e) =>{
+                let [datai,horai] = formatarData(e.horario_inicio)
+                let [dataf,horaf] = formatarData(e.horario_fim)
+                let [data,hora] = formatarData(e.data)
+
+                e.horario_inicio = horai
+                e.horario_fim = horaf
+                e.data = data
+            })
+            setEventos(eventoTemp)
+        }
+        catch(e){}
+        
+    }
+    
+    async function loadNoticia(){
+        let noticiaTemp = await getNoticia()
+        noticiaTemp.map((n)=>{
+            let [data,hora] = formatarData(n.data)
+            n.data = data
+        })
+        setNoticias(noticiaTemp)
+    }
+
+    useEffect( () => {
+        loadColaborador()
+        loadEvento()
+        loadNoticia()
+    },[])
+
 
 
     //elementos de teste
     //eventos
     let [selection,setSelection] = useState('eventos');
-    let [eventos,setEventos] = useState([
-        {
-            titulo: "Brechó de roupas",
-            data: "11/05/2024",
-            horario_inicio: "12:00",
-            horario_fim: "15:00",
-            endereco: "Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070",
-        },
-        {
-            titulo: "Venda de pizza",
-            data: "19/05/2024",
-            horario_inicio: "11:00",
-            horario_fim: "16:00",
-            endereco: "Rua Costa do Sol, 450 - Vila Costa do Sol, São Carlos - SP, 13566-070",
-        }
-    ]);
-
-    //colaboradores
-    let [colaboradores,setColaboradores] = useState([
-        {
-            nome:'Universidade de São Paulo',
-            url: 'https://www.usp.br',
-            imagem: '../public/images/colaborador/USPLogo.png'
-        },
-    ]);
-
-    //noticias
-    let [noticias,setNoticias] = useState([
-        {
-            titulo:'Universidade de São Paulo',
-            data: '22-11-2024',
-            imagem: '../public/images/colaborador/USPLogo.png',
-            descricao: "teste",
-            url: 'https://www.usp.br'
-        },
-    ]);
+    let [eventos,setEventos] = useState([]);
+    let [colaboradores,setColaboradores] = useState([])
+    let [noticias,setNoticias] = useState([])
 
 
 
@@ -272,28 +366,12 @@ function Edit_Info(){
     let btnColaboradoresClass='';
     let btnNoticiasClass='';
 
-
     if(selection == 'eventos')
         btnEventosClass = 'selected-btn';
     else if(selection == 'colaboradores')
         btnColaboradoresClass = 'selected-btn';
     else if(selection == 'noticias')
         btnNoticiasClass = 'selected-btn';
-
-    function removeEvento(index){
-        eventos.splice(index,1)
-        setEventos([...eventos]);
-    }
-
-    function removeColaborador(index){
-        colaboradores.splice(index,1)
-        setColaboradores([...colaboradores]);
-    }
-
-    function removeNoticia(index){
-        noticias.splice(index,1)
-        setNoticias([...noticias]);
-    }
 
     return(
         <>
@@ -311,7 +389,7 @@ function Edit_Info(){
             {selection == 'eventos' &&
                 <div id="container-lista">
                 {eventos.map((evento,index)=> 
-                    <Evento id={index} endereco={evento.endereco} titulo={evento.titulo} data={evento.data}
+                    <Evento id={index} endereco={evento.endereco} titulo={evento.nome} data={evento.data}
                     horario_fim={evento.horario_fim} horario_inicio={evento.horario_inicio} onClick={removeEvento}/>)}
                 </div>
 
@@ -331,7 +409,6 @@ function Edit_Info(){
                 </div>
             }
             
-           
         </>
     )
 }

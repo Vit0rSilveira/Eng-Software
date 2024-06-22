@@ -19,11 +19,11 @@ function Evento(props){
                 {/* <p className="textoBranco">{id}</p> */}
                 <p className="textoBranco">{titulo}</p>
                 <p className='textoBranco'>{data}</p>
-                <p className="textoBranco">{hora_inicio + '-' + hora_fim}</p>
+                <p className="textoBranco">{hora_inicio + ' - ' + hora_fim}</p>
             </div>
             <div className="evento-endereco">
                 <p className='textoBranco texto-endereco-evento'>{endereco}</p>
-                <button className="btn-excluir-evento" onClick = {() => callback(id)}>
+                <button className="btn-excluir-evento" onClick = {() => callback(titulo)}>
                     <FaRegTrashCan size={15} color="white"/>
                 </button>
             </div>

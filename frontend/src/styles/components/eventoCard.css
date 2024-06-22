@@ -1,0 +1,26 @@
+
+.eventos-text {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+    background-color:#F9B145;
+    box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.283);
+    border-radius: 20px;
+    padding: 1em 3em 0 3em;
+}
+
+.eventos-text .eventos-titulo{
+    margin-top: 0.3em;
+    font-size: 1.7em;
+    text-align: start;
+    color: #392600;
+    margin-bottom: 1em;
+}
+
+.eventos-text p2 {
+    color: white;
+    font-size: 1.1em;
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+}

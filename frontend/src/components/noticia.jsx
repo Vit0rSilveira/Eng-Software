@@ -21,7 +21,7 @@ function Noticia(props){
                         <p className='textoBranco '>Data: {data}</p>
 
                     </div>
-                    <button className="btn-excluir-evento" onClick = {() => callback(id)}>
+                    <button className="btn-excluir-evento" onClick = {() => callback(titulo)}>
                         <FaRegTrashCan size={15} color="white"/>
                     </button>
                 </div>

@@ -71,7 +71,7 @@ function Header(props) {
             <>
                 <div id='headerImage'>
                     <h1>{props.headerText1}<br/>{props.headerText2}</h1>
-                    {props.isHomePage ? (<button class = "defaultButton homePageButton">Venha nos conhecer!</button>):(<></>)}
+                    {props.isHomePage ? (<button onClick={() => (window.location.href = "/voluntariado")} class = "defaultButton homePageButton">Venha nos conhecer!</button>):(<></>)}
                 </div>
             </>
         )}

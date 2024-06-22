@@ -7,22 +7,17 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export function ItemVoluntario(props){
 
-    function TextoVoluntario({tipo,texto}){
-        console.log(tipo)
+    function TextoVoluntario({tipo,endereco,produto,motivo}){
         if(tipo == 'doação'){
-            let txt = '';
-            for(let t of texto){
-                txt += t + ', '
-            }
-            txt = txt.slice(0,txt.length - 2);
             
-            return <p>Produtos: {txt}</p>
+            return <p>Produtos: {produto}</p>
         }
         else if(tipo == 'visita')
-            return <p>Motivo: {texto}</p>
+            return <p>Motivo: {motivo}</p>
         else if(tipo == 'retirada'){
-            return <p>Endereço: {texto}</p>
+            return <p>Endereço: {endereco}</p>
         }
+        return <></>
             
     }
 
@@ -31,9 +26,14 @@ export function ItemVoluntario(props){
     let horario_fim = props.horario_fim;
     let tipo = props.tipo;
     let data = props.data;
-    let descricao = props.descricao;
     let email = props.email;
     let telefone = props.telefone;
+    let callback_excluir = props.callback_excluir
+
+    // somente um desses vai ter valor, os outros serao undefined
+    let endereco = props.endereco;
+    let motivo = props.motivo;
+    let produto = props.produto
 
     let horario = horario_fim ? horario_inicio + '-' + horario_fim : horario_inicio;
     
@@ -47,7 +47,7 @@ export function ItemVoluntario(props){
                     <h2 className="">{horario}</h2>
                 </div>
                 <div className="voluntario-corpo">
-                    <TextoVoluntario tipo={tipo} texto={descricao}/>
+                    <TextoVoluntario tipo ={tipo} endereco = {endereco} motivo={motivo} produto={produto}/>
                     <p>Email: {email}</p>
                     <p>Telefone: {telefone}</p>
                 </div>
@@ -55,7 +55,7 @@ export function ItemVoluntario(props){
                     <button className='btn-confirmar'>
                         <FaCircleCheck size={30} color='#12970d'/>
                     </button>
-                    <button className='btn-excluir'>
+                    <button className='btn-excluir' onClick={()=>callback_excluir(nome)}>
                         <FaRegTrashCan size={20} color="white"/>
                     </button>
                     <button className='btn-email'>
@@ -76,7 +76,7 @@ export function ListaVoluntarios(props){
         <>
             <div id='lista-voluntarios'>
                 {voluntarios.map(
-                    (v,index) => <ItemVoluntario {...v} key={index}/>
+                    (v,index) => <ItemVoluntario {...v} key={index} callback_excluir={props.callback_excluir}/>
                     )}
             </div>
         </>

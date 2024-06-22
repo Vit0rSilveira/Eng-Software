@@ -19,7 +19,14 @@ function LoginEsqueceuSenha(){
 
     const handleForgotPassword = async () => {
         const email = await pegarEmail()
-        
+        const serviceID = process.env.REACT_APP_SERVICEID;
+        const templateID = process.env.REACT_APP_TEMPLATEID;
+        const publicKey = process.env.REACT_APP_PUBLICKEYEMAILJSs;
+
+        console.log('Service ID:', serviceID);
+        console.log('Template ID:', templateID);
+        console.log('Public Key:', publicKey);
+
         const conteudo = {
             assunto: 'Recuperação de senha',
             mensagem: 'Clique no link para redefinir sua senha: [link]'
