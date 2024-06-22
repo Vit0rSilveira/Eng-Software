@@ -1,5 +1,5 @@
 import React from 'react';
-import Destiny from './components/routers'
+import Destiny from './routes/routers'
 import { BrowserRouter} from 'react-router-dom';
 
 import Home from './pages/home';

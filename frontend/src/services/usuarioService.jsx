@@ -5,10 +5,10 @@ const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL
 export async function getUsuario(){
     try {
         const response = await axios.get(API_URL)
-        return response.data.usuarios
+        return response.data.usuarios[0]
     } catch (error) {
         console.error('Erro ao obter o usuario:', error)
-        return []
+        return null
     }
 }
 
