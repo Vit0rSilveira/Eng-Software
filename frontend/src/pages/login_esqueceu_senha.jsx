@@ -1,10 +1,25 @@
+import { useState } from 'react';
 import '../styles/pages/login.css'
 import '../styles/pages/login_esqueceu_senha.css'
 import { envia_email } from '../utils/utils';
+import { Navigate } from 'react-router-dom';
+import {getUsuario} from '../services/usuarioService';
 
 function LoginEsqueceuSenha(){
+    const [email, setEmail] =  useState()
 
-     const handleForgotPassword = () => {
+    //envia email com texto de auxilio
+    //Tutorial: https://www.youtube.com/watch?v=Lz8yx-zn-O4
+
+     async function pegarEmail () {
+        const userEmail = await getUsuario()
+
+        setEmail(userEmail.email)
+    }
+
+    const handleForgotPassword = async () => {
+        const email = await pegarEmail()
+        
         const conteudo = {
             assunto: 'Recuperação de senha',
             mensagem: 'Clique no link para redefinir sua senha: [link]'
@@ -13,12 +28,14 @@ function LoginEsqueceuSenha(){
         envia_email(email, conteudo)
             .then((response) => {
                 alert('Email de recuperação de senha enviado com sucesso!');
+                Navigate("/login-email-enviado")
             })
             .catch((error) => {
                 alert('Erro ao enviar email de recuperação de senha: ' + error.text);
             });
     };
-
+        
+        
     return(
         <>
              {/* header*/}
@@ -33,9 +50,9 @@ function LoginEsqueceuSenha(){
 
             <div class = "titulo"  id = "contLoginConf">
                 <div  id = "textoLoginConf">
-                    Deseja enviar o email com o 
-                    <br/>
-                    texto auxilio da senha?
+                    <p>Deseja enviar o email com o </p>
+                    <p>texto auxilio da senha?</p>
+                    
                 </div>
                 <div>
                     <button onClick={() => handleForgotPassword()} className="defaultButton" id="botaoLoginConf">
