@@ -1,4 +1,5 @@
 import axios from "axios";
+import {parseDate,combineDateAndTime} from "../utils/datautils";
 
 const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL:"http://localhost:3000") + "/voluntario"
 
@@ -17,23 +18,23 @@ export async function postVoluntario(nome,email,tipo,data,horario_inicio,horario
     horario_inicio = combineDateAndTime(data,horario_inicio)
     horario_fim = combineDateAndTime(data,horario_fim)
     try{
-        const formData = new FormData();
-        formData.append('nome', nome);
-        formData.append('email', email);
-        formData.append('tipo', tipo);
-        formData.append('data', data);
-        formData.append('horario_inicio', horario_inicio);
-        formData.append('horario_fim', horario_fim);
-        formData.append('produto', produto);
-        formData.append('endereco', endereco);
-        formData.append('motivo', motivo);
-        formData.append('outras_informacoes', outros);
+        const datas = {nome: nome,
+            email: email,
+            tipo: tipo,
+            data: data,
+            horario_inicio: horario_inicio,
+            horario_fim: horario_fim,
+            produto: produto,
+            endereco: endereco,
+            motivo: motivo,
+            outras_informacoes: outros
+        }
 
-        const response = await axios.post(API_URL + "/", formData);
-
+        const response = await axios.post(API_URL + "/", datas);
 
         if(response.status == 201) return true
     }catch(error){
+        console.error('Erro ao colocar a voluntario:', error)
         throw new Error(error)
     }
 }

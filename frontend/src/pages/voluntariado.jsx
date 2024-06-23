@@ -3,6 +3,10 @@ import Header from '../components/header';
 import VoluntarioCard from '../components/voluntarioCard';
 import Footer from '../components/footer';
 import '../styles/pages/voluntariado.css';
+import {getVoluntario, postVoluntario} from "../services/voluntarioService";
+import {parseDate} from "../utils/datautils";
+import { envia_email_voluntario } from '../utils/utils';
+
 
 function Voluntariado(){
 
@@ -78,14 +82,40 @@ function Voluntariado(){
         setVerificar(!verificar)
     }
 
+
+    //cadastra no BD e envia email
+    const cadastrarVoluntario = async () => {
+        const conteudo = {
+            assunto: 'Confirmação de Cadastro',
+            email: email,
+            nome:nome,
+            email:email,
+            tipo:tipo,
+            data:data,
+            horario_inicial:horarioInicio,
+            horario_final:horarioFinal,
+
+        };
+
+        await postVoluntario(nome,email,tipo,data,horarioInicio,horarioFinal,produto,endereco,motivo,informacaoExtra)
+            .then((response) => {
+                envia_email_voluntario(email, conteudo)
+                .then((response) => {
+                    window.location.href = "/voluntario-confirmado"
+                })
+            })
+    };
+
+
     //se nao tiver erro, vai para pagina de confirmacao
     //foi colocado no useEffect, porque nao da para atualizar um state e ver o state atualizado na mesma funcao
     useEffect(()=>{
         if(primeiro) setPrimeiro(false)
+        //verifica se todos 
         else if(!erroNome && !erroEmail && !erroTipo && !erroProduto && !erroEndereco && !erroMotivo && !erroData && !erroHorario)
         {
-
-            window.location.href = "/voluntario-confirmado"
+            //cadastra no BD e envia email
+            cadastrarVoluntario()
         }
     }, [verificar])
 

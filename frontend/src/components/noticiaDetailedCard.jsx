@@ -20,8 +20,6 @@ function NoticiaDetaildCard(props) {
           <a href={props.link} target="_blank" id = "noticiaDetLink" class = "textoLink">Clique aqui para mais informações</a>
         </div>
     </div>
-
-
   );
 }
 
