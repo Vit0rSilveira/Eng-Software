@@ -1,16 +1,14 @@
 import emailjs from 'emailjs-com';
+import constantes from '../utils/constante';
 
+//Tutorial: https://www.youtube.com/watch?v=Lz8yx-zn-O4
 export function envia_email(email, conteudo) {
-    const serviceID = process.env.REACT_APP_SERVICEID;
-    const templateID = process.env.REACT_APP_TEMPLATEID;
-    const publicKey = process.env.REACT_APP_PUBLICKEYEMAILJSs;
-
-    console.log('Service ID:', serviceID);
-    console.log('Template ID:', templateID);
-    console.log('Public Key:', publicKey);
+    const serviceID = constantes.SERVICEID;
+    const templateID = constantes.TEMPLATEID;
+    const publicKey = constantes.PUBLICKEY_EMAILJS;
 
     const templateParams = {
-        email,
+        email: email,
         subject: conteudo.assunto,
         message: conteudo.mensagem
     };

@@ -1,27 +1,16 @@
 import React from "react";
 import "../styles/components/eventoCard.css";
+import {formatarData} from "../utils/datautils";
 
 function EventoCard(props) {
 
-  const dataString =  props.data
-  const data = new Date(dataString)
-  const hInicialString =  props.horarioInicio
-  const hInicial = new Date(hInicialString)
-  const hFimString =  props.horarioFim
-  const hFim = new Date(hFimString)
-
-  const dia = data.getDate()
-  const mes = data.getMonth()+1
-  const horaI = hInicial.getHours();
-  const minutoI = hInicial.getMinutes();
-  const horaF = hFim.getHours();
-  const minutoF = hFim.getMinutes();
-  // const horarioI = 
-  // const horarioF = 
+  const [data, nulo] = formatarData(props.data)
+  const [nulo2, horarioInicio] = formatarData(props.horarioInicio)
+  const [nulo3, horarioFim] = formatarData(props.horarioFim)
 
   return (
     <div className="eventos-text">
-          <h2 className="titulo eventos-titulo"> {props.nome}    Dia: {mes}/{dia}     {horaI}:{minutoI}-{horaF}:{minutoF}   </h2>
+          <h2 className="titulo eventos-titulo"> {props.nome}    Dia: {data}     {horarioInicio}-{horarioFim}   </h2>
           <p2>  {props.endereco} </p2>
     </div>
     // <div id = "containerDoacaoCard" style={backgroundColor}>

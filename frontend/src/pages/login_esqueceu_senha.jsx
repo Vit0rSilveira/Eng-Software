@@ -2,40 +2,21 @@ import { useState } from 'react';
 import '../styles/pages/login.css'
 import '../styles/pages/login_esqueceu_senha.css'
 import { envia_email } from '../utils/utils';
-import { Navigate } from 'react-router-dom';
 import {getUsuario} from '../services/usuarioService';
 
 function LoginEsqueceuSenha(){
-    const [email, setEmail] =  useState()
-
-    //envia email com texto de auxilio
-    //Tutorial: https://www.youtube.com/watch?v=Lz8yx-zn-O4
-
-     async function pegarEmail () {
-        const userEmail = await getUsuario()
-
-        setEmail(userEmail.email)
-    }
 
     const handleForgotPassword = async () => {
-        const email = await pegarEmail()
-        const serviceID = process.env.REACT_APP_SERVICEID;
-        const templateID = process.env.REACT_APP_TEMPLATEID;
-        const publicKey = process.env.REACT_APP_PUBLICKEYEMAILJSs;
-
-        console.log('Service ID:', serviceID);
-        console.log('Template ID:', templateID);
-        console.log('Public Key:', publicKey);
+        const userEmail = await getUsuario()
 
         const conteudo = {
             assunto: 'Recuperação de senha',
-            mensagem: 'Clique no link para redefinir sua senha: [link]'
+            mensagem: 'Este é o seu texto auxiliar: ' + userEmail.texto_auxiliar
         };
 
-        envia_email(email, conteudo)
+        envia_email(userEmail.email, conteudo)
             .then((response) => {
-                alert('Email de recuperação de senha enviado com sucesso!');
-                Navigate("/login-email-enviado")
+                window.location.href = "/login-email-enviado"
             })
             .catch((error) => {
                 alert('Erro ao enviar email de recuperação de senha: ' + error.text);
