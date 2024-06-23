@@ -312,9 +312,7 @@ function Edit_Info(){
         try{
             let colaboradoresBD = await getColaborador()
             for(let i = 0; i < colaboradoresBD.length; i++){
-                colaboradoresBD[i].imagem = `${constantes.PATH}/${colaboradoresBD[i].imagem.replace('publico\\','')}`.replace('\\','/')
-                console.log(colaboradoresBD[i].imagem)
-               // colaboradoresBD[i].imagem = '../../public/images/colaborador/1718230089596-USPLogo.png'      
+                colaboradoresBD[i].imagem = `${constantes.PATH}/${colaboradoresBD[i].imagem.replace('publico\\','')}`.replace('\\','/')    
             }
             setColaboradores(colaboradoresBD)
         }
