@@ -214,7 +214,7 @@ function CRUD_Conta(){
 
                     {/* cadastro Button */}
                     <div id = "buttonPlaceEditC">
-                        <button onClick={validarEdit} id="editButton" class="defaultButton">Confirmar</button>
+                        <button onClick={validarEdit} id="editButton" class="orangeButton">Confirmar</button>
                     </div>
                 </div>
             </div>

@@ -57,8 +57,8 @@ function LoginEsqueceuSenha(){
 
             <div class = "titulo"  id = "contLoginConf">
                 <div  id = "textoLoginConf">
-                    <p>Deseja enviar o email com o </p>
-                    <p>texto auxilio da senha?</p>
+                    Deseja enviar o email com o <br/> 
+                    texto auxilio da senha?
                     
                 </div>
                 <div>

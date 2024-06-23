@@ -11,13 +11,18 @@ function Footer() {
             <div class='redes'>
                 <p class="contrast-text media-hide" >Acesse nossas redes:</p>
                 <div class='redes-icons'>
-                    <FaInstagram size={30}/>
-                    <FaFacebook size={30}/>
+                    <a href="https://www.instagram.com/grupopaofraternoandreluiz/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                        <FaInstagram size={30}/>
+                    </a>
+                    <a href="https://www.facebook.com/groups/960934403960292?locale=id_ID" target="_blank" rel="noopener noreferrer"  style={{ color: 'inherit' }}>
+                        <FaFacebook size={30}/>
+                    </a>
                 </div>
             </div>
             <div class='contato'>
                 <p class='contrast-text media-hide'> Entre em contato conosco:</p>
                 <p> paofraterno@gmail.com </p>
+                <p> +55 (16) 99192-4555 </p>
                 <div class='media-hide'><FaPhone size={30} /></div>
             </div>
             <div class='localizacao'>

@@ -32,7 +32,7 @@
 #loginTextBox{
     width: 25em;
     font-size: 1.1em;
-    background-color: #F9DC45;
+    background-color: #F9C745;
     margin-top: 2em;
     padding: 0 0 0.7em 0;
 }
@@ -40,7 +40,7 @@
     width: 94.9%;
     font-size: 1.3em;
     font-weight: 700;
-    background-color: #F9C745;
+    background-color: #F9B145;
     padding: 0em 0.5em 0em 0.5em;
     margin-bottom: 1.5em;
 }
@@ -72,6 +72,8 @@
     font-size: 0.8em;
     font-weight: 600;
     color: white;
+    margin-top: 1em;
+    margin-left: 0.5em;
 }
 #linkEsqSenha{
     font-size: 1em;

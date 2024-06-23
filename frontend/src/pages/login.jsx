@@ -129,7 +129,7 @@ function Login(){
                     {(senhaVazia && <div class = "textoErroLogin textoErro">Preencha a senha</div>)}
                     {/* cadastro Button */}
                     <div id = "buttonPlaceLogin">
-                        <button onClick={validarLogin} id="loginButton" class="defaultButton">Login</button>
+                        <button onClick={validarLogin} id="loginButton" class="orangeButton">Login</button>
                     </div>
                     {/* esqueceu a senha */}
                     <div id ="textoEsqSenha" class = "textoBranco mt-5 mx-3">
