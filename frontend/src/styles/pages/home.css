@@ -36,11 +36,18 @@ main {
     
 .box-text p {
     color: white;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    font-weight: 700;
 }
         
-.box-text img {
+.home-img-box{
+    display: flex;
+    justify-content: center;
+}
+
+.home-img-box img {
     margin: 2em;
+    width: 60%;
 }
 
 #questions {
@@ -53,10 +60,10 @@ main {
 }
 
 #box-questions {
+    width: 90%;
     display: grid;
-    padding: 5%;
-    grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas de largura igual */
-    gap: 10px; /* Espaçamento entre as perguntas */
+    text-wrap: wrap;
+    grid-template-columns: repeat(1, 1fr); 
     margin: auto;
 }
 
