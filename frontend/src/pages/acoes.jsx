@@ -4,9 +4,26 @@ import Footer from '../components/footer';
 import '../styles/pages/acoes.css'
 import NoticiaCard from "../components/noticiaCard";
 import NoticiaDetaildCard from "../components/noticiaDetailedCard";
+import {getNoticia} from "../services/noticiaService";
+import constantes from '../utils/constante.js'
 
 
 function Acoes() {
+
+    //funcoes para pegar noticias do banco
+    let [noticias, setNoticias] = useState([])
+
+    async function LoadNoticia(){
+        let noticiasBD = await getNoticia()
+        setNoticias(noticiasBD)
+    }
+
+    useEffect(()=>{
+        LoadNoticia()
+    }, [])
+
+
+    //funcoes para mostrar o detalhe da noticia
     const[isShow, setShow] = useState(false);
     const[propriedade, setPropriedade] = useState([]);
 
@@ -18,6 +35,7 @@ function Acoes() {
         setShow(false)
     }
 
+
     return (
         <>
         <Header 
@@ -26,38 +44,19 @@ function Acoes() {
         />
         <div id="centralize">
             <div id = "conteinerNoticia">
-                <NoticiaCard
-                    title = "Doação de kit alimentos na igreja Papa Roho"
-                    image = "public\images\noticia\noticia1.png"
-                    descricao = "Escrever a descrição da notícia a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss. a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss"
-                    data = "13/4/2024"
-                    link =  "https://edisciplinas.usp.br"
-                    onShow = {showNoticia}
-                />
-                <NoticiaCard
-                    title = "Doação de kit alimentos na igreja Papa Roho"
-                    image = "public\images\noticia\noticia1.png"
-                    descricao = "Escrever a descrição da notícia a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss. a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss"
-                    data = "13/4/2024"
-                    link=  "https://edisciplinas.usp.br"
-                    onShow = {showNoticia}
-                />
-                <NoticiaCard
-                    title = "Doação de kit alimentos na igreja Papa Roho"
-                    image = "public\images\noticia\noticia1.png"
-                    descricao = "Escrever a descrição da notícia a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss. a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss"
-                    data = "13/4/2024"
-                    link=  "https://edisciplinas.usp.br"
-                    onShow = {showNoticia}
-                />
-                <NoticiaCard
-                    title = "Doação de kit alimentos na igreja Papa Roho RoRo"
-                    image = "public\images\noticia\noticia1.png"
-                    descricao = "Escrever a descrição da notícia a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss. a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss a aaa aas sssdsdsss ssssss sssss ssssss ssss s s ssss sssss sss ssss ssssssssss"
-                    data = "13/4/2024"
-                    link =  "https://edisciplinas.usp.br"
-                    onShow = {showNoticia}
-                />
+                {noticias.map((noticia,index)=> 
+                    <>
+                    <div className="conteinerNoticia">
+                        <NoticiaCard
+                            title = {noticia.titulo}
+                            image = {noticia.imagem.replace('publico',constantes.PATH).replace('\\','/')}
+                            descricao = {noticia.descricao}
+                            data = {noticia.data}
+                            link =  {noticia.link}
+                            onShow = {showNoticia}
+                        />
+                    </div>
+                </>)}
             </div>
         </div>
 
