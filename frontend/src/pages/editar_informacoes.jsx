@@ -8,6 +8,7 @@ import {deleteColaborador, getColaborador, postColaborador} from "../services/co
 import { deleteNoticia, getNoticia, postNoticia } from '../services/noticiaService.jsx';
 import { deleteEvento, getEvento, postEvento } from '../services/eventoService.jsx';
 import { formatarData } from '../utils/datautils.js';
+import constantes from '../utils/constante.js'
 
 function Edit_Info(){
     function Form(props){
@@ -311,7 +312,9 @@ function Edit_Info(){
         try{
             let colaboradoresBD = await getColaborador()
             for(let i = 0; i < colaboradoresBD.length; i++){
-                colaboradoresBD[i].imagem = colaboradoresBD[i].imagem.replace("publico\\imagens\\colaboradores\\", "../../../backend/publico/imagens/colaboradores/")
+                colaboradoresBD[i].imagem = `${constantes.PATH}/${colaboradoresBD[i].imagem.replace('publico\\','')}`.replace('\\','/')
+                console.log(colaboradoresBD[i].imagem)
+               // colaboradoresBD[i].imagem = '../../public/images/colaborador/1718230089596-USPLogo.png'      
             }
             setColaboradores(colaboradoresBD)
         }
