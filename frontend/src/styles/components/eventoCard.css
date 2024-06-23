@@ -15,12 +15,22 @@
     font-size: 1.7em;
     text-align: start;
     color: #392600;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .eventos-text p2 {
     color: white;
     font-size: 1.1em;
     padding-bottom: 5px;
-    margin-bottom: 50px;
+    margin-bottom: 2em;
+}
+
+.eventos-imagem-cont{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+.eventos-imagem{
+    width: 60%;
 }

@@ -3,6 +3,7 @@ import Header from '../components/header';
 import Question from "../components/questions";
 import Footer from '../components/footer';
 import '../styles/pages/home.css'
+import constantes from '../utils/constante.js'
 import EventoCard from '../components/eventoCard';
 import {getEvento} from "../services/eventoService";
 
@@ -115,7 +116,7 @@ function Home() {
                         <>
                             <EventoCard
                                 nome = {evento.nome}
-                                // imagem={evento.imagem.replace("publico\\imagens\\eventos", "../../public/images/evento")}
+                                imagem = {evento.imagem.replace('publico',constantes.PATH).replace('\\','/')}
                                 data = {evento.data}
                                 horarioInicio = {evento.horario_inicio}
                                 horarioFim = {evento.horario_fim}

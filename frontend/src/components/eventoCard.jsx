@@ -10,14 +10,12 @@ function EventoCard(props) {
 
   return (
     <div className="eventos-text">
-          <h2 className="titulo eventos-titulo"> {props.nome}    Dia: {data}     {horarioInicio}-{horarioFim}   </h2>
-          <p2>  {props.endereco} </p2>
+      <h2 className="titulo eventos-titulo"> {props.nome}    Dia: {data}     {horarioInicio}-{horarioFim}   </h2>
+      <p2>  {props.endereco} </p2>
+      <div className = "eventos-imagem-cont" >
+          <img className = "eventos-imagem" src={props.imagem}/>
+      </div>
     </div>
-    // <div id = "containerDoacaoCard" style={backgroundColor}>
-    //     <img src={props.image} id = "doacaoCardImage"/>
-    //     <div id = "t1" class = "titulo">{props.title}</div>
-    //     <div id = "t2" class = "textoBranco">{props.text}</div>
-    // </div>
   );
 }
 
