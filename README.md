@@ -40,6 +40,7 @@
   4. Adicione as seguintes variáveis no arquivo `constantes.js`:
      ```javascript
      export const SERVICEID = 'seu_service_id_emailjs';
+     export const TEMPLATEID_VOLUNTARIO = 'seu_template_id_emailjs';
      export const TEMPLATEID = 'seu_template_id_emailjs';
      export const PUBLICKEY_EMAILJS = 'sua_public_key_emailjs';
      ```
