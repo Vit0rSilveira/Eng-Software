@@ -26,9 +26,11 @@ function Info(){
                         </p>
                         <p id="quem-barra"></p>
                         <p id="quem-texto" className = "textoLaranja">
-                        Falar sobre: area de atuacao, que tipo de grupo, numero de pessoas envolvidas envolvidas. 
-                        Pode mudar a altura do conteiner conforme o tamanho do texto e imagem colocado. 
-                        Deixar um espaco entre `saiba mais` e o texto. 
+                        Somos uma organização do São Carlos, com o objetivo de ajudar os moradores de rua.
+                        Hoje, estamos com aproximadamente 40 pessoas voluntárias na organização.   
+                        </p>
+                        <p id="quem-texto" className = "textoLaranja">
+                        Atuamente somos parte da ONG Casa do Caminho, onde são juntam várias entidades de caráter de assistência social.
                         </p>
                     </div>
                 </div>
@@ -40,7 +42,8 @@ function Info(){
                         Objetivo
                     </div>
                     <p id="objetivo-texto" className = "textoBranco">
-                    Escrever sobre o objetivo. Pode escrever outra coisa tambem aaaaaaa aaa aaaaa aaaaaaa aaaaaaaaaaaa aaaaaaa aaaaaaaa aaa aaaa aaaaaaaaaaaaaaaaaaaaaa.  aaaaaaaaaaaa aaaaaaa aaaaaaaa aaa aaaa aaaaaaaaaaaaaaaaaaaaaa.  aaaaaaaaaaaa aaaaaaa aaaaaaaa aaa aaaa aaaaaaaaaaaaaaaaaaaaaa.
+                        Nosso objetivo é levar a fraternidade aos irmãos, através do alimento físico e espiritual quando desejado,
+                        tentando auxiliar na caminhada da vida.
                     </p>
                 </div>
 
@@ -55,14 +58,16 @@ function Info(){
                     <div className='hideInSmallDisplay'>
                         <div id="kitAlim-subcont">
                             <div id="kitAlim-texto" className='textoBranco'>
-                                aaaaaaa aaa aaaaa aaa aaaa aa aaaaa aaaaaaa aa aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
+                                A nossa principal atividade é a doação de kit de alimentos, toda sexta, passando pela toda a cidade do São Carlos.
+                                Entregamos sopa, bolo, água, e para quem precisar, roupas e produtos de higiene. 
                             </div>
                             <img id = "kitAlim-img" src={`${imgDir}montagem.png`} alt="" />
                         </div>
                         <div id="kitAlim-subcont">
                             <img id = "kitAlim-img" src={`${imgDir}entrega.png`} alt="" />
                             <div id="kitAlim-texto" className='textoBranco'>
-                            aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
+                            A atividade de doação é separada em 4 partes: coleta/compra de produtos, preparação de sopa, montagem de kit e entrega. 
+                            Em cada etapa trabalhamos, em média, com 10 pessoas.
                             </div>
                         </div>
                     </div>
@@ -71,8 +76,12 @@ function Info(){
                         <div id="kitAlim-subcont">
                             <img id = "kitAlim-img" src={`${imgDir}montagem.png`} alt="" />
                             <div id="kitAlim-texto" className='textoBranco'>
-                                aaaaaaa aaa aaaaa aaa aaaa aa aaaaa aaaaaaa aa aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
-                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
+                                A nossa principal atividade é a doação de kit de alimentos, toda sexta, passando pela toda a cidade do São Carlos.
+                                Entregamos sopa, bolo, água, e para quem precisar, roupas e produtos de higiene. 
+                            </div>
+                            <div id="kitAlim-texto" className='textoBranco'>
+                                A atividade de doação é separada em 4 partes: coleta/compra de produtos, preparação de sopa, montagem de kit e entrega. 
+                                Em cada etapa trabalhamos, em média, com 10 pessoas.
                             </div>
                         </div>
                     </div>
@@ -87,7 +96,9 @@ function Info(){
                     <div id="evento-subcont">
                         <img id = "evento-img" src={`${imgDir}montagem.png`} alt="" />
                         <div id="evento-texto" className='textoBranco'>
-                        aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaaaaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaaaaaa a aaaa aaa aaa a
+                            Os eventos ocorrem, em média, de 3 em 3 meses.
+                            Todo o dinheiro arrecadado nesses eventos são guardados e utilizadas para compras de produtos de doação.
+                            Qualquer pessoa poderá participar dos eventos. Será uma boa oportunidade de nos conhecer!
                         </div>
                     </div>
                 </div>
@@ -101,15 +112,17 @@ function Info(){
                             <div id="hist-subcont">
                                 <img id = "hist-img" src={`${imgDir}historia1.png`} alt="" />
                                 <div id="hist-texto" className='textoLaranja'>
-                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
-                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
-                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa a
+                                Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos alunos da USP de São Carlos.
+                                Atualmente, somos uma parte da ONG Casa do Caminho, onde são juntam várias entidades de caráter de assistência social. 
+                                Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos alunos da USP de São Carlos.
+                                Atualmente, somos uma parte da ONG Casa do Caminho, onde são juntam várias entidades de caráter de assistência social. 
                                 </div>
                             </div>
                             <div id="hist-subcont">
                                 <div id="hist-texto" className='textoLaranja'>
-                                    aaaaaaa aaa aaaaa aaa aaaa aa aaaaa aaaaaaa aa aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
-                                    a aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
+                                Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos alunos da USP de São Carlos.
+                                Atualmente, somos uma parte da ONG Casa do Caminho, onde são juntam várias entidades de caráter de assistência social.
+                                 
                                 </div>
                                 <img id = "hist-img" src={`${imgDir}historia2.png`} alt="" />
                             </div>
@@ -118,11 +131,16 @@ function Info(){
                             <div id="hist-subcont">
                                 <img id = "hist-img" src={`${imgDir}historia1.png`} alt="" />
                                 <div id="hist-texto" className='textoLaranja'>
-                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
-                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaaaaaa aaaa a aaaa aaa aaa aaaaa a
-                                aaaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaa aaaaaa aaaa a aaaaaaa aaa aaaaa aaaaaaa aaaaa a
-                                aaaaaaa aaa aaaaa aaa aaaa aa aaaaa aaaaaaa aa aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
-                                    a aaa aaaaaaa aaaaa aaa aaaa a aaaaaaa aaa aaaaa aa aaaaa aaaaa aaaaaaa aaaaa aaaaaaa aaaa aaaaaa aaa a aaaa aaa aaa aaaaa a
+                                Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos alunos da USP de São Carlos.
+                                Atualmente, somos uma parte da ONG Casa do Caminho, onde são juntam várias entidades de caráter de assistência social. 
+                                </div>
+                                <div id="hist-texto" className='textoLaranja'>
+                                Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos alunos da USP de São Carlos.
+                                Atualmente, somos uma parte da ONG Casa do Caminho, onde são juntam várias entidades de caráter de assistência social. 
+                                </div>
+                                <div id="hist-texto" className='textoLaranja'>
+                                Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos alunos da USP de São Carlos.
+                                Atualmente, somos uma parte da ONG Casa do Caminho, onde são juntam várias entidades de caráter de assistência social. 
                                 </div>
                             </div>
                         </div>

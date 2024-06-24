@@ -25,12 +25,12 @@ function Doacao() {
                     <div id="last"><DoacaoCard
                         color = "#FFBA52"
                         title = "Recipiente"
-                        text = "Temos trabalho de cozinhar, montagem de kit e entrega, aceitamos doações de recipientes e talheres descartáveis!"
+                        text = "Temos também o trabalho de montagem de kit, aceitamos doações de colheres, potes e sacolas para os kits!"
                     /></div>
                     <DoacaoCard
                         color = "#FFBA52"
                         title = "Produtos de Higiene"
-                        text = "Aceitamos doações de sabonetes, papel toalha e produtos de cozinha tambem!"
+                        text = "Aceitamos doações de roupas em geral (inclusive roupas íntimas), sabonetes, escova de dente, shampoo, e outros produtos de higiene tambem!"
                     />
                     <DoacaoCard
                         color = "#F1C144"
@@ -48,8 +48,7 @@ function Doacao() {
                                 Doe direto na casa do Pão Fraterno!
                                 Endereço: 
                                 Rua Costa do Sol, 450 Vila Costa do Sol São Carlos - SP 13566-070
-                                Horário: 
-                                Escrever os horários de atendimento"
+                                Horário: toda sexta-feira, de 10:00-16:00 (mudar depois)"
                     />
                     <DoacaoCard
                         color = "#F1C144"
@@ -59,8 +58,7 @@ function Doacao() {
                                 Doe sem sair de sua casa!
                                 Procedimento: 
                                 Escreva o endereço e horário no formulário abaixo, e nós vamos retirar o produto
-                                Horário: 
-                                Escrever os horários de atendimento"
+                                Horário: toda sexta-feira, de 10:00-16:00 (mudar depois)"
                     />
               </div>
 
@@ -73,7 +71,7 @@ function Doacao() {
               </div>
 
               <div class = "text-donate-bottom"
-                >Fazemos doação para os moradores de rua do São Carlos toda sexta
+                >Fazemos doação para os moradores de rua do São Carlos toda sexta sem falta
               </div>
 
               <Container>
@@ -85,7 +83,8 @@ function Doacao() {
                   <div class = "text-donate-bottom-images">
                     <p>Etapa de preparaçao da sopa, o principal produto da doação.</p>
                     <p>Horário: 11:00-16:00   toda sexta</p>
-                    <p>Escrever a quantidade feita, numero de pessoas etc</p>
+                    <p>Número médio de pessoas: 6</p>
+                    <p>Quantidade: X kg</p>
                     <img
                       className="img-fluid"
                       src="../../public/images/preparo.png"
@@ -101,7 +100,8 @@ function Doacao() {
                 <div class = "text-donate-bottom-images">
                   <p>Etapa de motagem do kit de doação.</p>
                   <p>Horário: 18:00-20:00   toda sexta</p>
-                  <p>Escrever a quantidade feita, numero de pessoas etc</p>
+                  <p>Número médio de pessoas: 10</p>
+                  <p>Quantidade: 140 kits</p>
                   <img
                     className="img-fluid"
                     src="../../public/images/montagem.png"
@@ -116,8 +116,8 @@ function Doacao() {
                   </div>
                   <div class = "text-donate-bottom-images">
                     <p>Etapa de entrega do kit de doação.</p>
-                    <p>Horário: 20:00-   toda sexta</p>
-                    <p>Escrever a quantidade feita, numero de pessoas etc</p>
+                    <p>Horário: 20:00-até terminar   toda sexta</p>
+                    <p>Número médio de pessoas: 12</p>
                     <img
                       className="img-fluid"
                       src="../../public/images/entrega.png"

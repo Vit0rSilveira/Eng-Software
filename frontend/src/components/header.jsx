@@ -21,9 +21,9 @@ function Header(props) {
 
     const header_items = [
         {nome:'quem-somos',ref:'/info',texto:'Quem Somos'},
-        {nome:'doacao',ref:'/doacao',texto:'Doacao'},
-        {nome:'seja-voluntario',ref:'/voluntariado',texto:'Seja Voluntario'},
-        {nome:'noticias',ref:'/acoes',texto:'Noticias'},
+        {nome:'doacao',ref:'/doacao',texto:'Doação'},
+        {nome:'seja-voluntario',ref:'/voluntariado',texto:'Seja Voluntário'},
+        {nome:'noticias',ref:'/acoes',texto:'Notícias'},
         {nome:'colaboradores',ref:'/patrocinadores',texto:'Colaboradores'},
     ];
     const pagina_atual = props.page;

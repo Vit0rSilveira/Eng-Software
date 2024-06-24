@@ -42,6 +42,9 @@
     width: 100%;
     margin-top: -2.5em;
 }
+#quem-texto{
+    font-weight: 600;
+}
 
 
 /* Objetivo */
@@ -60,6 +63,7 @@
 #objetivo-texto{
     margin-left: 3em;
     width: 45em;
+    font-weight: 600;
 }
 
 
@@ -97,6 +101,7 @@
 #kitAlim-texto, #evento-texto{
     width: 70%;
     margin: -1em 0.5em -1em 0.5em;
+    font-weight: 600;
 }
 #kitAlim-img, #evento-img{
     width: 35%;
@@ -142,7 +147,7 @@
 #hist-texto{
     width: 70%;
     margin: -1em 0.5em -1em 0.5em;
-    font-size: 0.95em;
+    font-weight: 600;
 }
 #hist-img{
     width: 35%;
@@ -197,9 +202,13 @@
     #kitAlim-subcont, #evento-subcont{
         flex-direction: column;
     }
-    #kitAlim-texto, #kitAlim-img, #evento-texto, #evento-img{
+    #kitAlim-texto, #evento-texto {
         margin: 1em;
         width: 80%;
+    }
+    #kitAlim-img, #evento-img{
+        margin: 1em;
+        width: 60%;
     }
 
     /* Historia */
@@ -209,13 +218,15 @@
     #hist-titulo{
         margin-bottom: 0em;
     }
-    #hist-texto, #hist-img{
-        margin: 1em;
+    #hist-texto{
+        margin-top: 1em;
+        margin-bottom: 0em;
         width: 80%;
     }
     #hist-img{
-        margin: 1em;
-        width: 60%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        width: 50%;
     }
 }
 
