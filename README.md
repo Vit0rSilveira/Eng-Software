@@ -20,6 +20,7 @@
   - Node.js
   - npm (Node Package Manager
   - Conta no MongoDB
+  - Conta no EmailJs
 
   ## Instalação e Configuração
 
@@ -38,8 +39,9 @@
      ```
   4. Adicione as seguintes variáveis no arquivo `constantes.js`:
      ```javascript
-     export const SERVICEID = 'seu_service_id';
-     export const TEMPLATEID = 'seu_template_id';
+     export const SERVICEID = 'seu_service_id_emailjs';
+     export const TEMPLATEID_VOLUNTARIO = 'seu_template_id_emailjs';
+     export const TEMPLATEID = 'seu_template_id_emailjs';
      export const PUBLICKEY_EMAILJS = 'sua_public_key_emailjs';
      ```
   5. Inicie o servidor de desenvolvimento:
