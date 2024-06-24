@@ -113,7 +113,7 @@
   5. Abra um Pull Request.
 
   ## Licença
-  Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE para detalhes.
+  Este projeto está licenciado sob a MIT License - veja o arquivo [[LICENSE]](https://opensource.org/license/mit)
 
   ## Contato
   Para dúvidas ou suporte, entre em contato com a equipe do Projeto Pão Fraterno através dos contatos disponíveis no projeto.
