@@ -14,6 +14,7 @@
   - React
   - Node.js
   - MongoDB
+  - EmailJs
 
   ## Pré-requisitos
   Antes de começar, certifique-se de ter instalado em sua máquina as seguintes ferramentas:
@@ -38,8 +39,8 @@
      ```
   4. Adicione as seguintes variáveis no arquivo `constantes.js`:
      ```javascript
-     export const SERVICEID = 'seu_service_id';
-     export const TEMPLATEID = 'seu_template_id';
+     export const SERVICEID = 'seu_service_id_emailjs';
+     export const TEMPLATEID = 'seu_template_id_emailjs';
      export const PUBLICKEY_EMAILJS = 'sua_public_key_emailjs';
      ```
   5. Inicie o servidor de desenvolvimento:
