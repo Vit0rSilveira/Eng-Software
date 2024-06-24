@@ -3,7 +3,7 @@ import Header from '../components/header';
 import Question from "../components/questions";
 import Footer from '../components/footer';
 import '../styles/pages/home.css'
-import constantes from '../utils/constante.js'
+import constantes from '../utils/constantes.js'
 import EventoCard from '../components/eventoCard';
 import {getEvento} from "../services/eventoService";
 
