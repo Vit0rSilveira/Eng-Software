@@ -14,13 +14,13 @@
   - React
   - Node.js
   - MongoDB
-  - EmailJs
 
   ## Pré-requisitos
   Antes de começar, certifique-se de ter instalado em sua máquina as seguintes ferramentas:
   - Node.js
   - npm (Node Package Manager
   - Conta no MongoDB
+  - Conta no EmailJs
 
   ## Instalação e Configuração
 
