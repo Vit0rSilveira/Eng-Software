@@ -5,7 +5,7 @@ import '../styles/pages/acoes.css'
 import NoticiaCard from "../components/noticiaCard";
 import NoticiaDetaildCard from "../components/noticiaDetailedCard";
 import {getNoticia} from "../services/noticiaService";
-import constantes from '../utils/constante.js'
+//import constantes from '../utils/constante.js'
 
 
 function Acoes() {

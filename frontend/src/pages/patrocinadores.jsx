@@ -4,7 +4,7 @@ import ColaboradorCard from '../components/colaboradorCard';
 import Footer from '../components/footer';
 import '../styles/pages/patrocinadores.css'
 import {getColaborador} from "../services/colaboradorService";
-import constantes from '../utils/constante.js'
+//import constantes from '../utils/constante.js'
 
 function Patrocinadores() {
 
