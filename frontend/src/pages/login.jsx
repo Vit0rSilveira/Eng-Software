@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import {getUsuario} from "../services/usuarioService";
 import bcrypt from 'bcryptjs'
 import { useStore } from '../zustand/store';
+import Cookies from 'js-cookie';
 
 function Login(){
     const updateUser = useStore((state) => state.updateUser)
@@ -92,8 +93,9 @@ useEffect(()=>{
 
 useEffect(()=>{
     if(teste){
-        
+        Cookies.set('auth', email, { expires: 1 }); // Cookie válido por 1 dia
         window.location.href = "/verificar-cadastros"
+        navigate('/verificar-cadastros'); 
         console.log("Teste", teste)
     }
 }, [teste])

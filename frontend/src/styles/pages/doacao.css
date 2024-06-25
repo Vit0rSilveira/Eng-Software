@@ -1,83 +1,79 @@
+/* Estilos gerais */
 .doacao-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .content {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3em;
-    margin-left: 3%;
-    margin-bottom: 3%;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
 
- .doacao-container h1, p{
-    margin-bottom: 1em;
-    color: #022859;
-  }
-  
- .doacao-container p{
-    color: black;
-    font-size: 25px;
-  }
-  
-  .image-container {
-    margin-top: 7em;
-    position: relative;
-    text-align: center;
-  }
-  
-  .image-container img {
-    margin-top: -2em;
-    width: 40%;
-    height: auto;
-  }
-  
-  .text-under {
-    position: top;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: #022859;
-    font-size: 30px;
-    font: "palanquin";
-  }
-  
-  .text-over {
-    top: 20px; /* ajuste conforme necessário */
-  }
-  
-  .text-under {
-    bottom: 20px; /* ajuste conforme necessário */
-  }
+.content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3% auto;
+}
 
+.doacao-container h1, .doacao-container p {
+  margin-bottom: 1em;
+  color: #022859;
+}
 
+.doacao-container p {
+  color: black;
+  font-size: 1.5em;
+}
 
-/* container geral */
-#conteinerMaster{
+/* Contêiner da imagem */
+.image-container {
+  margin-top: 3em;
+  position: relative;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.text-under, .text-over {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #022859;
+  font-size: 1.5em;
+}
+
+.text-over {
+  top: 20px; /* ajuste conforme necessário */
+}
+
+.text-under {
+  bottom: 20px; /* ajuste conforme necessário */
+}
+
+/* Container geral */
+#conteinerMaster {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 3em;
 }
 
-/* explicacoes de cadastro */
-#cardMargin{
+/* Explicações de cadastro */
+#cardMargin {
   display: grid;
   padding: 5%;
   grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas de largura igual */
-  row-gap: 2em; 
+  row-gap: 2em;
   column-gap: 4em;
   transition-duration: 1s;
 }
 
-
-/* conteiners */
-#cinzaConteiner{
+/* Contêiners */
+#cinzaConteiner {
   background-color: #eaeaea4a;
   width: 100%;
   display: flex;
@@ -86,218 +82,164 @@
   margin-top: 7em;
   padding: 3em 0 6em 0;
 }
-#cadastroTextBox{
+
+#cadastroTextBox {
   width: 33em;
   font-size: 1.1em;
   background-color: #F9C745;
   margin-top: 2em;
   padding: 0 0 2em 0;
 }
-#cadastroTitleBox{
+
+#cadastroTitleBox {
   width: 100%;
   font-size: 1.3em;
   background-color: #F9A645;
-  padding: 0em 0.5em 0em 0.5em;
+  padding: 0.5em;
   margin-bottom: 2em;
 }
 
-/* inputs e textos*/
-#cadastroTextBox>.TextoEInput{
+/* Inputs e textos */
+#cadastroTextBox .TextoEInput {
   display: flex;
   flex-direction: row;
   margin: 1em 0 2em 3%;
 }
-.cadastroTexto{
+
+.cadastroTexto {
   width: 18%;
 }
-.textoErroCadastroVol{
+
+.textoErroCadastroVol {
   margin: -2.5em 0 2em 3%;
 }
-.textoExplicacaoTipo{
+
+.textoExplicacaoTipo {
   margin: -2em 3% 2em 3%;
   font-size: 0.8em;
 }
-#outrasInput{
-  margin-top:-1em !important;
+
+#outrasInput {
+  margin-top: -1em !important;
   width: 18em;
   height: 5em;
 }
-#buttonPlace{
+
+#buttonPlace {
   display: flex;
   justify-content: center;
 }
-/* botao */
-#cadastroButton{
+
+/* Botão */
+#cadastroButton {
   background-color: #F9DC45;
   font-size: 1.1em;
 }
+
 #cadastroButton:hover {
   background: #f3d643;
 }
+
 #cadastroButton:active {
   background-color: #e6ca3d;
 }
+
 #cadastroButton:disabled {
   background-color: #F9DC45;
 }
 
-/* para telas menores */
-@media(max-width: 41em){
-  /* explicacao de cadastro */
-  #cardMargin{
-      display: grid;
-      padding: 5%;
-      grid-template-columns: repeat(1, 1fr);
-      row-gap: 2em; 
-      column-gap: 4em;
-      transition-duration: 1s;
-  }
-  #last{
-      order: 1;
+/* Responsividade para telas menores */
+@media (max-width: 41em) {
+  /* Explicação de cadastro */
+  #cardMargin {
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  /*area de cadastro*/
-  #cadastroTextBox{
-      width: 90%;
-  }
-  #cadastroTextBox>.TextoEInput{
-      flex-direction: column;
-      margin: 1em 1em 2em 1em;
-  }
-  .TextoEInput>.smallSizeInput{
-      margin-top: 0.5em;
-      width: 12em;
-  }
-  #outrasInput{
-      width: 12em;
+  #cadastroTextBox {
+    width: 90%;
   }
 
+  #cadastroTextBox .TextoEInput {
+    flex-direction: column;
+    margin: 1em 1em 2em 1em;
+  }
+
+  .TextoEInput .smallSizeInput {
+    margin-top: 0.5em;
+    width: 12em;
+  }
+
+  #outrasInput {
+    width: 12em;
+  }
 }
 
-/*tamanho para telas pequenas*/
-@media (max-width:600px){
-  #cadastroTitleBox{font-size: 1.1em;}
-  #cadastroButton{font-size: 0.9em;}
+/* Tamanho para telas pequenas */
+@media (max-width: 600px) {
+  #cadastroTitleBox {
+    font-size: 1.1em;
+  }
+
+  #cadastroButton {
+    font-size: 0.9em;
+  }
 }
 
-/* button */
+/* Estilos do botão */
 .doacaoButton {
-  /* text settings */
   font: 1.2em "palanquin", sans-serif;
   font-weight: 600;
-  align-items: center;
-  justify-content: center;
-  overflow: none;
   color: #392600;
-
-  /* button settings */
   background-color: #F9C745;
-  width: fit-content;
-  height: auto;
-  padding: 1.5em 1em 1.5em 1em;
+  padding: 1.5em 1em;
   margin-bottom: 1.5em;
   border-radius: 10em;
-  border-style: none;
+  border: none;
   box-shadow: 0 0.2em 0.1em rgba(0, 0, 0, 0.25);
 }
+
 .doacaoButton:hover {
   background: rgb(241, 189, 56);
   transition-duration: 0.1s;
 }
+
 .doacaoButton:active {
   background-color: #d7a72e;
- 
 }
+
 .doacaoButton:disabled {
   background-color: #F9C745;
 }
 
-/* texto de kit de doacao */
-.text-donate {
-  /* text settings */
-  font: 2.2em "palanquin", sans-serif;
+/* Texto de doação */
+.text-donate, .text-donate-above, .text-donate-bottom, .text-donate-bottom-images {
+  font: "palanquin", sans-serif;
   font-weight: 600;
   align-items: center;
   justify-content: center;
-  overflow: none;
+  overflow: hidden;
+}
+
+.text-donate {
+  font-size: 2.2em;
   color: #392600;
- 
-  width: fit-content;
-  height: auto;
-  padding: 1.5em 0em 0em 1em;
-  margin-bottom: 1.5em;
-  border-radius: 10em;
+  padding: 1.5em 0 0 1em;
 }
 
 .text-donate-above {
-  /* text settings */
-  font: 2.8em "palanquin", sans-serif;
-  font-weight: 600;
-  align-items: center;
-  justify-content: center;
-  overflow: none;
+  font-size: 2.8em;
   color: #392600;
- 
-  width: fit-content;
-  height: auto;
-  padding: 1.5em 0em 0em 1em;
-  margin-bottom: 1.5em;
-  border-radius: 10em;
+  padding: 1.5em 0 0 1em;
 }
 
-.text-donate-bottom {
-  /* text settings */
-  font: 1.6em "palanquin", sans-serif;
-  font-weight: 600;
-  align-items: center;
-  justify-content: center;
-  overflow: none;
+.text-donate-bottom, .text-donate-bottom-images {
+  font-size: 1.6em;
   color: #DE9E3E;
- 
-  width: fit-content;
-  height: auto;
-  padding: 0em 1.5em 3em 1.5em;
-  margin-bottom: 1.0em;
-  border-radius: 10em;
+  padding: 0 1.5em 3em 1.5em;
 }
 
-.text-donate-bottom-images {
-  /* text settings */
-  font: 1.6em "palanquin", sans-serif;
-  font-weight: 600;
-  align-items: center;
-  justify-content: center;
-  overflow: none;
-  color: #DE9E3E;
- 
-  width: 3000px;
-  height: auto;
-  padding: 0em 1.5em 3em 1.5em;
-  margin-bottom: 1.0em;
-  border-radius: 10em;
-}
-
-.montagem-meio {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  margin-bottom: 6em;
-  margin-top: 9em;
-  padding-left: 110em;
-  width: fit-content;
-}
-
-.text-donate-bottom-images p{
-  color: #DE9E3E;
-}
-
-.text-donate-bottom p{
-  color: #DE9E3E;
-}
-
-#hist-cinza-cont{
+/* Container cinza para cobrir toda a largura */
+#hist-cinza-cont {
   display: flex;
   justify-content: center;
   background-color: #eaeaea33;
@@ -305,9 +247,52 @@
   padding-bottom: 2em;
   margin-bottom: 6em;
   margin-top: 9em;
-  width: 100%;
+  width: 100vw; /* Ajustado para cobrir toda a largura da janela */
+  margin-left: calc(-50vw + 50%); /* Centra o contêiner para cobrir toda a área horizontal */
 }
 
-#hist-cont{
-  width: 60em;
+/* Container cinza para cobrir toda a largura */
+#hist-cinza-cont {
+  display: flex;
+  justify-content: center;
+  background-color: #eaeaea33;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 6em;
+  margin-top: 9em;
+  width: 100vw; /* Ajustado para cobrir toda a largura da janela */
+  margin-left: calc(-50vw + 50%); /* Centra o contêiner para cobrir toda a área horizontal */
+}
+
+/* Contêiner interno para centralizar o conteúdo */
+#hist-cont {
+  max-width: 60em;
+  padding: 0 1em; /* Adiciona espaço horizontal */
+}
+
+/* Adiciona espaçamento entre texto e imagem */
+.text-donate-bottom-images img,
+.montagem-meio img {
+  margin-top: 1em; /* Espaço entre texto e imagem */
+  margin-bottom: 1em;
+  width: 100%;
+  max-width: 500px; /* Ajuste conforme necessário */
+}
+
+/* Montagem de kit com cor de fundo */
+.montagem-meio {
+  display: flex;
+  flex-direction: column; /* Para empilhar texto e imagem verticalmente */
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 3em;
+  margin-top: 9em;
+  background-color: transparent; /* Cor de fundo transparente para igualar ao fundo da página */
+}
+
+.text-donate-bottom-images p {
+  color: #DE9E3E;
+  margin-bottom: 0.5em; /* Espaço entre parágrafos */
 }

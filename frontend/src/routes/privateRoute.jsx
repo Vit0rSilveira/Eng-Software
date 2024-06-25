@@ -1,16 +1,16 @@
 import { Navigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import { useStore } from "../zustand/store";
+import React, { useEffect, useState } from "react";
+import Cookies from 'js-cookie';
 
 const PrivateRoute = ({ Component }) => {
-  const usuario = useStore((state) => state.usuario);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {
-    setIsAuthenticated(!!usuario);
-  }, [usuario]);
+    useEffect(() => {
+        const auth = Cookies.get('auth');
+        setIsAuthenticated(!!auth);
+    }, []);
 
-  return isAuthenticated ? <Component /> : <Navigate to="/login" />;
+    return isAuthenticated ? <Component /> : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;

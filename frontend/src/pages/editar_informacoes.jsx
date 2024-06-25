@@ -8,7 +8,11 @@ import {deleteColaborador, getColaborador, postColaborador} from "../services/co
 import { deleteNoticia, getNoticia, postNoticia } from '../services/noticiaService.jsx';
 import { deleteEvento, getEvento, postEvento } from '../services/eventoService.jsx';
 import { formatarData } from '../utils/datautils.js';
+<<<<<<< HEAD
 //import constantes from '../utils/constante.js'
+=======
+import constantes from '../utils/constantes.js'
+>>>>>>> 502958503a77c53b2e4c5f2c6c3d58ba3c659274
 
 function Edit_Info(){
     function Form(props){

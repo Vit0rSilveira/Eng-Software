@@ -1,5 +1,9 @@
 import emailjs from 'emailjs-com';
+<<<<<<< HEAD
 //import constantes from '../utils/constante';
+=======
+import constantes from './constantes';
+>>>>>>> 502958503a77c53b2e4c5f2c6c3d58ba3c659274
 
 //Tutorial: https://www.youtube.com/watch?v=Lz8yx-zn-O4
 export function envia_email(email, conteudo) {

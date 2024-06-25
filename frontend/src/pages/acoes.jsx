@@ -5,7 +5,11 @@ import '../styles/pages/acoes.css'
 import NoticiaCard from "../components/noticiaCard";
 import NoticiaDetaildCard from "../components/noticiaDetailedCard";
 import {getNoticia} from "../services/noticiaService";
+<<<<<<< HEAD
 //import constantes from '../utils/constante.js'
+=======
+import constantes from '../utils/constantes.js'
+>>>>>>> 502958503a77c53b2e4c5f2c6c3d58ba3c659274
 
 
 function Acoes() {

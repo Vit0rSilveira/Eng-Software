@@ -8,8 +8,9 @@ export const useStore = create(
       updateUser: (novoUsuario) => set({ usuario: novoUsuario }),
     }),
     {
-      name: 'user-storage', // Nome do item no storage (deve ser único)
-      storage: createJSONStorage(() => sessionStorage), // Armazenamento utilizado (sessionStorage)
+      name: 'user-storage',
+      storage: createJSONStorage(() => sessionStorage),
     }
   )
 );
+

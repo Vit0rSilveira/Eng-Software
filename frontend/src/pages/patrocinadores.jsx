@@ -4,7 +4,11 @@ import ColaboradorCard from '../components/colaboradorCard';
 import Footer from '../components/footer';
 import '../styles/pages/patrocinadores.css'
 import {getColaborador} from "../services/colaboradorService";
+<<<<<<< HEAD
 //import constantes from '../utils/constante.js'
+=======
+import constantes from '../utils/constantes.js'
+>>>>>>> 502958503a77c53b2e4c5f2c6c3d58ba3c659274
 
 function Patrocinadores() {
 
