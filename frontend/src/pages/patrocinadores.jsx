@@ -4,6 +4,7 @@ import ColaboradorCard from '../components/colaboradorCard';
 import Footer from '../components/footer';
 import '../styles/pages/patrocinadores.css'
 import {getColaborador} from "../services/colaboradorService";
+import constantes from '../utils/constantes.js'
 
 function Patrocinadores() {
 
@@ -29,7 +30,7 @@ function Patrocinadores() {
                     <div className="conteinerColaborador">
                         <ColaboradorCard
                             nome = {colaborador.nome}
-                            imagem={colaborador.imagem.replace("publico\\imagens\\colaboradores", "../../public/images/colaborador")}
+                            imagem = {colaborador.imagem.replace('publico',constantes.PATH).replace('\\','/')}
                             descricao = {colaborador.descricao}
                             link = {colaborador.link}
                             color = {index%2==0 ? "#F9C745" : "#F9B145"}
