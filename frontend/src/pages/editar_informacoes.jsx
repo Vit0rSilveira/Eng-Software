@@ -311,13 +311,15 @@ function Edit_Info(){
     async function loadColaborador(){
         try{
             let colaboradoresBD = await getColaborador()
-            for(let i = 0; i < colaboradoresBD.length; i++){
-                colaboradoresBD[i].imagem = `${constantes.PATH}/${colaboradoresBD[i].imagem.replace('publico\\','')}`.replace('\\','/')    
+            for(let i = 0; i < colaboradoresBD.length; i++){  
+                console.log(colaboradoresBD[i].imagem)
+                colaboradoresBD[i].imagem = colaboradoresBD[i].imagem.replace('publico',constantes.PATH).replace('\\','/')
             }
             setColaboradores(colaboradoresBD)
         }
         catch(e){}
     }
+    
     async function loadEvento(){
 
         try{
