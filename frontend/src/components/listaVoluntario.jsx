@@ -56,12 +56,6 @@ export function ItemVoluntario(props){
                     <button className='btn-excluir' onClick={()=>callback_excluir(nome)}>
                         <FaRegTrashCan size={20} color="white"/>
                     </button>
-                    <button className='btn-email'>
-                        <FaEnvelope size={20} color="white"/>
-                    </button >
-                    <button className='btn-whatsapp'>
-                        <FaWhatsapp size={25} color="white"/>
-                    </button>
                 </div>
                 
             </div>
