@@ -95,7 +95,7 @@ function Home() {
                     <div className="home-img-box">
                         <img
                         className="img-fluid"
-                        src="../../public/images/entrega_doacoes.png"
+                        src="../../public/images/sopao.png"
                         alt="First slide"
                         />
                     </div>

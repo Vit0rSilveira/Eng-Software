@@ -94,7 +94,7 @@ function Info(){
                         Eventos
                     </div>
                     <div id="evento-subcont">
-                        <img id = "evento-img" src={`${imgDir}montagem.png`} alt="" />
+                        <img id = "evento-img" src={`${imgDir}montagem_kit.png`} alt="" />
                         <div id="evento-texto" className='textoBranco'>
                             Os eventos ocorrem, em média, de 3 em 3 meses.
                             Todo o dinheiro arrecadado nesses eventos são guardados e utilizadas para compras de produtos de doação.
@@ -110,7 +110,7 @@ function Info(){
                         <div id="hist-titulo" className='titulo'>História</div>
                         <div className='hideInSmallDisplay'>
                             <div id="hist-subcont">
-                                <img id = "hist-img" src={`${imgDir}historia1.png`} alt="" />
+                                <img id = "hist-img" src={`${imgDir}casaDoCaminho.png`} alt="" />
                                 <div id="hist-texto" className='textoLaranja'>
                                 Somos uma fraternidade de São Carlos que surgiu nos anos 90, criada pelos alunos da USP de São Carlos.
                                 Atualmente, somos uma parte da ONG Casa do Caminho, onde são juntam várias entidades de caráter de assistência social. 
@@ -124,7 +124,7 @@ function Info(){
                                 Atualmente, somos uma parte da ONG Casa do Caminho, onde são juntam várias entidades de caráter de assistência social.
                                  
                                 </div>
-                                <img id = "hist-img" src={`${imgDir}historia2.png`} alt="" />
+                                <img id = "hist-img" src={`${imgDir}entrega.png`} alt="" />
                             </div>
                         </div>
                         <div className='hideInBigDisplay'>
