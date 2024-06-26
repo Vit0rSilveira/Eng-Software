@@ -28,8 +28,8 @@ function VerificarCadastros(props){
         data:''
     }
 
-    function handleDataChange(){
-
+    function handleDataChange(event){
+        data = event.target.value
     }
 
     function handleHorarioChange(event,inicio){
@@ -44,6 +44,7 @@ function VerificarCadastros(props){
         else{
             return voluntarios.filter((v)=>v.tipo == filtro)
         }
+
     }
 
 
@@ -100,21 +101,6 @@ function VerificarCadastros(props){
                             <button className='defaultButton btn-filtro' onClick={b.onClick}>{b.texto}</button>
                         )}
                     </div>
-                </div>
-                <div>
-                    <h2>Data:</h2>
-                    <input  onChange={handleDataChange} type="date"  className='defaultInput input-data'></input>
-                </div>
-                <div>
-                    <h2>Horário:</h2>
-                    <section>
-                        <input onChange={(evento) => handleHorarioChange(evento,true)} type="time" className='defaultInput input-horario'></input>
-                        <p className='inline-text'>até</p>
-                        <input onChange={(evento) => handleHorarioChange(evento,false)} type="time" className='defaultInput input-horario'></input>
-                    </section>
-                </div>
-                <div className='container-btn'>
-                    <button className='defaultButton btn-adicionar' onClick={()=>None}>Buscar</button>
                 </div>
             </div>
             <ListaVoluntario voluntarios={voluntariosFiltrados} callback_excluir={removeVoluntario}/>

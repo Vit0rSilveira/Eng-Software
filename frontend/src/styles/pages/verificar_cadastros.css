@@ -8,7 +8,7 @@
 #verificar-voluntarios-container #formulario{
     background-color: var(--main-bg-color);
     width: 750px;
-    height: 480px;
+    height: auto;
     border-radius: var(--border-r) ;
     margin-top: 100px;
 }
