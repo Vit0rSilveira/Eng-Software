@@ -21,6 +21,8 @@
     line-height: 180%;
     color: #594614;
     text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
 .textoErro{
     font: 0.7em "palanquin", sans-serif;
@@ -37,7 +39,7 @@
 }
 /*tamanho para telas pequenas*/
 @media (max-width:600px){
-    .titulo{ font-size: 1.5em;}
+    .titulo{ font-size: 1.8em;}
 }
 
 /* Input */

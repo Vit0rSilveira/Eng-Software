@@ -1,298 +1,182 @@
-/* Estilos gerais */
-.doacao-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1em;
-}
-
-.content {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 3% auto;
-}
-
-.doacao-container h1, .doacao-container p {
-  margin-bottom: 1em;
-  color: #022859;
-}
-
-.doacao-container p {
-  color: black;
-  font-size: 1.5em;
-}
-
-/* Contêiner da imagem */
-.image-container {
-  margin-top: 3em;
-  position: relative;
-  text-align: center;
-}
-
-.image-container img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-}
-
-.text-under, .text-over {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  color: #022859;
-  font-size: 1.5em;
-}
-
-.text-over {
-  top: 20px; /* ajuste conforme necessário */
-}
-
-.text-under {
-  bottom: 20px; /* ajuste conforme necessário */
-}
-
 /* Container geral */
 #conteinerMaster {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 3em;
-}
+}  
 
-/* Explicações de cadastro */
-#cardMargin {
-  display: grid;
-  padding: 5%;
-  grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas de largura igual */
-  row-gap: 2em;
-  column-gap: 4em;
-  transition-duration: 1s;
-}
-
-/* Contêiners */
-#cinzaConteiner {
+/* Contêiner */
+.cinza-conteiner {
   background-color: #eaeaea4a;
   width: 100%;
+}
+
+
+/* Produtos de doacao */
+.prod-doacao-cont{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 7em;
-  padding: 3em 0 6em 0;
+  column-gap: 1em;
+  width: 50em;
+  background-color: #F1C144;
+  border-radius: 0.6em;
+  padding: 1.7em 1em 1.7em 2em;
+  margin: 1em 0 1em 0;
 }
-
-#cadastroTextBox {
-  width: 33em;
-  font-size: 1.1em;
-  background-color: #F9C745;
-  margin-top: 2em;
-  padding: 0 0 2em 0;
+.prod-doacao-subtitulo{
+  font-size: 1.8em;
+  color: #392600;
+  width: 30%;
 }
-
-#cadastroTitleBox {
-  width: 100%;
-  font-size: 1.3em;
-  background-color: #F9A645;
-  padding: 0.5em;
-  margin-bottom: 2em;
-}
-
-/* Inputs e textos */
-#cadastroTextBox .TextoEInput {
-  display: flex;
-  flex-direction: row;
-  margin: 1em 0 2em 3%;
-}
-
-.cadastroTexto {
-  width: 18%;
-}
-
-.textoErroCadastroVol {
-  margin: -2.5em 0 2em 3%;
-}
-
-.textoExplicacaoTipo {
-  margin: -2em 3% 2em 3%;
-  font-size: 0.8em;
-}
-
-#outrasInput {
-  margin-top: -1em !important;
-  width: 18em;
+.prod-doacao-separador{
+  position: relative;
   height: 5em;
+  border: solid;
+  border-width: 0.15em;
+  border-color: #392600;
 }
-
-#buttonPlace {
-  display: flex;
-  justify-content: center;
-}
-
-/* Botão */
-#cadastroButton {
-  background-color: #F9DC45;
-  font-size: 1.1em;
-}
-
-#cadastroButton:hover {
-  background: #f3d643;
-}
-
-#cadastroButton:active {
-  background-color: #e6ca3d;
-}
-
-#cadastroButton:disabled {
-  background-color: #F9DC45;
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 41em) {
-  /* Explicação de cadastro */
-  #cardMargin {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  #cadastroTextBox {
-    width: 90%;
-  }
-
-  #cadastroTextBox .TextoEInput {
-    flex-direction: column;
-    margin: 1em 1em 2em 1em;
-  }
-
-  .TextoEInput .smallSizeInput {
-    margin-top: 0.5em;
-    width: 12em;
-  }
-
-  #outrasInput {
-    width: 12em;
-  }
-}
-
-/* Tamanho para telas pequenas */
-@media (max-width: 600px) {
-  #cadastroTitleBox {
-    font-size: 1.1em;
-  }
-
-  #cadastroButton {
-    font-size: 0.9em;
-  }
-}
-
-/* Estilos do botão */
-.doacaoButton {
-  font: 1.2em "palanquin", sans-serif;
-  font-weight: 600;
-  color: #392600;
-  background-color: #F9C745;
-  padding: 1.5em 1em;
-  margin-bottom: 1.5em;
-  border-radius: 10em;
-  border: none;
-  box-shadow: 0 0.2em 0.1em rgba(0, 0, 0, 0.25);
-}
-
-.doacaoButton:hover {
-  background: rgb(241, 189, 56);
-  transition-duration: 0.1s;
-}
-
-.doacaoButton:active {
-  background-color: #d7a72e;
-}
-
-.doacaoButton:disabled {
-  background-color: #F9C745;
-}
-
-/* Texto de doação */
-.text-donate, .text-donate-above, .text-donate-bottom, .text-donate-bottom-images {
-  font: "palanquin", sans-serif;
-  font-weight: 600;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.text-donate {
-  font-size: 2.2em;
-  color: #392600;
-  padding: 1.5em 0 0 1em;
-}
-
-.text-donate-above {
-  font-size: 2.8em;
-  color: #392600;
-  padding: 1.5em 0 0 1em;
-}
-
-.text-donate-bottom, .text-donate-bottom-images {
-  font-size: 1.6em;
-  color: #DE9E3E;
-  padding: 0 1.5em 3em 1.5em;
-}
-
-/* Container cinza para cobrir toda a largura */
-#hist-cinza-cont {
-  display: flex;
-  justify-content: center;
-  background-color: #eaeaea33;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  margin-bottom: 6em;
-  margin-top: 9em;
-  width: 100vw; /* Ajustado para cobrir toda a largura da janela */
-  margin-left: calc(-50vw + 50%); /* Centra o contêiner para cobrir toda a área horizontal */
-}
-
-/* Container cinza para cobrir toda a largura */
-#hist-cinza-cont {
-  display: flex;
-  justify-content: center;
-  background-color: #eaeaea33;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  margin-bottom: 6em;
-  margin-top: 9em;
-  width: 100vw; /* Ajustado para cobrir toda a largura da janela */
-  margin-left: calc(-50vw + 50%); /* Centra o contêiner para cobrir toda a área horizontal */
-}
-
-/* Contêiner interno para centralizar o conteúdo */
-#hist-cont {
-  max-width: 60em;
-  padding: 0 1em; /* Adiciona espaço horizontal */
-}
-
-/* Adiciona espaçamento entre texto e imagem */
-.text-donate-bottom-images img,
-.montagem-meio img {
-  margin-top: 1em; /* Espaço entre texto e imagem */
+.prod-doacao-titulo{
+  margin-top: 1em;
   margin-bottom: 1em;
+}
+.prod-doacao-texto{
+  font-weight: 600;
   width: 100%;
-  max-width: 500px; /* Ajuste conforme necessário */
 }
+.cor-recipiente{background-color: #F9B145;}
+.cor-higiene{background-color: #f5c123;}
+.cor-roupa{background-color: #E7B451;}
+.cor-dinheiro{background-color: #F9D144;}
 
-/* Montagem de kit com cor de fundo */
-.montagem-meio {
+
+
+/* Formas de Doacao */
+.forma-doacao-bigtitulo{
+  margin-top: 3em;
+}
+#forma-doacao-pos{
   display: flex;
-  flex-direction: column; /* Para empilhar texto e imagem verticalmente */
   align-items: center;
+  flex-direction: row;
+  column-gap: 4em;
+  transition-duration: 1s;
+}  
+.forma-doacao-cont{
+  background-color: #F9C745;
+  width: 21em;
+  border-radius: 0.3em;
+  padding: 1.2em 1.5em 3em 1.5em;
+  margin-bottom: 5em;
+  margin: 2em 0em 0em 0em;
+}  
+.forma-doacao-titulo{
+  color: #392600;
+  font-size: 1.9em;
+  
+}  
+.forma-doacao-subtitulo{
+  font-size: 1.3em;
+  margin-top: 1.5em;
+}  
+.center-texto{
+  text-align: center;
+}  
+.forma-doacao-color2{
+  background-color: #F9B145;
+}  
+
+
+/* Trabalho Fraterno */
+.trab-frat-titulo-cont{
+  margin: 7em 0 4em 0;
+}  
+.trab-frat-cont{
+  display: flex;
   justify-content: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  margin-bottom: 3em;
-  margin-top: 9em;
-  background-color: transparent; /* Cor de fundo transparente para igualar ao fundo da página */
+  column-gap: 7em;
+  width: 100%;
+  padding: 1.5em 0em 1.5em 0em;
+}  
+.trab-frat-img{
+  width: 15em;
+}  
+.trab-frat-textcont{
+  align-self: center;
+}  
+.trab-frat-subtitulo{
+  text-align: left;
+  font-size: 1.8em;
+
+}  
+.trab-frat-bordafina{
+  font-weight: 600;
+}  
+.textoLink-doacao{
+  margin: 2em;
+  font-size: 1.2em;
+}
+.centralize-text{
+  text-align: center;
 }
 
-.text-donate-bottom-images p {
-  color: #DE9E3E;
-  margin-bottom: 0.5em; /* Espaço entre parágrafos */
+/* Aceitar visita */
+.aceitar-visita-cont{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1em;
+  padding-bottom: 6em;
+  margin-top: 8em;
+}
+.aceitar-visita-titulo{
+  margin: 1em 0 2em 0;
+  font-size: 1.7em;
+}
+
+
+
+@media (max-width: 900px) {
+  /* produto de doacao */
+  .prod-doacao-cont{
+    flex-direction: column;
+    width: 80%;
+
+    padding-top:0.8em;
+  }
+  .prod-doacao-subtitulo{width: 130%;}
+  .prod-doacao-separador{
+    width: 90%;
+    height: 0em;
+  }
+  .prod-doacao-texto{margin-top: 1.5em; width: 90%;}
+
+  /* Forma de doacao */
+  #forma-doacao-pos{flex-direction: column;}  
+}
+
+@media (max-width: 700px) {
+  /* Trabalho Fraterno */
+  .trab-frat-cont{
+    flex-direction: column;
+    align-items: center;
+  }  
+  .trab-frat-img{
+    order: 2;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 600px) {
+  .prod-doacao-cont{
+    font-size: 0.9em;
+  }  
+  .prod-doacao-titulo{
+    font-size: 1.8em;
+  }
+  .forma-doacao-cont{
+    font-size: 0.9em;
+    width: 70%;
+  }
 }

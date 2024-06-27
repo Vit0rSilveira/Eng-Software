@@ -11,9 +11,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 dotenv.config();
 
-const PORT = process.env.PORT
-const USER_MONGODB = process.env.USER_MONGODB
-const PASSWORD_MONGODB = process.env.PASSWORD_MONGODB
+const PORT = "3000"
+const USER_MONGODB = "884kaito"
+const PASSWORD_MONGODB = "ABKbE0hftkiyd3tx"
 
 
 
