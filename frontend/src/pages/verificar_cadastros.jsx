@@ -16,7 +16,7 @@ function VerificarCadastros(props){
         {texto:'Todas',onClick:()=>{setFiltro('todas')}},
         {texto:'Visita',onClick:()=>setFiltro('visita')},
         {texto:'Doação',onClick:()=>setFiltro('doação')},
-        {texto:'Preparo',onClick:()=>setFiltro('preparo')},
+        {texto:'Cozinha',onClick:()=>setFiltro('Cozinha')},
         {texto:'Montagem',onClick:()=>setFiltro('montagem')},
         {texto:'Distribuição',onClick:()=>setFiltro('distribuição')},
         {texto:'Retirada',onClick:()=>setFiltro('retirada')},
