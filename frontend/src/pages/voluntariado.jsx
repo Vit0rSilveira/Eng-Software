@@ -149,7 +149,7 @@ function Voluntariado(){
                     <VoluntarioCard
                         color = "#FFBA52"
                         image = "public\images\cadastroVoluntario\carro.png"
-                        title = "Doação a partir da casa"
+                        title = "Retirada de doação"
                         text = "Retiramos a doação na sua casa"
                     />
                     <VoluntarioCard

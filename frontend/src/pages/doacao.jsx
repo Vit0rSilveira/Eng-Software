@@ -15,7 +15,7 @@ function Doacao() {
         page="doacao"
       />
       <div id="conteinerMaster">
-        <div className="titulo">Produtos de Doação</div>
+        <div className="titulo">Produtos que podem ser doados</div>
         <div id="cardMargin">
           <DoacaoCard
             color="#F1C144"
@@ -31,7 +31,7 @@ function Doacao() {
           </div>
           <DoacaoCard
             color="#FFBA52"
-            title="Produtos de Higiene"
+            title="Produtos de Higiene / Roupas"
             text="Aceitamos doações de roupas em geral (inclusive roupas íntimas), sabonetes, escova de dente, shampoo, e outros produtos de higiene tambem!"
           />
           <DoacaoCard
@@ -40,12 +40,22 @@ function Doacao() {
             text="Também aceitamos doações financeiras por pix, dinheiro e cartão!"
           />
         </div>
+        
+        {/* Formas de doacao */}
         <div className="titulo">Formas de Doação</div>
         <div id="cardMargin">
-          <DoacaoCard
+          {/* Doacao direta */}
+          <div>
+            
+          </div>
+          {/* Doe sem sair de sua casa */}
+          <div>
+            
+          </div>
+          {/* <DoacaoCard
             color="#FFBA52"
             title="Doação Direta"
-            text="Doação Direta
+            text="
                   Doe direto na casa do Pão Fraterno!
                   Endereço: 
                   Rua Costa do Sol, 450 Vila Costa do Sol São Carlos - SP 13566-070
@@ -53,13 +63,13 @@ function Doacao() {
           />
           <DoacaoCard
             color="#F1C144"
-            title="Doação pela casa"
-            text="Doação pela Casa
+            title="Retirada de doação"
+            text="
                   Doe sem sair de sua casa!
                   Procedimento: 
                   Escreva o endereço e horário no formulário abaixo, e nós vamos retirar o produto
                   Horário: toda sexta-feira, de 10:00-16:00 (mudar depois)"
-          />
+          /> */}
         </div>
 
         <button onClick={() => (window.location.href = "/voluntariado")} id="doacaoButton" className="defaultButton">
@@ -67,7 +77,7 @@ function Doacao() {
         </button>
 
         <div className="text-donate">
-          Preparo de kit de doação
+          Trabalho Fraterno
         </div>
 
         <div className="text-donate-bottom">
@@ -81,10 +91,10 @@ function Doacao() {
                 Preparo
               </div>
               <div className="text-donate-bottom-images">
-                <p>Etapa de preparação da sopa, o principal produto da doação.</p>
+                <p>Etapa de preparação da sopa.</p>
                 <p>Horário: 11:00-16:00 toda sexta</p>
                 <p>Número médio de pessoas: 6</p>
-                <p>Quantidade: X kg</p>
+                <p>Quantidade: 150L de sopa</p>
                 <img
                   className="img-fluid"
                   src="../../public/images/preparo.png"
