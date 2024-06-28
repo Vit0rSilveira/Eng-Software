@@ -133,12 +133,15 @@ header #logo-pao-fraterno {
 }
 
 /*tamanho para telas pequenas*/
-@media (max-width:600px){
+@media (max-width:800px){
     header #logo-pao-fraterno {
         width: 5em;
     }
     #headerImage>h1{
-        font-size: 1.4em;
+        font-size: 1.5em;
+    }
+    .homePageButton{
+        font-size: 0.8em !important;
     }
     .header-ul li {
         font-size: 0.7em;

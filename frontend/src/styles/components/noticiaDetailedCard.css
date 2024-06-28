@@ -54,8 +54,9 @@
     margin-top: 1.3em;
 }
 #noticiaDetDescricao{
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: 600;
+    color: #594614;
     width: 80%;
     text-wrap:wrap;
     line-height: 180%;

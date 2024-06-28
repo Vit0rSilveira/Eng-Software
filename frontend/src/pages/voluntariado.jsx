@@ -169,7 +169,7 @@ function Voluntariado(){
                     
                     {/* Titulo */}
                     <div id = "cadastroTextBox">
-                        <div id= "cadastroTitleBox2" class = "textoBranco">Cadastro de Voluntário</div>
+                        <div id= "cadastroTitleBox" class = "textoBranco">Cadastro de Voluntário</div>
                         {/* Nome */}
                         <div class="TextoEInput">
                             <div class = "cadastroTexto textoBranco">Nome:</div>

@@ -175,6 +175,7 @@
         width: 85%;
     }
     #quem-texto-cont{margin-top: 3em;}
+    #quem-img{width: 25em;}
 
     /* Objetivo */
     #objetivo-cont{
@@ -206,8 +207,9 @@
         width: 80%;
     }
     #kitAlim-img, #evento-img{
+        order: 2;
         margin: 1em;
-        width: 60%;
+        width: 40%;
     }
 
     /* Historia */
@@ -225,7 +227,7 @@
     #hist-img{
         margin-top: 1em;
         margin-bottom: 1em;
-        width: 50%;
+        width: 40%;
     }
 }
 
