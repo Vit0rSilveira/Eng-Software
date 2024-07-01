@@ -28,7 +28,7 @@ router.get('/:nome', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const { nome, email, tipo, data, horario_inicio, horario_fim,
+    const { nome, email, telefone, tipo, data, horario_inicio, horario_fim,
          produto, endereco, motivo, outras_informacoes } = req.body;
 
     try {
@@ -41,6 +41,7 @@ router.post('/', async (req, res) => {
         const voluntario = new Voluntario({
             nome,
             email,
+            telefone,
             tipo,
             data,
             horario_inicio,
@@ -60,7 +61,7 @@ router.post('/', async (req, res) => {
 
 router.patch("/:nome", async (req, res) => {
     const nomeBuscado = req.params.nome;
-    const { nome, email, tipo, data, horario_inicio, horario_fim,
+    const { nome, email, telefone, tipo, data, horario_inicio, horario_fim,
         produto, endereco, motivo, outras_informacoes } = req.body;
 
     try {
@@ -72,6 +73,7 @@ router.patch("/:nome", async (req, res) => {
 
         voluntarioBD.nome = nome || voluntarioBD.nome;
         voluntarioBD.email = email || voluntarioBD.email;
+        voluntarioBD.telefone = telefone || voluntarioBD.telefone;
         voluntarioBD.tipo = tipo || voluntarioBD.tipo;
         voluntarioBD.data = data || voluntarioBD.data;
         voluntarioBD.horario_inicio = horario_inicio || voluntarioBD.horario_inicio;

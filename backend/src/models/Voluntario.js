@@ -3,6 +3,7 @@
 const Voluntario = mongoose.model('Voluntario', {
     nome : String,
     email : String,
+    telefone: String,
     tipo : String,
     data : Date,
     horario_inicio : Date,

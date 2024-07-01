@@ -14,13 +14,14 @@ export async function getVoluntario(){
     }
 }
 
-export async function postVoluntario(nome,email,tipo,data,horario_inicio,horario_fim,produto,endereco,motivo,outros){
+export async function postVoluntario(nome,email,telefone,tipo,data,horario_inicio,horario_fim,produto,endereco,motivo,outros){
     data = parseDate(data)
     horario_inicio = combineDateAndTime(data,horario_inicio)
     horario_fim = combineDateAndTime(data,horario_fim)
     try{
         const datas = {nome: nome,
             email: email,
+            telefone: telefone,
             tipo: tipo,
             data: data,
             horario_inicio: horario_inicio,

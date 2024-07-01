@@ -27,6 +27,7 @@ export function ItemVoluntario(props){
     let tipo = props.tipo;
     let data = props.data;
     let email = props.email;
+    let telefone = props.telefone;
     let callback_excluir = props.callback_excluir;
 
     // somente um desses vai ter valor, os outros serao undefined
@@ -48,10 +49,11 @@ export function ItemVoluntario(props){
                 <div className="voluntario-corpo">
                     <TextoVoluntario tipo ={tipo} endereco = {endereco} motivo={motivo} produto={produto}/>
                     <p>Email: {email}</p>
+                    <p>Telefone: {telefone}</p>
                 </div>
                 <div id='voluntario-botoes'>
                     <button className='btn-confirmar'>
-                        <FaCircleCheck size={30} color='#12970d'/>
+                        <FaCircleCheck size={36} color='#12970d'/>
                     </button>
                     <button className='btn-excluir' onClick={()=>callback_excluir(nome)}>
                         <FaRegTrashCan size={20} color="white"/>
