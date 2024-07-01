@@ -11,7 +11,7 @@ function EventoCard(props) {
   return (
     <div className="eventos-text">
       <h2 className="titulo eventos-titulo"> {props.nome}    Dia: {data}     {horarioInicio}-{horarioFim}   </h2>
-      <p2>  {props.endereco} </p2>
+      <p2> Endereço: {props.endereco} </p2>
       <div className = "eventos-imagem-cont" >
           <img className = "eventos-imagem" src={props.imagem}/>
       </div>

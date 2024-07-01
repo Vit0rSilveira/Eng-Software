@@ -32,7 +32,24 @@ function Home() {
 
     //pega eventos do banco no inicio
     async function LoadEvento(){
+        //pega do BD
         let eventosBD = await getEvento()
+        
+        //retira os eventos ja passados
+        let ontem = new Date();
+        ontem.setDate(ontem.getDate() + 1)
+        ontem = ontem.toISOString()
+        eventosBD = eventosBD.filter(evento => evento.data >= ontem)
+
+        //ordena
+        eventosBD.sort((a, b) => {
+            if(a.data != b.data) return a.data.localeCompare(b.data);
+            else return a.horarioInicio.localeCompare(b.horarioInicio)
+        })
+
+        //limita para primeiros 3 eventos
+        eventosBD = eventosBD.slice(0,3)
+        
         setEventos(eventosBD)
     }
     useEffect(()=>{
@@ -113,6 +130,7 @@ function Home() {
                     </p>
                 </div>
 
+                {/* Perguntas frequentes */}
                 <div id="questions" className="textoBranco box-text">
                     <h1>Perguntas Frequentes</h1>
                     <div id="box-questions">
@@ -138,8 +156,9 @@ function Home() {
 
                     <h1>Eventos</h1>
                     <p>Venha participar!</p>
-
-                    {eventos.map((evento,index)=> 
+                    
+                    {eventos.length > 0 ? 
+                    (<>{eventos.map((evento,index)=> 
                         <>
                             <EventoCard
                                 nome = {evento.nome}
@@ -148,10 +167,15 @@ function Home() {
                                 horarioInicio = {evento.horario_inicio}
                                 horarioFim = {evento.horario_fim}
                                 endereco = {evento.endereco}
-                        />
+                            />
+                        </>)}
+                    </>)
+                    :(<> 
+                        <p>Estamos sem evento no momento </p>
                     </>)}
                 </div>
-
+                
+                {/* Botao de venha nos conhecer */}
                 <button onClick={() => (window.location.href = "/voluntariado")} class = "defaultButton homePageButton2"
                 >Venha nos conhecer!</button>
             </main>

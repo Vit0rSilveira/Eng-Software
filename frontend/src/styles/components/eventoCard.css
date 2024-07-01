@@ -19,8 +19,9 @@
 }
 
 .eventos-text p2 {
+    font-weight: 600;
     color: white;
-    font-size: 1.1em;
+    font-size: 1.3em;
     padding-bottom: 5px;
     margin-bottom: 2em;
 }
@@ -32,5 +33,5 @@
     margin-bottom: 3em;
 }
 .eventos-imagem{
-    width: 60%;
+    width: 50%;
 }
