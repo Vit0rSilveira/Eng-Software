@@ -9,8 +9,6 @@ function NoticiaCard(props) {
         <button onClick={() => props.onShow(props)} class = "saibaMais textoLink">Saiba Mais</button>
         <div id = "noticiaTitle" class = "titulo">{props.title}</div>
     </div>
-
-
   );
 }
 

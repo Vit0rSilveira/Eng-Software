@@ -1,7 +1,7 @@
 import axios from "axios";
-import { combineDateAndTime, parseDate } from "../utils/datautils.js";
+import constantes from "../utils/constantes";
 
-const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL:"http://localhost:3000") + "/evento"
+const API_URL = constantes.PATH + "/evento"
 
 export async function getEvento(){
     try {

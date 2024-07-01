@@ -19,12 +19,14 @@ function Footer() {
                     </a>
                 </div>
             </div>
+
             <div class='contato'>
                 <p class='contrast-text media-hide'> Entre em contato conosco:</p>
                 <p> paofraterno@gmail.com </p>
                 <p> +55 (16) 99192-4555 </p>
                 <div class='media-hide'><FaPhone size={30} /></div>
             </div>
+            
             <div class='localizacao'>
                 <p class='contrast-text media-hide'><IoLocationSharp size={30} />Localização:</p>
                 <p>R. Costa do Sol,450 - Vila Costa do Sol</p>

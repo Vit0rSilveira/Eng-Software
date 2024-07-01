@@ -6,8 +6,7 @@ function Colaborador(props){
     const nome = props.nome;
     const url = props.link;
     const imagem = props.imagem;
-    const callback = props.callback
-    const id = props.id;
+    const callback = props.callback;
 
     console.log('carregando imagem', imagem)
     return(

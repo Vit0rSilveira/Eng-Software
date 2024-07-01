@@ -11,12 +11,11 @@ function Patrocinadores() {
 
     let [colaboradores, setColaboradores] = useState([])
 
+    //pega colaboradores do banco
     async function LoadColaborador(){
-        //pega colaboradores do banco
         let colaboradoresBD = await getColaborador()
         setColaboradores(colaboradoresBD)
     }
-
     useEffect(()=>{
         LoadColaborador()
     }, [])
@@ -36,7 +35,7 @@ function Patrocinadores() {
                             color = {index%2==0 ? "#F9C745" : "#F9B145"}
                         />
                     </div>
-                    </>)}
+                </>)}
             <Footer />
         </>
     )

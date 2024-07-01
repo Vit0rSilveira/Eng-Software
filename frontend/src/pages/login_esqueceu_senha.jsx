@@ -6,6 +6,7 @@ import {getUsuario} from '../services/usuarioService';
 
 function LoginEsqueceuSenha(){
 
+    //envia email com texto auxilio
     const handleForgotPassword = async () => {
         const userEmail = await getUsuario()
 
@@ -20,7 +21,7 @@ function LoginEsqueceuSenha(){
             })
             .catch((error) => {
                 alert('Erro ao enviar email de recuperação de senha: ' + error.text);
-            });
+        });
     };
         
         
@@ -29,23 +30,28 @@ function LoginEsqueceuSenha(){
              {/* header*/}
              <div id = 'loginPage' className='mt-7 mb-1'>
                 <div id="loginHeader">
-                        {/* logo */}
-                        <img src="public\images\logo2.jpg" id="imagemLogoLogin" alt="logo"></img>  
-                        {/* Texto */}
-                        <p id="textoLogoLogin" class="titulo">Pão Fraterno André Luiz</p>
-                    </div>
+                    {/* logo */}
+                    <img src="public\images\logo2.jpg" id="imagemLogoLogin" alt="logo"></img>  
+                    {/* Texto */}
+                    <p id="textoLogoLogin" class="titulo">Pão Fraterno André Luiz</p>
+                </div>
              </div>
-
+            
             <div class = "titulo"  id = "contLoginConf">
+
+                {/* Textos */}
                 <div  id = "textoLoginConf">
                     Deseja enviar o email com o <br/> 
                     texto auxilio da senha?
-                    
                 </div>
+
+                {/* Botoes */}
                 <div>
+                    {/* Enviar email */}
                     <button onClick={() => handleForgotPassword()} className="defaultButton" id="botaoLoginConf">
                         Enviar
                     </button>
+                    {/* Voltar para login */}
                     <button onClick={() => (window.location.href = "/login")} className="defaultButton" id="botaoLoginConf">
                         Voltar
                     </button>

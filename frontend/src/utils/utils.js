@@ -2,6 +2,8 @@ import emailjs from 'emailjs-com';
 import constantes from './constantes';
 
 //Tutorial: https://www.youtube.com/watch?v=Lz8yx-zn-O4
+
+// Modelo de email geral
 export function envia_email(email, conteudo) {
     const serviceID = constantes.SERVICEID;
     const templateID = constantes.TEMPLATEID;
@@ -25,6 +27,7 @@ export function envia_email(email, conteudo) {
         });
 }
 
+// Modelo de email para cadastro de voluntario
 export function envia_email_voluntario(email, conteudo) {
     const serviceID = constantes.SERVICEID;
     const templateID = constantes.TEMPLATEID_VOLUNTARIO;

@@ -16,7 +16,6 @@ function Info(){
 
 
             <div id = "info-cont">
-
             {/* Quem Somos */}
                 <div id = "quem-cont">
                     <img id = "quem-img" src={`${imgDir}casaDoCaminho.png`} alt="" />
@@ -54,6 +53,7 @@ function Info(){
                     <div id = "kitAlim-titulo" className='titulo'>
                         Doações de kit de alimento
                     </div>
+
                     {/* Para tela grande */}
                     <div className='hideInSmallDisplay'>
                         <div id="kitAlim-subcont">

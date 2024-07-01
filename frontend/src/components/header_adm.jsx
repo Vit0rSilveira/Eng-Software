@@ -17,10 +17,7 @@ export function HeaderADM(props){
     const [cookies, setCookies, removeCookies] = useCookies(["isLogin"]);
     function verificarSaida(item){
         if(item.nome == 'logout') 
-            {
-                console.log("enter")
-                removeCookies("isLogin")
-            }
+            removeCookies("isLogin")
     }
 
     //hamburguer

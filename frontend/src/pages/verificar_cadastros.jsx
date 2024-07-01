@@ -21,7 +21,7 @@ function VerificarCadastros(props){
     }, [])
 
 
-
+    //tipos de filtros
     const [filtro,setFiltro] = useState('todas')
     const botoes = [
         {texto:'Todas',onClick:()=>{setFiltro('todas')}},
@@ -33,21 +33,6 @@ function VerificarCadastros(props){
         {texto:'Retirada',onClick:()=>setFiltro('retirada')},
     ]
 
-    let formularioValues = {
-        horario_inicio: '',
-        horario_fim: '',
-        data:''
-    }
-
-    function handleDataChange(event){
-        data = event.target.value
-    }
-
-    function handleHorarioChange(event,inicio){
-        inicio ? formularioValues.horario_inicio = event.target.value
-               : formularioValues.horario_fim = event.target.value 
-    }
-
     function aplicarFiltros(voluntarios){
         if(filtro == 'todas'){
             return voluntarios;
@@ -55,27 +40,11 @@ function VerificarCadastros(props){
         else{
             return voluntarios.filter((v)=>v.tipo == filtro)
         }
-
     }
 
 
     let [voluntarios,setVoluntarios] = useState([])
 
-    async function removeVoluntario(nome){
-        if(!confirm('Deseja mesmo excluir o voluntário: ' + nome)){
-            return;
-        }
-
-        try{
-            deleteVoluntario(nome)
-            alert("Voluntário removido com sucesso!")
-        }
-        catch(error){
-            alert('Não foi possível remover este voluntário')
-            return;
-        }
-        loadVoluntarios()
-    }
     async function loadVoluntarios(){
         try{
             let voluntarioTemp = await getVoluntario()
@@ -92,6 +61,23 @@ function VerificarCadastros(props){
         }
         catch(e){}
     }
+
+    async function removeVoluntario(nome){
+        if(!confirm('Deseja mesmo excluir o voluntário: ' + nome)){
+            return;
+        }
+
+        try{
+            deleteVoluntario(nome)
+            alert("Voluntário removido com sucesso!")
+        }
+        catch(error){
+            alert('Não foi possível remover este voluntário')
+            return;
+        }
+        loadVoluntarios()
+    }
+    
     useEffect( ()=>{
         loadVoluntarios()
     },[]) //Carregar voluntarios quando iniciar pagina

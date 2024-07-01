@@ -1,3 +1,4 @@
+/* variaveis */
 :root {
     --contrast-bg-color:#F9B145;
     --main-bg-color: #F9C745; 
@@ -170,7 +171,7 @@
     background-color: #F9C745;
 }
 
-@media(max-width: 1260px){
+@media(max-width: 1400px){
     #edit-info{
         flex-direction: column;
         align-items: center;

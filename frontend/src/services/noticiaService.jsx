@@ -1,7 +1,7 @@
 import axios from "axios";
-import { parseDate } from "../utils/datautils";
+import constantes from "../utils/constantes";
 
-const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL:"http://localhost:3000") + "/noticia"
+const API_URL = constantes.PATH + "/noticia"
 
 export async function getNoticia(){
     try {

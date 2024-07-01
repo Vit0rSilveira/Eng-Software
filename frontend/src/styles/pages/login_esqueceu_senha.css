@@ -15,7 +15,6 @@
     font-size: 1.2em;
 }
 
-
 /*tamanho para telas medias*/
 @media (max-width:1000px){
     #contLoginConf{font-size: 1.1em;}

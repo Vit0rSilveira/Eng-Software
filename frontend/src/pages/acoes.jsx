@@ -45,7 +45,7 @@ function Acoes() {
         <div id="centralize">
             <div id = "conteinerNoticia">
                 {noticias.map((noticia,index)=> 
-                    <>
+                <>
                     <div className="conteinerNoticia">
                         <NoticiaCard
                             title = {noticia.titulo}

@@ -4,7 +4,6 @@ import '../styles/components/evento.css'
 
 function Evento(props){
 
-    let id = props.id;
     let data = props.data;
     let endereco = props.endereco;
     let hora_inicio = props.horario_inicio;
@@ -16,7 +15,6 @@ function Evento(props){
         <>
         <div id='evento-container'>
             <div className="evento-titulo">
-                {/* <p className="textoBranco">{id}</p> */}
                 <p className="textoBranco">{titulo}</p>
                 <p className='textoBranco'>{data}</p>
                 <p className="textoBranco">{hora_inicio + ' - ' + hora_fim}</p>

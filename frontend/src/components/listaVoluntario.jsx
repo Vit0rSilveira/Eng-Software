@@ -27,12 +27,12 @@ export function ItemVoluntario(props){
     let tipo = props.tipo;
     let data = props.data;
     let email = props.email;
-    let callback_excluir = props.callback_excluir
+    let callback_excluir = props.callback_excluir;
 
     // somente um desses vai ter valor, os outros serao undefined
     let endereco = props.endereco;
     let motivo = props.motivo;
-    let produto = props.produto
+    let produto = props.produto;
 
     let horario = horario_fim ? horario_inicio + '-' + horario_fim : horario_inicio;
     

@@ -25,7 +25,7 @@ main {
         
 .orange{
     background-color: #F9B145;
-    }
+}
     
 .box-text h1, .questions h1 {
     color: #392600 !important;
@@ -50,13 +50,14 @@ main {
     width: 60%;
 }
 
+
 #questions {
     width: 50em;
 }
 
 #questions p {
-    width: 100%; /* Ajusta a largura do parágrafo */
-    max-width: 100%; /* Define a largura máxima */
+    width: 100%; 
+    max-width: 100%;
 }
 
 #box-questions {

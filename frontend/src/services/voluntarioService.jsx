@@ -1,7 +1,8 @@
 import axios from "axios";
 import {parseDate,combineDateAndTime} from "../utils/datautils";
+import constantes from "../utils/constantes";
 
-const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL:"http://localhost:3000") + "/voluntario"
+const API_URL = constantes.PATH + "/voluntario"
 
 export async function getVoluntario(){
     try {

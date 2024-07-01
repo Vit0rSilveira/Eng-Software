@@ -1,6 +1,7 @@
 import axios from "axios";
+import constantes from "../utils/constantes";
 
-const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL:"http://localhost:3000") + "/colaborador"
+const API_URL = constantes.PATH + "/colaborador"
 
 export async function getColaborador(){
     try {

@@ -2,13 +2,17 @@ import HeaderADM from '../components/header_adm.jsx';
 import Evento from '../components/evento.jsx';
 import Colaborador from '../components/colaborador.jsx';
 import Noticia from '../components/noticia.jsx';
+
 import '../styles/pages/editar_informacoes.css';
+
 import React, {useState,useEffect} from 'react';
 import { useCookies } from "react-cookie";
 import { useNavigate } from 'react-router-dom';
+
 import {deleteColaborador, getColaborador, postColaborador} from "../services/colaboradorService";
 import { deleteNoticia, getNoticia, postNoticia } from '../services/noticiaService.jsx';
 import { deleteEvento, getEvento, postEvento } from '../services/eventoService.jsx';
+
 import { formatarData } from '../utils/datautils.js';
 import constantes from '../utils/constantes.js'
 
@@ -21,14 +25,12 @@ function Edit_Info(){
     //ve se o usuario esta login
     useEffect(() => {
         if (!cookies.isLogin)
-            {
-                navigate("/login")
-
-            }
+            navigate("/login")
     }, [])
 
 
     function Form(props){
+        // Variaveis para input
         let eventoValues = {
             nome: "",
             imagem:"",
@@ -54,6 +56,7 @@ function Edit_Info(){
 
         let selected_file = ''
         
+        // Funcao para colocar o nome da imagem do lado do botao `escolher imagem`
         function handleFileSelection(){
             selected_file = document.getElementById('selecionar-arquivo').files[0]
             let  nome_arquivo = selected_file.name;
@@ -61,8 +64,9 @@ function Edit_Info(){
             p.innerText = nome_arquivo
         }
 
-        //verifica os campos e adicona um elemento
+        //verifica os inputs e adiciona um elemento
         async function handleBtnAdicionar(selection){
+            //para eventos
             if(selection == 'eventos'){
                 const {nome,data,horario_inicio,horario_fim,endereco} = eventoValues;
                 let imagem = selected_file;
@@ -70,6 +74,8 @@ function Edit_Info(){
                     alert("Preencha todos os campos");
                     return;
                 }
+
+                // Coloca no BD
                 try{
                     await postEvento(nome,data,horario_inicio,horario_fim,endereco,imagem)
                 }
@@ -77,11 +83,11 @@ function Edit_Info(){
                     console.error(error)
                     return;
                 }
-                // const [ano,mes,dia] = eventoValues.data.split('-')
-                // eventoValues.data = `${dia}/${mes}/${ano}`
-                //setEventos([...eventos,{...eventoValues}]);
+                
+                // atualiza os eventos
                 loadEvento()
             }
+            //para colaboradores
             else if(selection == 'colaboradores'){
                 const {nome,url,descricao} = colaboradorValues;
                 let imagem = selected_file;
@@ -89,6 +95,8 @@ function Edit_Info(){
                     alert("Preencha todos os campos");
                     return;
                 }
+
+                // Coloca no BD
                 try{
                     await postColaborador(nome,descricao,url,imagem)
                 }
@@ -96,9 +104,11 @@ function Edit_Info(){
                     console.error(error)
                     return
                 }
+                
+                // atualiza os colaboradores
                 loadColaborador()
-                //setColaboradores([...colaboradores,{...colaboradorValues}])
             }
+            //para noticias
             else if(selection == 'noticias'){
                 const {titulo,descricao,url,data} = noticiaValues;
                 let imagem = selected_file
@@ -106,6 +116,8 @@ function Edit_Info(){
                     alert("Preencha os campos necessários");
                     return;
                 }
+
+                // Coloca no BD
                 try{
                     await postNoticia(titulo,data,descricao,url,imagem)
                 }
@@ -113,9 +125,8 @@ function Edit_Info(){
                     console.error(error)
                     return
                 }
-                // const [ano,mes,dia] = noticiaValues.data.split('-')
-                // noticiaValues.data = `${dia}/${mes}/${ano}`
-                //setNoticias([...noticias,{...noticiaValues}])
+                
+                // atualiza as noticias
                 loadNoticia()
             }
             else{
@@ -129,16 +140,13 @@ function Edit_Info(){
         function handleNomeChange(event){
             eventoValues.nome=event.target.value;
         }
-
         function handleDataChange(event){
             eventoValues.data = event.target.value;
         }
-
         function handleHorarioChange(event,inicio){
             inicio ? eventoValues.horario_inicio = event.target.value
                    : eventoValues.horario_fim = event.target.value 
         }
-
         function handleEnderecoChange(event){
             eventoValues.endereco = event.target.value;
         }
@@ -147,27 +155,23 @@ function Edit_Info(){
         function colabHandleNomeChange(event){
             colaboradorValues.nome=event.target.value;
         }
-
         function colabHandleDescricaoChange(event){
             colaboradorValues.descricao = event.target.value;
         }
-
         function colabHandleURLChange(event){
             colaboradorValues.url=event.target.value;
         }
+
         //noticias
         function notHandleTituloChange(event){
             noticiaValues.titulo=event.target.value;
         }
-
         function notHandleDescricaoChange(event){
             noticiaValues.descricao=event.target.value;
         }
-
         function notHandleURLChange(event){
             noticiaValues.url=event.target.value;
         }
-
         function notHandleDataChange(event){
             noticiaValues.data=event.target.value;
         }
@@ -175,7 +179,7 @@ function Edit_Info(){
 
         let selection = props.selection;
         
-        //editar eventos
+        //html de eventos
         if(selection == 'eventos'){
             return(
                 <div className ='container-edit'>
@@ -212,7 +216,7 @@ function Edit_Info(){
         }
 
 
-        // editar colaboradores
+        //html de editar colaboradores
         else if(selection == 'colaboradores'){
             return(
                 <div className ='container-edit'>
@@ -242,7 +246,7 @@ function Edit_Info(){
         }
 
 
-        // editar noticias
+        //html de editar noticias
         else if(selection == 'noticias'){
             return(
                 <div className ='container-edit'>
@@ -276,7 +280,7 @@ function Edit_Info(){
         }
     }
 
-    
+    // Funcoes para remocao
     function removeEvento(nome){
         if(!confirm('Deseja mesmo excluir o evento: ' + nome)){
             return;
@@ -325,6 +329,7 @@ function Edit_Info(){
         loadNoticia()
     }
 
+    // Funcoes para atualizar a pagina
     async function loadColaborador(){
         try{
             let colaboradoresBD = await getColaborador()
@@ -372,16 +377,13 @@ function Edit_Info(){
     },[])
 
 
-
-    //elementos de teste
-    //eventos
-    let [selection,setSelection] = useState('eventos');
+    //armazenam dados do BD
     let [eventos,setEventos] = useState([]);
     let [colaboradores,setColaboradores] = useState([])
     let [noticias,setNoticias] = useState([])
-
-
-
+    
+    //Variaveis para trocar dados a serem editados
+    let [selection,setSelection] = useState('eventos');
     let btnEventosClass = '';
     let btnColaboradoresClass='';
     let btnNoticiasClass='';
@@ -393,9 +395,11 @@ function Edit_Info(){
     else if(selection == 'noticias')
         btnNoticiasClass = 'selected-btn';
 
+
     return(
         <>
             <HeaderADM page='editar-site'/>
+ 
             <h1 className='titulo-pagina'>Editar Site</h1>
             <div id='edit-info'>
                 <div className = 'select-mode'>
@@ -408,24 +412,23 @@ function Edit_Info(){
 
             {selection == 'eventos' &&
                 <div id="container-lista">
-                {eventos.map((evento,index)=> 
-                    <Evento id={index} endereco={evento.endereco} titulo={evento.nome} data={evento.data}
-                    horario_fim={evento.horario_fim} horario_inicio={evento.horario_inicio} onClick={removeEvento}/>)}
+                    {eventos.map((evento,index)=> 
+                        <Evento id={index} endereco={evento.endereco} titulo={evento.nome} data={evento.data}
+                        horario_fim={evento.horario_fim} horario_inicio={evento.horario_inicio} onClick={removeEvento}/>)}
                 </div>
-
             }
 
             {selection == 'colaboradores' &&
                 <div id='container-lista'>
                     {colaboradores.map((c,index)=> 
-                    <Colaborador {...c} index={index} callback={removeColaborador}/>)}
+                        <Colaborador {...c} index={index} callback={removeColaborador}/>)}
                 </div>
             }
 
             {selection == 'noticias' &&
                 <div id='container-lista'>
                     {noticias.map((c,index)=> 
-                    <Noticia {...c} index={index} callback={removeNoticia}/>)}
+                        <Noticia {...c} index={index} callback={removeNoticia}/>)}
                 </div>
             }
             

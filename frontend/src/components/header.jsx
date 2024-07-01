@@ -67,6 +67,8 @@ function Header(props) {
                 <div class = "boxline"></div>
                 <a href='/patrocinadores'><li>Colaboradores</li></a>
         </ul>
+        
+        {/* Botao para o home page */}
         {props.isImage ? (<></>):(
             <>
                 <div id='headerImage'>

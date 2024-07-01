@@ -9,9 +9,11 @@ import {getEvento} from "../services/eventoService";
 
 function Home() {
 
-    //questions
+    //variaveis
     const [questions, setQuestions] = useState([]);
-
+    let [eventos, setEventos] = useState([])
+    
+    //pega as perguntas no inicio
     useEffect(() => {
         fetch('../../perguntas.json')
             .then(response => {
@@ -28,16 +30,11 @@ function Home() {
             })
     }, []);
 
-
-    //eventos
-    let [eventos, setEventos] = useState([])
-
+    //pega eventos do banco no inicio
     async function LoadEvento(){
-        //pega eventos do banco
         let eventosBD = await getEvento()
         setEventos(eventosBD)
     }
-
     useEffect(()=>{
         LoadEvento()
     }, []) 
@@ -50,10 +47,14 @@ function Home() {
                 headerText1 = {'Conheça a Organização Pão Fraterno André Luiz'}
                 isHomePage = {true}
             />
+
             <main>
+
+                {/* Um pouco sobre nos */}
                 <div className="textoBranco box-text">
                     <h1>Um pouco sobre nós</h1>
-                    <p>O Pão Fraterno André Luiz é uma organização que tem como objetivo ajudar, 
+                    <p>
+                        O Pão Fraterno André Luiz é uma organização que tem como objetivo ajudar, 
                         fisicamente e mentalmente os moradores de rua do São Carlos. 
                         Somos um grupo de aproximadamente 40 pessoas, sem fins lucrativos, com caráter de assistência social.
                     </p>
@@ -74,22 +75,22 @@ function Home() {
                     </p>
                 </div>
 
+                {/* Acoes realizadas */}
                 <div className="textoBranco box-text orange">
                     <h1>Ações Realizadas</h1>
                     <p>
-                    A nossa principal atividade é a entrega de kit para 140 moradores de rua na sexta toda semana sem falta. 
-                    Nesse kit temos alimentos, roupas e alguns produtos de higiene.
-                    
+                        A nossa principal atividade é a entrega de kit para 140 moradores de rua na sexta toda semana sem falta. 
+                        Nesse kit temos alimentos, roupas e alguns produtos de higiene.
                     </p>
                     <p>
-                    As ações voluntárias para a entrega podem ser divididas em 4 grupos distintos de atuação. Um deles é a doação, 
-                    que é a fonte de todas as nossas ações. 
+                        As ações voluntárias para a entrega podem ser divididas em 4 grupos distintos de atuação. Um deles é a doação, 
+                        que é a fonte de todas as nossas ações. 
                     </p>
                     <p>
-                    As demais se baseiam em atividades que realizamos cotidianamente para 
-                    manter o funcionamento da Pão Fraterno. Ou seja, fazer os alimentos, realizar sua montagem para distribuiçao, ir
-                    as casas dos doadores recolher as doações, ir em bairros que atendemos e distribuir. Todas essas constituem pilares essenciais que 
-                    mantem a fraternidade em pé. 
+                        As demais se baseiam em atividades que realizamos cotidianamente para 
+                        manter o funcionamento da Pão Fraterno. Ou seja, fazer os alimentos, realizar sua montagem para distribuiçao, ir
+                        as casas dos doadores recolher as doações, ir em bairros que atendemos e distribuir. Todas essas constituem pilares essenciais que 
+                        mantem a fraternidade em pé. 
                     </p>
                         
                     <div className="home-img-box">
@@ -102,13 +103,14 @@ function Home() {
                     
                     <p>
                         Além disso temos fazemos eventos aproximadamente 4 vezes por ano, para arrecadar o dinheiro para compra de produtos do kit. 
-                    Dentre eles, temos eventos como venda de pizza, brechó e etc.
-                    Qualquer pessoa está convida para ir nos eventos.
+                        Dentre eles, temos eventos como venda de pizza, brechó e etc.
+                        Qualquer pessoa está convida para ir nos eventos.
                     </p>
-                    <p>Por mais que pareçam muitas funcoes buscamos sempre dividi-las ao maximo, o que ainda 
-                    reforca nossa necessidade constante de voluntariado, por isso buscamos atençāo para a questao social a qual nos 
-                    envolvemos e esperamos sua ajuda para fazer parte da nossa história.</p>
-                    
+                    <p>
+                        Por mais que pareçam muitas funcoes buscamos sempre dividi-las ao maximo, o que ainda 
+                        reforca nossa necessidade constante de voluntariado, por isso buscamos atençāo para a questao social a qual nos 
+                        envolvemos e esperamos sua ajuda para fazer parte da nossa história.
+                    </p>
                 </div>
 
                 <div id="questions" className="textoBranco box-text">

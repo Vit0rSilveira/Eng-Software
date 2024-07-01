@@ -1,6 +1,7 @@
 import axios from "axios";
+import constantes from "../utils/constantes";
 
-const API_URL = ((typeof process !== 'undefined')? process.env.REACT_APP_API_URL:"http://localhost:3000") + "/usuario"
+const API_URL = constantes.PATH + "/usuario"
 
 export async function getUsuario(){
     try {

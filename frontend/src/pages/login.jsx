@@ -9,8 +9,8 @@ import { useNavigate } from 'react-router-dom';
 function Login(){
 
     //usados na verificacao de erros
-    const [primeiro, setPrimeiro] = useState(true);
-    const [verificar, setVerificar] = useState(false);
+    const [primeiro, setPrimeiro] = useState(true); //retringe acesso no useEffect no primeiro acesso
+    const [verificar, setVerificar] = useState(false); //entra na verificacao
 
     //valor dos inputs
     const [email, setEmail] = useState('');
@@ -39,21 +39,20 @@ function Login(){
     //ativado com o botao confirmar
     //validada os itens do login
     async function validarLogin() {
+
         //pega usuario do banco
-        
         const usuario = await getUsuario()
         if(usuario == undefined) 
         {
             console.log("Erro ao obter dados do usuario")
             return
         }
+
         //reseta os variaveis de erro
         resetarErro()
 
         //verificacao de erros
-        
-        //compara senha
-        const senhaCorreta = bcrypt.compareSync(senha, usuario.senha)
+        const senhaCorreta = bcrypt.compareSync(senha, usuario.senha) //compara senha
         if(email === "")
             setEmailVazio(true)
         if(senha === "")
@@ -63,7 +62,6 @@ function Login(){
 
         //atualiza verificar para entrar no useEffect 
         setVerificar(prevState => !prevState)
-   
     }
 
     //se nao tiver erro, vai para aba de administrador
@@ -72,18 +70,17 @@ function Login(){
         if(primeiro) setPrimeiro(false)
         else if(!invalido && !senhaVazia && !emailVazio )
         {
-            setCookies("isLogin", true, {maxAge: 60 * 60 * 12})
+            setCookies("isLogin", true, {maxAge: 60 * 60 * 12}) //seta o cookie com 12h para expirar
             navigate("/verificar-cadastros")
         }
-
     }, [verificar])
 
 
 
     return(
         <>
-
             <div id = 'loginPage'>
+
                 {/* header */}
                 <div id="loginHeader">
                     {/* logo */}
@@ -96,6 +93,7 @@ function Login(){
                 <div id = "loginTextBox">
                     <div id= "loginTitleBox" class = "textoBranco">Login Administrador</div>
                     {(invalido && <div class = "textoErroLogin textoErro">Email ou senha invalida</div>)}
+                    
                     {/* Nome */}
                     <div class="TextoEInputLogin">
                         <div class = "loginTexto textoBranco">Email:</div>
@@ -109,13 +107,15 @@ function Login(){
                         <input onChange={(event) => setSenha(event.target.value)}  class = "loginInput defaultInput" type="password" />
                     </div>
                     {(senhaVazia && <div class = "textoErroLogin textoErro">Preencha a senha</div>)}
+                    
                     {/* cadastro Button */}
                     <div id = "buttonPlaceLogin">
                         <button onClick={validarLogin} id="loginButton" class="orangeButton">Login</button>
                     </div>
+
                     {/* esqueceu a senha */}
-                    <div id ="textoEsqSenha" class = "textoBranco mt-5 mx-3">
-                         Esqueceu a senha?
+                    <div id ="textoEsqSenha" class = "textoBranco mt-5 mx-3"> 
+                        Esqueceu a senha?
                         <a  id ="linkEsqSenha"  class='textoLink mx-1' href="/login-esqueceu-senha">Clique aqui</a>
                     </div>
                 </div>

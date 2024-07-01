@@ -83,7 +83,7 @@ function Voluntariado(){
     }
 
 
-    //cadastra no BD e envia email
+    //cadastra o voluntario no BD e envia email
     const cadastrarVoluntario = async () => {
         const conteudo = {
             assunto: 'Confirmação de Cadastro',
@@ -170,12 +170,14 @@ function Voluntariado(){
                     {/* Titulo */}
                     <div id = "cadastroTextBox">
                         <div id= "cadastroTitleBox" class = "textoBranco">Cadastro de Voluntário</div>
+                        
                         {/* Nome */}
                         <div class="TextoEInput">
                             <div class = "cadastroTexto textoBranco">Nome:</div>
                             <input onChange={(event) => setNome(event.target.value)} class = "smallSizeInput defaultInput" type="text"/>
                         </div>
                         {(erroNome && <div class = "textoErroCadastroVol textoErro">Preencha o nome</div>)}
+                        
                         {/* Email */}
                         <div class="TextoEInput">
                             <div class = "cadastroTexto textoBranco">Email:</div>
@@ -311,9 +313,11 @@ function Voluntariado(){
                             <input onChange={(event) => setHorarioFinal(event.target.value)} class = "smallSizeInput defaultInput" type="time" />
                         </div>
                         {(erroHorario && <div class = "textoErroCadastroVol textoErro">Preencha o horário</div>)}
+                        
                         {/* Outras informacoes */}
                         <div class = "TextoEInput textoBranco">Outras informações:</div>
                         <textarea onChange={(event) => setInformacaoExtra(event.target.value)} id = "outrasInput" class = "TextoEInput defaultInput"  type="text" />
+                        
                         {/* cadastro Button */}
                         <div id = "buttonPlace">
                             <button onClick={validarCadastro} id = "cadastroButton" class="defaultButton">Confirmar</button>

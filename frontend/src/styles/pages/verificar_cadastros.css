@@ -27,11 +27,9 @@
 }
 
 #formulario h2{
-    font-family: "palanquin", Helvetica, sans-serif;
     font-size: 1.5em;
     font-weight: 700;
     padding-left: 30px;
-    color: white;
     margin-right: 0px;
     width: 200px;
 }
@@ -41,52 +39,15 @@
     margin-top: 45px;
 }
 
-#formulario input{
-    height: 2em;
-    width: 300px;
-}
-
 .container-opcoes-filtro{
     flex-wrap: wrap;
     margin-top: 0px !important;
-}
-
-#formulario .input-data{
-    width: 150px;
-    margin-left: -50px;
-}
-
-#formulario section{
-    display: flex;
-    margin-left: -50px
-}
-
-#formulario .input-horario{
-    width: 100px;
-}
-
-#formulario .inline-text{
-    font-family: "palanquin", Helvetica, sans-serif;
-    font-size: 1.3em;
-    color: white;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 #formulario button{
     background-color: var(--contrast-bg-color);
     margin-right: 40px;
     margin-bottom: 25px;
-    color: white;
-}
-#formulario .btn-adicionar{
-    font-size: 1.3em;
-}
-
-#formulario .container-btn{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
 }
 
 #formulario .btn-filtro{
