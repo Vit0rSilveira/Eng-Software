@@ -48,15 +48,41 @@ function VerificarCadastros(props){
     async function loadVoluntarios(){
         try{
             let voluntarioTemp = await getVoluntario()
+
+            //apaga o voluntario que ja passou o dia
+            voluntarioTemp.map((v) =>{
+                //formatacoes
+                let ontem = new Date();
+                ontem.setDate(ontem.getDate() + 1)
+                ontem = ontem.toISOString()
+                //apagar
+                if(v.data <= ontem)
+                    try{
+                        deleteVoluntario(v.nome)
+                    }
+                    catch(error){
+                        console.log('Erro na remoção do voluntário')
+                        return;
+                    }
+            })
+            
+            //formata dado
             voluntarioTemp.map((v) =>{
                 let [datai,horai] = formatarData(v.horario_inicio)
                 let [dataf,horaf] = formatarData(v.horario_fim)
                 let [data,hora] = formatarData(v.data)
-
+                
                 v.horario_inicio = horai
                 v.horario_fim = horaf
                 v.data = data
             })
+
+            //ordena
+            voluntarioTemp.sort((a, b) => {
+                if(a.data != b.data) return a.data.localeCompare(b.data);
+                else return a.horario_inicio.localeCompare(b.horario_inicio)
+            })
+
             setVoluntarios(voluntarioTemp)
         }
         catch(e){}
