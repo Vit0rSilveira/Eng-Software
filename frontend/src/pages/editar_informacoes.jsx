@@ -196,7 +196,7 @@ function Edit_Info(){
                     </div>
                     <div>
                         <h2>Data:</h2>
-                        <input onChange={handleDataChange}type="date"  className='defaultInput input-data'></input>
+                        <input onChange={handleDataChange} type="date" className='defaultInput input-data'></input>
                     </div>
                     <div>
                         <h2>Horário:</h2>
@@ -208,7 +208,7 @@ function Edit_Info(){
                     </div>
                     <div>
                         <h2>Endereço:</h2>
-                        <input  maxlength="100"onChange={handleEnderecoChange} className='defaultInput'></input>
+                        <input maxlength="100" onChange={handleEnderecoChange} className='defaultInput'></input>
                     </div>
                     <button className='button-adicionar' onClick={()=>handleBtnAdicionar('eventos')}>Adicionar</button>
                 </div>
@@ -227,7 +227,7 @@ function Edit_Info(){
                     </div>
                     <div>
                         <h2>Descrição:</h2>
-                        <textarea onChange={colabHandleDescricaoChange} id = "outrasInput" class = "TextoEInput defaultInput"  type="text" />
+                        <textarea onChange={colabHandleDescricaoChange} class = "TextoEInput defaultInput big-input"  type="text" />
                     </div>
                     <div>
                         <h2>Imagem:</h2>    
@@ -267,7 +267,7 @@ function Edit_Info(){
                     </div>
                     <div>
                         <h2>Descrição:</h2>
-                        <textarea onChange={notHandleDescricaoChange} id = "outrasInput" class = "TextoEInput defaultInput"  type="text" />
+                        <textarea onChange={notHandleDescricaoChange} class = "TextoEInput defaultInput big-input"  type="text" />
                     </div>
                     <div>
                         <h2>Link:</h2>

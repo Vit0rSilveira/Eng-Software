@@ -143,6 +143,11 @@
     flex-grow: 1;
 }
 
+.big-input{
+    width: 18.7em;
+    height: 10em;
+}
+
 .button-adicionar{
     width: 150px;
     height: 40px;

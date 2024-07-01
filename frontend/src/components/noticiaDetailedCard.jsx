@@ -15,7 +15,11 @@ function NoticiaDetaildCard(props) {
             <div id = "noticiaDetTitle" class = "titulo">{props.title}</div>
             <div id = "noticiaDetData" class = "titulo">{data}</div>
             <img src={props.image} id = "noticiaDetImage"/>
-            <div id = "noticiaDetDescricao" class = "textoLaranja">{props.descricao}</div>
+            <div id = "noticiaDetDescricao" class = "textoLaranja">
+              {props.descricao.split('\n').map((linha) => (
+                <p id="entre-paragrafo">{linha}</p>
+              ))}
+            </div>
           </div>
           <a href={props.link} target="_blank" id = "noticiaDetLink" class = "textoLink">Clique aqui para mais informações</a>
         </div>
