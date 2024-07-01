@@ -4,6 +4,8 @@ import Colaborador from '../components/colaborador.jsx';
 import Noticia from '../components/noticia.jsx';
 import '../styles/pages/editar_informacoes.css';
 import React, {useState,useEffect} from 'react';
+import { useCookies } from "react-cookie";
+import { useNavigate } from 'react-router-dom';
 import {deleteColaborador, getColaborador, postColaborador} from "../services/colaboradorService";
 import { deleteNoticia, getNoticia, postNoticia } from '../services/noticiaService.jsx';
 import { deleteEvento, getEvento, postEvento } from '../services/eventoService.jsx';
@@ -11,6 +13,21 @@ import { formatarData } from '../utils/datautils.js';
 import constantes from '../utils/constantes.js'
 
 function Edit_Info(){
+
+    //cookie & navigate
+    const [cookies, setCookies, removeCookies] = useCookies(["isLogin"]);
+    const navigate = useNavigate()
+    
+    //ve se o usuario esta login
+    useEffect(() => {
+        if (!cookies.isLogin)
+            {
+                navigate("/login")
+
+            }
+    }, [])
+
+
     function Form(props){
         let eventoValues = {
             nome: "",

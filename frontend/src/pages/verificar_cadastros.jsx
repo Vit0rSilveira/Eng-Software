@@ -1,16 +1,27 @@
 import '../styles/pages/verificar_cadastros.css'
 import HeaderADM from '../components/header_adm'
 import React, {useEffect, useState} from 'react';
+import { useCookies } from "react-cookie";
 import ListaVoluntario from '../components/listaVoluntario.jsx';
-import { useStore } from '../zustand/store';
 import { deleteVoluntario, getVoluntario } from '../services/voluntarioService.jsx';
 import { formatarData } from '../utils/datautils.js';
+import { useNavigate } from 'react-router-dom';
 
 
 function VerificarCadastros(props){
 
-    const teste = useStore((state) => state.usuario)
-    console.log("teste cadastro", teste)
+    //cookie & navigate
+    const [cookies, setCookies, removeCookies] = useCookies(["isLogin"]);
+    const navigate = useNavigate()
+    
+    //ve se o usuario esta login
+    useEffect(() => {
+        if (!cookies.isLogin)
+            navigate("/login")
+    }, [])
+
+
+
     const [filtro,setFiltro] = useState('todas')
     const botoes = [
         {texto:'Todas',onClick:()=>{setFiltro('todas')}},
@@ -82,7 +93,6 @@ function VerificarCadastros(props){
         catch(e){}
     }
     useEffect( ()=>{
-        console.log(filtro)
         loadVoluntarios()
     },[]) //Carregar voluntarios quando iniciar pagina
 

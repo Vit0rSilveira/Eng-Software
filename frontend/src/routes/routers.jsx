@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route} from 'react-router-dom';
-import PrivateRoute from "./privateRoute.jsx";
 import Home from '../pages/home.jsx'
 import Voluntariado from '../pages/voluntariado.jsx';
 import VoluntarioConfirmado from '../pages/voluntario-confirmado.jsx';
@@ -27,14 +26,14 @@ function Destiny () {
             <Route path='/login' element={<Login/>}/>
             <Route path='/login-esqueceu-senha' element={<LoginEsqueceuSenha/>}/>
             <Route path='/login-email-enviado' element={<LoginConfirmarEmail/>}/>
-            <Route path='/crud-conta' element={<CRUD_Conta/>}/>
-            <Route path='/crud_conta_sucesso' element={<CrudContaSucesso/>}/>
             <Route path='/info' element={<Info/>}/>
             <Route path="/patrocinadores" element={<Patrocinadores />} />
             <Route path="/acoes" element={<Acoes />} />
             <Route path="/doacao" element={<Doacao />} />
-            <Route path="/edit-info" element={<PrivateRoute Component={Edit_Info} />} />
-            <Route path="/verificar-cadastros" element={<PrivateRoute Component={VerificarCadastros} />}/>
+            <Route path='/crud-conta' element={<CRUD_Conta/>}/>
+            <Route path='/crud_conta_sucesso' element={<CrudContaSucesso/>}/>
+            <Route path="/edit-info" element={<Edit_Info/>} />
+            <Route path="/verificar-cadastros" element={<VerificarCadastros/>}/>
         </Routes>
     )
 }

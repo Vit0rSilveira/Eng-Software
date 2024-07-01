@@ -1,11 +1,25 @@
 import '../styles/pages/crud-conta.css';
 import HeaderADM from '../components/header_adm';
 import React, { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from 'react-router-dom';
 import { deleteUsuario, getUsuario, postUsuario} from '../services/usuarioService';
 import bcrypt from 'bcryptjs'
 
 
 function CRUD_Conta(){
+
+    //cookie & navigate
+    const [cookies, setCookies, removeCookies] = useCookies(["isLogin"]);
+    const navigate = useNavigate()
+    
+    //ve se o usuario esta login
+    useEffect(() => {
+        if (!cookies.isLogin)
+            navigate("/login")
+    }, [])
+
+
     //usados na verificacao de erros
     const [primeiro, setPrimeiro] = useState(true);
     const [verificar, setVerificar] = useState(false);
