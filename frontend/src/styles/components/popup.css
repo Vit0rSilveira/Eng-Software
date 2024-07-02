@@ -1,0 +1,61 @@
+#contPopUpCard{
+    width: 40em;
+    border-radius: 2em 2em 1em 1em;
+    background-color: white;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+    font-size: 1.1em;
+    transition-duration: 0.1s;
+}
+#PopUpTop{
+    color: white;
+    background-color: #F9C745;
+    width: 98%;
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: 800;
+    padding: 0.2em 0.7em 0.4em 0;
+    border-radius: 1em 1em 0 0;
+    height: auto;
+}
+#PopUpXButton{
+    border: none;
+    background: none;
+}
+#PopUpCentralize{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#PopUpTitle{
+    width: 80%;
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 180%;
+    margin-top: 1.5em;
+} 
+.rejeitarInput{
+    margin-top: 2em;
+    width: 70%;
+    height: 10em;
+}
+#PopUpButtonCont{
+    margin-top: 2em;
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: row;
+    column-gap: 7em;
+}
+
+/*tamanho para telas medias*/
+@media (max-width:1000px){
+    #contPopUpCard{font-size: 0.9em;}
+}
+/*tamanho para telas pequenas*/
+@media (max-width:600px){
+    #contPopUpCard{font-size: 0.66em;}
+}
+/*tamanho para telas mais pequenas*/
+@media (max-width:450px){
+    #contPopUpCard{font-size: 0.5em !important;}
+}

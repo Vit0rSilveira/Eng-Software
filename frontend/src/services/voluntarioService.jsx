@@ -14,6 +14,16 @@ export async function getVoluntario(){
     }
 }
 
+export async function getVoluntarioNome(nome){
+    try {
+        const response = await axios.get(API_URL + "/" + nome)
+        return response.data.Voluntario
+    } catch (error) {
+        console.error('Erro ao obter o voluntario:', error)
+        return []
+    }
+}
+
 export async function postVoluntario(nome,email,telefone,tipo,data,horario_inicio,horario_fim,produto,endereco,motivo,outros){
     data = parseDate(data)
     horario_inicio = combineDateAndTime(data,horario_inicio)

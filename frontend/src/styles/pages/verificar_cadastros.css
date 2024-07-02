@@ -63,3 +63,16 @@
 #formulario button:disabled {
     background-color: #F9C745;
 }
+#popupCont{
+    overflow-y: auto;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #7c7c7c65;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

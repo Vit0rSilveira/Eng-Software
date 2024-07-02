@@ -8,13 +8,14 @@ export function envia_email(email, conteudo) {
     const serviceID = constantes.SERVICEID;
     const templateID = constantes.TEMPLATEID;
     const publicKey = constantes.PUBLICKEY_EMAILJS;
-
     const templateParams = {
         email: email,
+        name: conteudo.nome,
         subject: conteudo.assunto,
-        message: conteudo.mensagem
+        message: conteudo.mensagem,
+        message2: conteudo.mensagem2,
+        message3: conteudo.mensagem3
     };
-
     
     return emailjs.send(serviceID, templateID, templateParams, publicKey)
         .then(response => {

@@ -18,8 +18,7 @@ main {
     background-color:#F9C745;
     box-shadow: 0 .75rem 1rem rgba(0, 0, 0, 0.326);
     border-radius: 20px;
-    padding: 3%;
-    padding-top: 2em;
+    padding: 2em 3% 2em 3%;
     margin-top: 7em;
 }
         
@@ -48,6 +47,17 @@ main {
 .home-img-box img {
     margin: 2em;
     width: 60%;
+}
+
+
+.home-saiba-mais-cont{
+    display: flex;
+    justify-content: end;
+}
+.home-saiba-mais{
+    margin-top: 2em;
+    font-size: 1.4em;
+    color: white;
 }
 
 
@@ -107,9 +117,7 @@ main {
     #eventos p{font-size: 2.4em;}
 }
 @media (max-width:750px){
-    main img{
-        width: 60%;
-    }
+    main img{width: 60%; }
     .box-text{width: 80%;}
     #questions{width: 80%;}
     .eventos{width: 80%;}

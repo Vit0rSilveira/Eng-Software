@@ -3,8 +3,10 @@ import HeaderADM from '../components/header_adm'
 import React, {useEffect, useState} from 'react';
 import { useCookies } from "react-cookie";
 import ListaVoluntario from '../components/listaVoluntario.jsx';
-import { deleteVoluntario, getVoluntario } from '../services/voluntarioService.jsx';
+import PopUp from "../components/popup.jsx";
+import { deleteVoluntario, getVoluntario, getVoluntarioNome } from '../services/voluntarioService.jsx';
 import { formatarData } from '../utils/datautils.js';
+import { envia_email } from '../utils/utils';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -20,6 +22,25 @@ function VerificarCadastros(props){
             navigate("/login")
     }, [])
 
+    // funcoes para popup
+    const[isShow, setShow] = useState(true);
+    const [popup, setPopup] = useState({
+        nome: "",
+        texto: "",
+        botao1nome: "",
+        botao1funcao: "",
+        botao2nome: "",
+        botao2funcao: "",
+        isTextArea: false
+    })
+    const showPopUp = (props) => {
+        setShow(true)
+        setPopup(props)
+    }
+    const cancelPopUp = () => {
+        setShow(false)
+    }
+
 
     //tipos de filtros
     const [filtro,setFiltro] = useState('todas')
@@ -27,9 +48,9 @@ function VerificarCadastros(props){
         {texto:'Todas',onClick:()=>{setFiltro('todas')}},
         {texto:'Visita',onClick:()=>setFiltro('visita')},
         {texto:'Doação',onClick:()=>setFiltro('doação')},
-        {texto:'Cozinha',onClick:()=>setFiltro('Cozinha')},
+        {texto:'Cozinha',onClick:()=>setFiltro('cozinha')},
         {texto:'Montagem',onClick:()=>setFiltro('montagem')},
-        {texto:'Distribuição',onClick:()=>setFiltro('distribuição')},
+        {texto:'Distribuição',onClick:()=>setFiltro('entrega')},
         {texto:'Retirada',onClick:()=>setFiltro('retirada')},
     ]
 
@@ -88,19 +109,150 @@ function VerificarCadastros(props){
         catch(e){}
     }
 
-    async function removeVoluntario(nome){
-        if(!confirm('Deseja mesmo excluir o voluntário: ' + nome)){
+
+    //popup de confirmacao de aceita
+    async function confirmaVoluntario(nome){
+        //pega do voluntario do banco
+        let voluntario 
+        try{
+            voluntario = await getVoluntarioNome(nome)
+        }
+        catch(error){
+            alert('Erro na obtenção do voluntário')
             return;
         }
 
+        //mensagem de confirmacao
+        const propriedade = {
+            nome: voluntario.nome,
+            texto: "Deseja enviar o email de confirmação para " + voluntario.nome + "?",
+            botao1nome: "Sim",
+            botao1funcao: voluntarioConfirmado,
+            botao2nome: "Não",
+            botao2funcao: cancelPopUp,
+            isTextArea: false
+        }
+        showPopUp(propriedade)
+    }
+    //aceita e apaga o voluntario
+    async function voluntarioConfirmado(nome)
+    {
+        //pega voluntario do banco
+        let voluntario 
         try{
-            deleteVoluntario(nome)
-            alert("Voluntário removido com sucesso!")
+            voluntario = await getVoluntarioNome(nome)
         }
         catch(error){
-            alert('Não foi possível remover este voluntário')
+            alert('Erro na obtenção do voluntário')
             return;
         }
+
+        //Formatacao da mensagem do email
+        let [nulo1,horario_inicio] = formatarData(voluntario.horario_inicio)
+        let [nulo2,horario_final] = formatarData(voluntario.horario_fim)
+        let [data,nulo3] = formatarData(voluntario.data)
+        let mensagem2
+        if(voluntario.tipo == 'retirada')
+            mensagem2 = 'Espere a nossa chegada no endereço ' +  voluntario.endereco
+        else
+            mensagem2 = 'Venha até a Casa do Caminho, no endereço R. Costa do Sol,450 - Vila Costa do Sol São Carlos - SP'
+        const conteudo = {
+            assunto: 'Confirmação do Cadastro',
+            nome: voluntario.nome,
+            mensagem: 'O seu cadastro de ' + voluntario.tipo + ' no dia ' + data + ', de ' + horario_inicio + ' até ' +horario_final + ' foi aceito!',
+            mensagem2: mensagem2
+        };
+
+        //envio de email
+        envia_email(voluntario.email, conteudo)
+            .then((response) => {
+                // // remove o voluntario
+                try{
+                    deleteVoluntario(nome)
+                }
+                catch(error){
+                    alert('Erro na remoção do voluntário')
+                    return;
+                }
+
+                //mostra o popup de mensagem de confirmacao
+                const propriedade = {
+                    texto: "Foi enviado a mensagem de confirmação!",
+                    botao1nome: "Confirmar",
+                    botao1funcao: cancelPopUp,
+                    botao2nome: "",
+                    isTextArea: false
+                }
+                showPopUp(propriedade)
+            })
+            .catch((error) => {
+                cancelPopUp()
+                alert('Erro ao enviar o email: ' + error.text);
+        });
+
+        loadVoluntarios()
+    }
+
+    //popup de confirmacao de rejeicao
+    async function confirmaRemoveVoluntario(nome){
+        const propriedade = {
+            nome: nome,
+            texto: "Escreva o motivo de rejeição do " + nome + " em uma linha",
+            botao1nome: "Enviar",
+            botao1funcao: removeVoluntario,
+            botao2nome: "",
+            isTextArea: true
+        }
+        showPopUp(propriedade)
+    }
+    //rejeita e apaga o voluntario
+    async function removeVoluntario(nome, textoRejeicao){
+        //pega voluntario do banco
+        let voluntario 
+        try{
+            voluntario = await getVoluntarioNome(nome)
+        }
+        catch(error){
+            alert('Erro na obtenção do voluntário')
+            return;
+        }
+
+        //Formatacao da mensagem do email
+        let [nulo1,horario_inicio] = formatarData(voluntario.horario_inicio)
+        let [nulo2,horario_final] = formatarData(voluntario.horario_fim)
+        let [data,nulo3] = formatarData(voluntario.data)
+        const conteudo = {
+            assunto: 'Rejeição do Cadastro',
+            nome: voluntario.nome,
+            mensagem: 'O seu cadastro de ' + voluntario.tipo + ' no dia ' + data + ', de ' + horario_inicio + ' até ' +horario_final + ' foi rejeitado por seguinte motivo:',
+            mensagem2: textoRejeicao
+        };
+
+        envia_email(voluntario.email, conteudo)
+            .then((response) => {
+                // // remove o voluntario
+                try{
+                    deleteVoluntario(nome)
+                }
+                catch(error){
+                    alert('Erro na remoção do voluntário')
+                    return;
+                }
+
+                //mostra o popup de mensagem de rejeicao
+                const propriedade = {
+                    texto: "Foi enviado a mensagem de rejeição!",
+                    botao1nome: "Confirmar",
+                    botao1funcao: cancelPopUp,
+                    botao2nome: "",
+                    isTextArea: false
+                }
+                showPopUp(propriedade)
+            })
+            .catch((error) => {
+                cancelPopUp()
+                alert('Erro ao enviar o email: ' + error.text);
+        });
         loadVoluntarios()
     }
     
@@ -125,8 +277,23 @@ function VerificarCadastros(props){
                     </div>
                 </div>
             </div>
-            <ListaVoluntario voluntarios={voluntariosFiltrados} callback_excluir={removeVoluntario}/>
+            <ListaVoluntario voluntarios={voluntariosFiltrados} callback_excluir={confirmaRemoveVoluntario} callback_confirmar={confirmaVoluntario}/>
         </div>
+
+        {(isShow === true &&
+            <div id = "popupCont">
+                <PopUp
+                    nome = {popup.nome}
+                    texto = {popup.texto}   
+                    botao1funcao = {popup.botao1funcao}   
+                    botao1nome = {popup.botao1nome}
+                    botao2funcao = {popup.botao2funcao}   
+                    botao2nome = {popup.botao2nome}
+                    onNotShow = {cancelPopUp}
+                    isTextArea = {popup.isTextArea}
+                />
+            </div>
+        )}
         </>
     )
 }

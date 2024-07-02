@@ -84,6 +84,16 @@ function Voluntariado() {
 
     // cadastra o voluntario no BD e envia email
     const cadastrarVoluntario = async () => {
+        //conversao dos nomes dos tipos
+        if(tipo == 'Cozinha') setTipo('cozinha')
+        if(tipo == 'Montagem') setTipo('montagem')
+        if(tipo == 'Entrega')setTipo('entrega')
+        if(tipo == 'Doação direta') setTipo('doação')
+        if(tipo == 'Doação pela casa') setTipo('retirada')
+        if(tipo == 'Visita') setTipo('visita')
+        if(tipo == 'Outros') setTipo('outros')
+
+
         const conteudo = {
             assunto: 'Confirmação de Cadastro',
             email: email,

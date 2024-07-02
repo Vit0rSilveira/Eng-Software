@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import Header from '../components/header';
 import Question from "../components/questions";
 import Footer from '../components/footer';
@@ -90,6 +91,10 @@ function Home() {
                         recolhemos roupas para o inverno ou não, roupas intimas, cobertores e mantas. Recebemos como muita alegria e gratidão
                         sua doação.
                     </p>
+
+                    <div className="home-saiba-mais-cont">
+                        <Link to="info" className="textoLink home-saiba-mais">Saiba Mais</Link>
+                    </div>
                 </div>
 
                 {/* Acoes realizadas */}
@@ -128,6 +133,9 @@ function Home() {
                         reforca nossa necessidade constante de voluntariado, por isso buscamos atençāo para a questao social a qual nos 
                         envolvemos e esperamos sua ajuda para fazer parte da nossa história.
                     </p>
+                    <div className="home-saiba-mais-cont">
+                        <Link to="info" className="textoLink home-saiba-mais">Saiba Mais</Link>
+                    </div>
                 </div>
 
                 {/* Perguntas frequentes */}

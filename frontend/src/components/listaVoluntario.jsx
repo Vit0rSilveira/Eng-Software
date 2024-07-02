@@ -29,6 +29,7 @@ export function ItemVoluntario(props){
     let email = props.email;
     let telefone = props.telefone;
     let callback_excluir = props.callback_excluir;
+    let callback_confirmar = props.callback_confirmar;
 
     // somente um desses vai ter valor, os outros serao undefined
     let endereco = props.endereco;
@@ -52,7 +53,7 @@ export function ItemVoluntario(props){
                     <p>Telefone: {telefone}</p>
                 </div>
                 <div id='voluntario-botoes'>
-                    <button className='btn-confirmar'>
+                    <button className='btn-confirmar' onClick={()=>callback_confirmar(nome)}>
                         <FaCircleCheck size={36} color='#12970d'/>
                     </button>
                     <button className='btn-excluir' onClick={()=>callback_excluir(nome)}>
@@ -70,7 +71,7 @@ export function ListaVoluntarios(props){
         <>
             <div id='lista-voluntarios'>
                 {voluntarios.map(
-                    (v,index) => <ItemVoluntario {...v} key={index} callback_excluir={props.callback_excluir}/>
+                    (v,index) => <ItemVoluntario {...v} key={index} callback_excluir={props.callback_excluir} callback_confirmar={props.callback_confirmar}/>
                     )}
             </div>
         </>
