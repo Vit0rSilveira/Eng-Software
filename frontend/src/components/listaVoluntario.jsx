@@ -41,11 +41,21 @@ export function ItemVoluntario(props){
     return(
         <>
             <div id='voluntario-container'>
-                <div className="voluntario-info">
+                <div className="voluntario-info isTelaGrande">
                     <h2 className="">{nome}</h2>
                     <h2 className="">Tipo: {tipo}</h2>
                     <h2 className="">Data: {data}</h2>
                     <h2 className="">{horario}</h2>
+                </div>
+                <div className="voluntario-info isTelaPequena">
+                    <div>
+                        <h2 className="">{nome}</h2>
+                        <h2 className="">Tipo: {tipo}</h2>
+                    </div>
+                    <div>
+                        <h2 className="">Data: {data}</h2>
+                        <h2 className="">{horario}</h2>
+                    </div>
                 </div>
                 <div className="voluntario-corpo">
                     <TextoVoluntario tipo ={tipo} endereco = {endereco} motivo={motivo} produto={produto}/>

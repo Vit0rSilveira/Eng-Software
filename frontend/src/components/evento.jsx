@@ -14,11 +14,16 @@ function Evento(props){
     return(
         <>
         <div id='evento-container'>
-            <div className="evento-titulo">
+            <div className="evento-titulo isTelaGrande">
                 <p className="textoBranco">{titulo}</p>
                 <p className='textoBranco'>{data}</p>
                 <p className="textoBranco">{hora_inicio + ' - ' + hora_fim}</p>
             </div>
+            <div className="evento-titulo isTelaPequena">
+                <p className="textoBranco">{titulo}</p>
+                <p className="textoBranco">{data+ ' '} {hora_inicio + ' - ' + hora_fim}</p>
+            </div>
+
             <div className="evento-endereco">
                 <p className='textoBranco texto-endereco-evento'>{endereco}</p>
                 <button className="btn-excluir-evento" onClick = {() => callback(titulo)}>

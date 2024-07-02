@@ -1,5 +1,5 @@
 #containerVoluntarioCard{
-    width: 16em;
+    width: 17em;
     height: auto;
     border-radius: 1em;
     padding: 1.5em 0.5em 2em 0.5em;
@@ -16,10 +16,10 @@
 #containerVoluntarioCard>#t1{
     margin-top: 0.5em;
     margin-bottom: 1em;
-    font-size: 1.1em;
+    font-size: 1.2em;
     text-align: center;
 }
 #containerVoluntarioCard>#t2{
-    font-size: 0.8em;
+    font-size: 0.9em;
     text-align: center;
 }

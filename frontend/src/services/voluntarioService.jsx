@@ -46,6 +46,7 @@ export async function postVoluntario(nome,email,telefone,tipo,data,horario_inici
 
         if(response.status == 201) return true
     }catch(error){
+        if(error.response.status == 422) return false //caso ja tem voluntario com o nome igual
         console.error('Erro ao colocar a voluntario:', error)
         throw new Error(error)
     }

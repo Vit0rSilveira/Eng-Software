@@ -84,7 +84,7 @@
 }
 
 /* para telas menores */
-@media(max-width: 41em){
+@media(max-width: 45em){
     /* explicacao de cadastro */
     #cardMargin{
         display: grid;

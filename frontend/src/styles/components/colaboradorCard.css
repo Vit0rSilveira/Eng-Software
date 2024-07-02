@@ -26,7 +26,8 @@
 #conteinerColabDescricao{
     text-align: left;
     color: #fff;
-    font-size: 0.9em;
+    font-size: 1em;
+    font-weight: 600;
     margin-bottom: 0.6em;
 }
 #conteinerColabLink{

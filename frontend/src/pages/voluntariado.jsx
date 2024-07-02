@@ -36,6 +36,7 @@ function Voluntariado() {
     const [erroMotivo, setErroMotivo] = useState(false);
     const [erroData, setErroData] = useState(false);
     const [erroHorario, setErroHorario] = useState(false);
+    const [erroMesmoNome, setErroMesmoNome] = useState(false);
 
     // reseta os mensagens de erro
     const resetarErro = () => {
@@ -48,6 +49,7 @@ function Voluntariado() {
         setErroMotivo(false);
         setErroData(false);
         setErroHorario(false);
+        setErroMesmoNome(false);
     }
 
     // ativado com o botao confirmar
@@ -106,13 +108,18 @@ function Voluntariado() {
             horario_final: horarioFinal,
         };
 
-        await postVoluntario(nome, email, telefone, tipo, data, horarioInicio, horarioFinal, produto, endereco, motivo, informacaoExtra)
+        const isPost = await postVoluntario(nome, email, telefone, tipo, data, horarioInicio, horarioFinal, produto, endereco, motivo, informacaoExtra)
             .then((response) => {
+                if(!response){
+                    setErroMesmoNome(true)
+                    return
+                }
                 envia_email_voluntario(email, conteudo)
                     .then((response) => {
                         window.location.href = "/voluntario-confirmado"
                     })
             })
+
     };
 
     // se nao tiver erro, vai para pagina de confirmacao
@@ -180,6 +187,7 @@ function Voluntariado() {
                             <input onChange={(event) => setNome(event.target.value)} class="smallSizeInput defaultInput" type="text" />
                         </div>
                         {(erroNome && <div class="textoErroCadastroVol textoErro">Preencha o nome</div>)}
+                        {(erroMesmoNome && <div class="textoErroCadastroVol textoErro">O nome já cadastrado</div>)}
 
                         {/* Email */}
                         <div class="TextoEInput">
