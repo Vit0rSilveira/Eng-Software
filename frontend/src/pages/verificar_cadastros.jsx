@@ -23,7 +23,7 @@ function VerificarCadastros(props){
     }, [])
 
     // funcoes para popup
-    const[isShow, setShow] = useState(true);
+    const[isShow, setShow] = useState(false);
     const [popup, setPopup] = useState({
         nome: "",
         texto: "",
