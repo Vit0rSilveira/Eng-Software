@@ -58,7 +58,7 @@
      npm install
      ```
   3. Crie um arquivo `constantes.js` na pasta `src` no segunte formato:
-     ```env
+     ```javascript
      const constantes = {USER_MONGODB: 'seu_usuario_mongodb',
      PASSWORD_MONGODB: 'sua_senha_mongodb',
      PORT: sua_porta}
