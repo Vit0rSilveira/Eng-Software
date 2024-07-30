@@ -9,12 +9,12 @@ import eventoRotas from './routes/eventoRotas.js';
 import userRotas from './routes/userRotas.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import constantes from './constantes.js';
 dotenv.config();
 
-const PORT = "3000"
-const USER_MONGODB = "884kaito"
-const PASSWORD_MONGODB = "ABKbE0hftkiyd3tx"
-
+const PORT = constantes.PORT
+const USER_MONGODB = constantes.USER_MONGODB
+const PASSWORD_MONGODB = constantes.PASSWORD_MONGODB
 
 
 const app = express();
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 })
 
 
-mongoose.connect(`mongodb+srv://${USER_MONGODB}:${PASSWORD_MONGODB}@projetoengsoft.uduvgcm.mongodb.net/PaoFraterno`)
+mongoose.connect(`mongodb+srv://${USER_MONGODB}:${PASSWORD_MONGODB}@paofraterno.tbg4rvo.mongodb.net/PaoFraterno`)
 .then(() => {
     app.listen(PORT)
     console.log("Conectamos ao Mongo db")
