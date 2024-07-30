@@ -1,3 +1,4 @@
 node_modules
 .env
-
+backend/src/constantes.js
+frontend/src/utils/constantes.js
