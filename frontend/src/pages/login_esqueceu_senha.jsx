@@ -9,13 +9,13 @@ function LoginEsqueceuSenha(){
     //envia email com texto auxilio
     const handleForgotPassword = async () => {
         const userEmail = await getUsuario()
-
+        console.log(userEmail.login)
         const conteudo = {
             assunto: 'Recuperação de senha',
             mensagem: 'Este é o seu texto auxiliar: ' + userEmail.texto_auxiliar
         };
 
-        envia_email(userEmail.email, conteudo)
+        envia_email(userEmail.login, conteudo)
             .then((response) => {
                 window.location.href = "/login-email-enviado"
             })

@@ -72,9 +72,7 @@ function Home() {
                 <div className="textoBranco box-text">
                     <h1>Um pouco sobre nós</h1>
                     <p>
-                        O Pão Fraterno André Luiz é uma organização que tem como objetivo ajudar, 
-                        fisicamente e mentalmente os moradores de rua do São Carlos. 
-                        Somos um grupo de aproximadamente 40 pessoas, sem fins lucrativos, com caráter de assistência social.
+                    A Campanha do Pão Fraterno André Luiz, iniciada em 1996 em São Carlos, é um projeto voluntário dedicado a levar amor e apoio aos moradores de rua. Inspirada na Campanha do Pão de Ribeirão Preto, nossa equipe distribui semanalmente sopa, pão, roupas, cobertores e kits de higiene, além de oferecer conforto espiritual através da leitura do Evangelho segundo o Espiritismo, mensagens edificantes e conversas fraternas.
                     </p>
                     <div className="home-img-box">
                         <img
@@ -85,11 +83,7 @@ function Home() {
                     </div>
                     
                     <p>
-                        Hoje em dia aceitamos os mais
-                        diversos alimentos, o nosso foco sao verduras, que é essencial para fazer nossa principal refeição, a sopa, 
-                        distribuída todas as sextas-feiras. Aceitamos produtos de higiene básica como papel higienico e sabonetes, tambem
-                        recolhemos roupas para o inverno ou não, roupas intimas, cobertores e mantas. Recebemos como muita alegria e gratidão
-                        sua doação.
+                    Nossa missão é proporcionar não apenas o alimento material, mas também o alimento espiritual, revivendo a pureza da Boa Nova e levando a esperança e a solidariedade às ruas. Venha fazer parte deste trabalho de amor ao próximo!
                     </p>
 
                     <div className="home-saiba-mais-cont">
