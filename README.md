@@ -18,7 +18,7 @@
   ## Pré-requisitos
   Antes de começar, certifique-se de ter instalado em sua máquina as seguintes ferramentas:
   - Node.js
-  - npm (Node Package Manager
+  - npm (Node Package Manager)
   - Conta no MongoDB
   - Conta no EmailJs
 
@@ -33,18 +33,17 @@
      ```bash
      npm install
      ```
-  3. Crie um arquivo `constantes.js` na pasta `utils` com a seguinte variável:
+  3. Crie um arquivo `constantes.js` na pasta `src/utils` no segunte formato:
      ```javascript
-     export const PATH = 'URL_DO_BACKEND';
+     const constantes = {SERVICEID: 'seu_service_id_do_emailJS',
+     TEMPLATEID: 'seu_id_do_template_geral_do_emailJS',
+     TEMPLATEID_VOLUNTARIO: 'seu_id_do_template_voluntario_do_emailJS',
+     PUBLICKEY_EMAILJS: 'seu_public_key_do_emailJS',
+     PATH: 'url_do_backend'}
+
+     export default constantes;
      ```
-  4. Adicione as seguintes variáveis no arquivo `constantes.js`:
-     ```javascript
-     export const SERVICEID = 'seu_service_id_emailjs';
-     export const TEMPLATEID_VOLUNTARIO = 'seu_template_id_emailjs';
-     export const TEMPLATEID = 'seu_template_id_emailjs';
-     export const PUBLICKEY_EMAILJS = 'sua_public_key_emailjs';
-     ```
-  5. Inicie o servidor de desenvolvimento:
+  4. Inicie o servidor de desenvolvimento:
      ```bash
      npm start
      ```
@@ -58,11 +57,13 @@
      ```bash
      npm install
      ```
-  3. Crie um arquivo `.env` na pasta do backend com as seguintes variáveis:
+  3. Crie um arquivo `constantes.js` na pasta `src` no segunte formato:
      ```env
-     USER_MONGODB=seu_usuario_mongodb
-     PASSWORD_MONGODB=sua_senha_mongodb
-     PORT=sua_porta
+     const constantes = {USER_MONGODB: 'seu_usuario_mongodb',
+     PASSWORD_MONGODB: 'sua_senha_mongodb',
+     PORT: sua_porta}
+
+     export default constantes;
      ```
   4. Inicie o servidor:
      ```bash
@@ -88,8 +89,8 @@
   │   ├── pages/
   │   ├── utils/
   │   ├── services/
-  │   ├── zustand/
   │   ├── App.js
+  │   ├── constantes.js
   │   └── index.js
   └── package.json
   ```
@@ -102,8 +103,8 @@
   │   ├── models/
   │   ├── routes/
   │   ├── utils/
-  ├── .env
-  └── index.js
+  |   ├──index.js
+  └── package.json
   ```
 
   ## Contribuição
